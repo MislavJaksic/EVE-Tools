@@ -20,7 +20,6 @@ classifiers = []
 python = "^3.8"
 requests = "^2.22.0"
 pandas = "^1.1.2"
-cachier = "^1.4.3"
 
 [tool.poetry.dev-dependencies]
 pytest-cov = "^2.8.1"
