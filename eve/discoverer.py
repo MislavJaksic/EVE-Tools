@@ -1,9 +1,6 @@
 from functools import lru_cache
 from getter import Getter
-
-corp_store_error_value = {
-    "error": "No loyalty point store found for the provided corporation"
-}
+import pandas
 
 
 class Discoverer(object):
@@ -12,19 +9,6 @@ class Discoverer(object):
 
     def corp_id_to_corp_name(self, corp_id):
         return self.getter.get_corp_info(corp_id)["name"]
-
-    @lru_cache(maxsize=1)
-    def get_all_corp_store_offers(self):
-        corp_ids = self.getter.get_corp_npccorps_ids()
-        corp_stores = []
-        for id in corp_ids:
-            corp_store = self.getter.get_corp_store_offers(id)
-            if corp_store != corp_store_error_value:
-                for dict in corp_store:
-                    dict["corporation_id"] = id
-                corp_stores.extend(corp_store)
-
-        return corp_stores
 
     @lru_cache(maxsize=1000)
     def item_id_top_sell_value(self, item_id):
@@ -53,6 +37,11 @@ class Discoverer(object):
 
         return orders
 
+    def market_group_id_to_market_group_name(self, id):
+        if not pandas.isna(id):
+            return self.get_all_market_group_infos()[id].get("name")
+        return None
+
     def region_name_to_id(self, region_name):
         return self.get_region_name_to_id_dict()[region_name]
 
@@ -65,35 +54,42 @@ class Discoverer(object):
 
         return dict
 
-    def type_id_to_market_group_id(self, type_id):
-        for type_info in self.get_all_type_infos():
-            if type_id == type_info["type_id"]:
-                return type_info.get_uri_to_file_if_stale("market_group_id")
+    def type_id_to_market_group_id(self, id):
+        return self.get_all_type_infos()[id].get("market_group_id")
 
     def type_name_to_type_id(self, type_name):
-        for type_info in self.get_all_type_infos():
-            if type_name == type_info["name"]:
-                return type_info["type_id"]
+        for id, info in self.get_all_type_infos():
+            if info["name"] == type_name:
+                return id
 
-    def type_id_to_type_name(self, type_id):
-        for type_info in self.get_all_type_infos():
-            if type_id == type_info["type_id"]:
-                return type_info["name"]
+    def type_id_to_type_name(self, id):
+        if not pandas.isna(id):
+            return self.get_all_type_infos()[id]["name"]
+        return None
+
+    @lru_cache(maxsize=1)
+    def get_all_market_group_infos(self):
+        market_group_infos = {}
+        for market_group_id in self.getter.get_market_group_ids():
+            market_group_info = self.getter.get_market_group_info(market_group_id)
+            market_group_infos[market_group_id] = market_group_info
+
+        return market_group_infos
 
     @lru_cache(maxsize=1)
     def get_all_type_infos(self):
-        type_infos = []
-        for type_id in self.get_all_types():
-            type_info_page = self.getter.get_universe_type_info(type_id)
-            type_infos.append(type_info_page)
+        type_infos = {}
+        for id in self.get_all_type_ids():
+            type_info_page = self.getter.get_universe_type_info(id)
+            type_infos[id] = type_info_page
 
         return type_infos
 
     @lru_cache(maxsize=1)
-    def get_all_types(self):
+    def get_all_type_ids(self, stale_after=None):
         types = []
         for page in range(1, 40):
-            type_page = self.getter.get_universe_type_page(page)
+            type_page = self.getter.get_universe_type_page(page, stale_after)
             types.extend(type_page)
 
         return types

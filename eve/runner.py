@@ -10,13 +10,169 @@
 import sys
 import datetime
 import pandas
+import numpy
 
 from getter import Getter
 from discoverer import Discoverer
 from lp_store import LPStore
 
+"""
+EVE ESI column names (after flattening):
+['ak_cost', 'isk_cost', 'lp_cost', 'offer_id', 'quantity', 'required_items_0_quantity', 'required_items_0_type_id', 'type_id', 'corporation_id', 'required_items_1_quantity', 'required_items_1_type_id', 'required_items_2_quantity', 'required_items_2_type_id', 'required_items_3_quantity', 'required_items_3_type_id', 'required_items_4_quantity', 'required_items_4_type_id']
+"""
 
-class TableMaker(object):
+"""
+Google Sheets column names:
+faction_name	corporation_name	item_id	item_name	market_group_name	quantity	offer_buy_value	offer_sell_value	item_buy_volume	item_sell_volume	isk_cost	lp_cost	analysis_kredit_cost	required_items_0_item_id	required_items_0_item_name	required_items_0_quantity	sum_required_items_0_item_buy_value	sum_required_items_0_item_sell_value	required_items_1_item_id	required_items_1_item_name	required_items_1_quantity	sum_required_items_1_item_buy_value	sum_required_items_1_item_sell_value	required_items_2_item_id	required_items_2_item_name	required_items_2_quantity	sum_required_items_2_item_buy_value	sum_required_items_2_item_sell_value	required_items_3_item_id	required_items_3_item_name	required_items_3_quantity	sum_required_items_3_item_buy_value	sum_required_items_3_item_sell_value	required_items_4_item_id	required_items_4_item_name	required_items_4_quantity	sum_required_items_4_item_buy_value	sum_required_items_4_item_sell_value	total_isk_buy_cost	total_isk_sell_cost	profit_sell_to_buy_buy_from_sell	profit_sell_to_sell_buy_from_sell	isk_per_lp_profit_sell_to_buy_buy_from_sell	isk_per_lp_profit_sell_to_sell_buy_from_sell
+"""
+
+
+class LPDataframe(object):
+    def __init__(self, df):
+        self.disco = Discoverer()
+        self.df = df
+
+    def add_all_type_names(self):
+        id_name_column_pairs = [
+            ("type_id", "type_name"),
+            ("required_items_0_type_id", "required_items_0_item_name"),
+            ("required_items_1_type_id", "required_items_1_item_name"),
+            ("required_items_2_type_id", "required_items_2_item_name"),
+            ("required_items_3_type_id", "required_items_3_item_name"),
+            ("required_items_4_type_id", "required_items_4_item_name"),
+        ]
+        for id_column, name_column in id_name_column_pairs:
+            self.add_name_id_column(id_column, name_column)
+
+    def add_name_id_column(self, id_column, name_column):
+        type_ids = self.df[id_column].tolist()
+        type_names = []
+        for id in type_ids:
+            type_name = self.disco.type_id_to_type_name(id)
+            type_names.append(type_name)
+
+        self.df[name_column] = type_names
+
+    def add_corporation_name(self):
+        corporation_ids = self.df["corporation_id"].tolist()
+        corporation_names = []
+        for id in corporation_ids:
+            corporation_name = self.disco.corp_id_to_corp_name(id)
+            corporation_names.append(corporation_name)
+
+        self.df["corporation_name"] = corporation_names
+
+    def add_market_group_id(self):
+        type_ids = self.df["type_id"].tolist()
+        market_group_ids = []
+        for id in type_ids:
+            market_group_id = self.disco.type_id_to_market_group_id(id)
+            market_group_ids.append(market_group_id)
+
+        integer_array = pandas.array(market_group_ids, dtype="Int64")
+        self.df["market_group_id"] = integer_array
+
+    def add_market_group_name(self):
+        market_group_ids = self.df["market_group_id"].tolist()
+        market_group_names = []
+        for id in market_group_ids:
+            market_group_name = self.disco.market_group_id_to_market_group_name(id)
+            market_group_names.append(market_group_name)
+
+        self.df["market_group_name"] = market_group_names
+
+    def add_empty_columns(self):
+        empty_columns = [
+            "faction_name",
+            "buy_value",
+            "sell_value",
+            "buy_volume",
+            "sell_volume",
+            "sum_required_items_0_item_buy_value",
+            "sum_required_items_0_item_sell_value",
+            "sum_required_items_1_item_buy_value",
+            "sum_required_items_1_item_sell_value",
+            "sum_required_items_2_item_buy_value",
+            "sum_required_items_2_item_sell_value",
+            "sum_required_items_3_item_buy_value",
+            "sum_required_items_3_item_sell_value",
+            "sum_required_items_4_item_buy_value",
+            "sum_required_items_4_item_sell_value",
+            "total_isk_buy_cost",
+            "total_isk_sell_cost",
+            "profit_sell_to_buy_buy_from_sell",
+            "profit_sell_to_sell_buy_from_sell",
+            "isk_per_lp_profit_sell_to_buy_buy_from_sell",
+            "isk_per_lp_profit_sell_to_sell_buy_from_sell",
+        ]
+        for col in empty_columns:
+            self.df[col] = numpy.nan
+
+    def reorder_columns(self):
+        column_order = [
+            "offer_id",
+            "faction_name",
+            "corporation_id",
+            "corporation_name",
+            "type_id",
+            "type_name",
+            "market_group_id",
+            "market_group_name",
+            "quantity",
+            "buy_value",
+            "sell_value",
+            "buy_volume",
+            "sell_volume",
+            "isk_cost",
+            "lp_cost",
+            "ak_cost",
+            "required_items_0_type_id",
+            "required_items_0_item_name",
+            "required_items_0_quantity",
+            "sum_required_items_0_item_buy_value",
+            "sum_required_items_0_item_sell_value",
+            "required_items_1_type_id",
+            "required_items_1_item_name",
+            "required_items_1_quantity",
+            "sum_required_items_1_item_buy_value",
+            "sum_required_items_1_item_sell_value",
+            "required_items_2_type_id",
+            "required_items_2_item_name",
+            "required_items_2_quantity",
+            "sum_required_items_2_item_buy_value",
+            "sum_required_items_2_item_sell_value",
+            "required_items_3_type_id",
+            "required_items_3_item_name",
+            "required_items_3_quantity",
+            "sum_required_items_3_item_buy_value",
+            "sum_required_items_3_item_sell_value",
+            "required_items_4_type_id",
+            "required_items_4_item_name",
+            "required_items_4_quantity",
+            "sum_required_items_4_item_buy_value",
+            "sum_required_items_4_item_sell_value",
+            "total_isk_buy_cost",
+            "total_isk_sell_cost",
+            "profit_sell_to_buy_buy_from_sell",
+            "profit_sell_to_sell_buy_from_sell",
+            "isk_per_lp_profit_sell_to_buy_buy_from_sell",
+            "isk_per_lp_profit_sell_to_sell_buy_from_sell",
+        ]
+        self.df = self.df[column_order]
+
+    def fill_na(self):
+        self.df = self.df.fillna(-1)
+
+    def __str__(self):
+        return str(self.df)
+
+
+class DataframeMaker(object):
+    def json_to_dataframe(self, jsons):
+        dic_flattened = (self.flatten_json(d) for d in jsons)
+        df = pandas.json_normalize(dic_flattened)
+        return df
+
     def flatten_json(self, y):
         out = {}
 
@@ -35,119 +191,40 @@ class TableMaker(object):
         flatten(y)
         return out
 
-    def normalize_data_to_json(self, raw_data: [list, dict, tuple], parent=""):
-        from datetime import datetime
-        from decimal import Decimal
-
-        result = {}
-        # key name normalise to snake case (single underscore)
-        parent = parent.lower().replace(" ", "_") if isinstance(parent, str) else parent
-        if isinstance(parent, str) and parent.startswith("__"):
-            # if parent has no parent remove double underscore and treat as int if digit else as str
-            # treating as int is better if passed data is a list so you output is index based dict
-            parent = (
-                int(parent.lstrip("_"))
-                if parent.lstrip("_").isdigit()
-                else parent.lstrip("_")
-            )
-
-        # handle str, int, float, and decimal.
-        # you can easily add more data types as er your data
-        if type(raw_data) in [str, int, float, Decimal]:
-            result[parent] = (
-                float(raw_data) if isinstance(raw_data, Decimal) else raw_data
-            )
-
-        # normalise datetime object
-        elif isinstance(raw_data, datetime):
-            result[parent] = raw_data.strftime("%Y-%m-%d %H:%M:%S")
-
-        # normalise dict and all nested dicts.
-        # all nests are joined with double underscore to identify parent key name with it's children
-        elif isinstance(raw_data, dict):
-            for k, v in raw_data.items():
-                k = f"{parent}__{k}" if parent else k
-                result.update(self.normalize_data_to_json(v, parent=k))
-
-        # normalise list and tuple
-        elif type(raw_data) in [list, tuple]:
-            for i, sub_item in enumerate(raw_data, start=1):
-                result.update(self.normalize_data_to_json(sub_item, f"{parent}__{i}"))
-
-        # any data which did not matched above data types, normalise them using it's __str__
-        else:
-            result[parent] = str(raw_data)
-
-        return result
-
 
 def main(args):
     """main() will be run if you run this script directly
     """
 
-    getter = Getter()
-    disco = Discoverer()
-    print(getter.get_corp_npccorps_ids(stale_after=datetime.timedelta(seconds=1)))
-    for id in getter.get_corp_npccorps_ids():
-        print(str(id) + ":" + disco.corp_id_to_corp_name(id))
+    lp_store = LPStore()
+    json_offers = lp_store.get_all_corp_store_offers()
+    maker = DataframeMaker()
+    df = maker.json_to_dataframe(json_offers)
+    lp_df = LPDataframe(df)
+    lp_df.add_all_type_names()
+    lp_df.add_corporation_name()
+    lp_df.add_market_group_id()
+    lp_df.add_market_group_name()
+    lp_df.add_empty_columns()
+    lp_df.reorder_columns()
+    print(lp_df)
 
-    # print(getter.get_universe_type_info(44))
+    lp_df.df.to_csv("all-stores.csv")
 
-    # # print(disco.type_name_to_type_id("Tritanium"))
-    # # print(disco.type_id_to_type_name(34))
-    # corp_stores = disco.get_all_corp_store_offers()
-    # # print(corp_stores[0])
-    # # print(disco.item_id_top_sell_value(23047))
-    #
-    # lp_store = LPStore()
-    # # print(lp_store.get_offer_isk_per_lp_sell_sell_profit(corp_stores[0]))
-    # for offer in corp_stores:
-    #     print(disco.type_id_to_type_name(offer["type_id"]))
-    #     print(disco.type_id_to_market_group_id(offer["type_id"]))
-    #     print(lp_store.get_offer_isk_per_lp_sell_sell_profit(offer))
+    id_columns = [
+        "type_id",
+        "required_items_0_type_id",
+        "required_items_1_type_id",
+        "required_items_2_type_id",
+        "required_items_3_type_id",
+        "required_items_4_type_id",
+    ]
 
-    # corp_stores = disco.get_all_corp_store_offers()
-    #
-    # table_maker = TableMaker()
-    #
-    # dic_flattened = (table_maker.flatten_json(d) for d in corp_stores)
-    # dataframe = pandas.json_normalize(dic_flattened)
-    # print(dataframe)
-    # dataframe = dataframe.drop_duplicates()
-    # dataframe = dataframe.fillna(-1)
-    # print(dataframe)
-    # dataframe.to_csv("all-stores.csv")
-
-    # region_ids = getter.get_universe_region_ids()
-    # print(region_ids)
-    #
-    # for id in region_ids:
-    #     getter.get_universe_region_info(id)
-    #
-    # types = getter.get_all_types()
-    # print(types)
-    # count = 0
-    # for type in types:
-    #     info = getter.get_universe_type_info(type)
-    #     count += 1
-    #     if count % 10 == 0:
-    #         print(info)
-
-    # disco = Discoverer()
-    # corp_stores = disco.get_all_corp_stores()
-    # print(corp_stores[0])
-    # dict = disco.get_region_name_to_id_dict()
-    # forge_id = dict["The Forge"]
-    # print(forge_id)
-    # disco.item_id_to_top_sell_price(43)
-    #
-    # types = trans.get_all_types()
-    # count = 0
-    # for item_id in types:
-    #     info = getter.get_market_region_item_history(forge_id, item_id)
-    #     count += 1
-    #     if count % 10 == 0:
-    #         print(info)
+    all_type_ids = []
+    for id_column in id_columns:
+        type_ids = lp_df.df[id_column].tolist()
+        all_type_ids.extend(type_ids)
+    pandas.DataFrame(all_type_ids).drop_duplicates().to_csv("unique_ids.csv")
 
 
 def run():
