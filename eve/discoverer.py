@@ -1,11 +1,11 @@
 from functools import lru_cache
-from getter import Getter
+from api_getter import APIGetter
 import pandas
 
 
 class Discoverer(object):
     def __init__(self):
-        self.getter = Getter()
+        self.getter = APIGetter()
 
     def corp_id_to_corp_name(self, corp_id):
         return self.getter.get_corp_info(corp_id)["name"]

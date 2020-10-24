@@ -2,11 +2,11 @@ import datetime
 from file_cacher import FileCacher
 
 
-market_history_stalness_days = 7
-market_order_stalness_hours = 72
+market_history_stalness_days = 3
+market_order_stalness_hours = 24
 
 
-class Getter(object):
+class APIGetter(object):
     def __init__(self):
         self.file_cacher = FileCacher()
 

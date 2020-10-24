@@ -1,6 +1,6 @@
 from functools import lru_cache
 from discoverer import Discoverer
-from getter import Getter
+from api_getter import APIGetter
 
 corp_store_error_value = {
     "error": "No loyalty point store found for the provided corporation"
@@ -9,7 +9,7 @@ corp_store_error_value = {
 
 class LPStore(object):
     def __init__(self):
-        self.getter = Getter()
+        self.getter = APIGetter()
         self.disco = Discoverer()
 
     def get_offer_isk_per_lp_sell_sell_profit(self, offer):
