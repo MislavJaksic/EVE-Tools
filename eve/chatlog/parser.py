@@ -127,8 +127,8 @@ for file_path in file_paths:
         channel = ChatChannel(file)
 
         channel_name = "Fleet"
-        start_time = "2020.09.20 18:55:00"
-        end_time = "2020.09.20 22:05:00"
+        start_time = "2020.10.23 00:00:00"
+        end_time = "2020.10.25 00:00:00"
 
         filter = ChatFilter(channel)
         filter.filter_channel_name(channel_name)
