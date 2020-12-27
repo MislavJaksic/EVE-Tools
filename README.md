@@ -36,6 +36,8 @@ $: make html
 ### eve
 
 ```
+$: poetry run python ./eve/exploration/runner.py
+
 $: poetry run python ./eve/runner.py
 ```
 
