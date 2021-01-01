@@ -18,7 +18,7 @@ $: poetry install  # install all dependencies
 ### dist
 
 ```
-$: pip install dist/eve-x.y.z-py3-none.any.whl
+$: pip install dist/eve-0.0.1-py3-none.any.whl
 
 $: poetry-template
 ```
@@ -86,3 +86,13 @@ $: poetry publish --build
 ```
 https://pypi.org/project/poetry-template/
 ```
+
+### Notes
+
+Choice:
+* [pyswagger](https://github.com/pyopenapi/pyswagger): doesn't cache easily into a file; implements swagger api
+* [diskcache](http://www.grantjenks.com/docs/diskcache/): can cache files
+
+Alternatives:
+* [esipy](https://github.com/Kyria/EsiPy): the author abandoned an adjacent project, has poor documentation and short lived cache; easy EVE API access, implemented security, implements swagger api, retries, ETag, ...
+* [swagger-codegen](https://github.com/swagger-api/swagger-codegen): generates an enormous code overhead; creates a whole python project, tests, data models and api function

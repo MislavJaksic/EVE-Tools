@@ -1,7 +1,7 @@
 import pandas
 import numpy
-from discoverer import Discoverer
-from lp_store import LPStore
+from eve_tools.discoverer import Discoverer
+from eve_tools.lp_store import LPStore
 
 
 class LPDBGenerator(object):

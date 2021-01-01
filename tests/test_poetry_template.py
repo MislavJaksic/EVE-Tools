@@ -1,5 +1,5 @@
-from eve import __version__
+from eve_tools import __version__
 
 
 def test_version():
-    assert __version__ == "0.1.3"
+    assert __version__ == "0.0.1"

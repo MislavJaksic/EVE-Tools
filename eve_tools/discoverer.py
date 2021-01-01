@@ -1,6 +1,6 @@
-from functools import lru_cache
-from api_getter import APIGetter
 import pandas
+from functools import lru_cache
+from eve_tools.api_getter import APIGetter
 
 
 class Discoverer(object):

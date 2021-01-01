@@ -1,6 +1,6 @@
 from functools import lru_cache
-from discoverer import Discoverer
-from api_getter import APIGetter
+from eve_tools.discoverer import Discoverer
+from eve_tools.api_getter import APIGetter
 
 corp_store_error_value = {
     "error": "No loyalty point store found for the provided corporation"

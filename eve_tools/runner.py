@@ -13,14 +13,13 @@ import pandas
 import numpy
 
 from api_getter import APIGetter
-from discoverer import Discoverer
-from lp_store import LPStore
-from lp_bd_generator import LPDBGenerator, get_unique_ids, save_unique_ids
+from eve_tools.discoverer import Discoverer
+from eve_tools.lp_store import LPStore
+from eve_tools.lp_bd_generator import LPDBGenerator, get_unique_ids, save_unique_ids
 
 
 def main(args):
-    """main() will be run if you run this script directly
-    """
+    """main() will be run if you run this script directly"""
 
     lp_db_gen = LPDBGenerator()
     # lp_db_gen.to_csv("all-stores.csv")
@@ -35,12 +34,10 @@ def main(args):
 
 
 def run():
-    """Entry point for the runnable script.
-    """
+    """Entry point for the runnable script."""
     sys.exit(main(sys.argv[1:]))
 
 
 if __name__ == "__main__":
-    """main calls run().
-    """
+    """main calls run()."""
     run()
