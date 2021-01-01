@@ -44,7 +44,7 @@ $: poetry run python ./eve/runner.py
 ### tests
 
 ```
-$: poetry run pytest
+$: poetry run pytest --durations=0
 ```
 
 ```

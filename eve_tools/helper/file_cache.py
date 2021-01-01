@@ -1,8 +1,5 @@
 from diskcache import Cache
 import hashlib
-import pickle
-
-from eve_tools import settings
 
 
 class FileCache:
@@ -17,23 +14,26 @@ class FileCache:
         self.close()
 
     def exists(self, key):
-        key_hash = self.hash(key)
-        return key_hash in self.cache
+        digest = self.digest(key)
+        return digest in self.cache
 
     def get(self, key):
-        key_hash = self.hash(key)
-        return self.cache[key_hash]
+        digest = self.digest(key)
+        return self.cache[digest]
 
-    def set(self, key, value, expire_seconds=None):
-        key_hash = self.hash(key)
-        self.cache.set(key_hash, value, expire=expire_seconds)
+    def set(self, key, value, expire_seconds=86400):
+        digest = self.digest(key)
+        self.cache.set(digest, value, expire=expire_seconds)
 
     def delete(self, key):
-        key_hash = self.hash(key)
-        del self.cache[key_hash]
+        digest = self.digest(key)
+        del self.cache[digest]
 
-    def hash(self, data):
-        return hashlib.sha512(pickle.dumps(data)).hexdigest()
+    def digest(self, data):
+        return hashlib.sha512(str(data).encode()).hexdigest()
+
+    def clear(self):
+        self.cache.clear()
 
     def close(self):
         self.cache.close()

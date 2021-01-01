@@ -19,26 +19,53 @@ def client():
 
 
 @pytest.fixture(scope="module")
-def op(app):
+def getInventory_op(app):
+    operation_id = "getInventory"
+    yield app.op[operation_id]
+
+
+@pytest.fixture(scope="module")
+def getUserByName_op(app):
     operation_id = "getUserByName"
     yield app.op[operation_id]
 
 
 @pytest.fixture(scope="module")
-def response(client, op):
+def response_200(client, getInventory_op):
+    yield client.request(getInventory_op())
+
+
+@pytest.fixture(scope="module")
+def response_404(client, getUserByName_op):
     username = "Alice"
-    yield client.request(op(username=username))
+    yield client.request(getUserByName_op(username=username))
 
 
-class TestResponse:
-    def test_status(self, response):
-        assert response.status == 404
+class TestResponse200:
+    def test_status(self, response_200):
+        assert response_200.status == 200
 
-    def test_data(self, response):
-        assert response.data == None
+    def test_header(self, response_200):
+        assert response_200.header["Content-Type"][0] == "application/json"
 
-    def test_header(self, response):
-        assert response.header["Content-Type"][0] == "application/json"
+    # def test_data(self, response_200):  # flakey!
+    #     assert response_200.data["sold"] == 1
 
-    def test_raw(self, response):
-        assert response.raw == b'{"code":1,"type":"error","message":"User not found"}'
+    # def test_raw(self, response_200):  # flakey!
+    #     assert response_200.raw == b'{"sold":1,"string":724,"available":249}'
+
+
+class TestResponse404:
+    def test_status(self, response_404):
+        assert response_404.status == 404
+
+    def test_header(self, response_404):
+        assert response_404.header["Content-Type"][0] == "application/json"
+
+    def test_data(self, response_404):
+        assert response_404.data == None
+
+    def test_raw(self, response_404):
+        assert (
+            response_404.raw == b'{"code":1,"type":"error","message":"User not found"}'
+        )
