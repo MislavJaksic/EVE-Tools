@@ -13,13 +13,22 @@ class EveDatastore:
     def __exit__(self, exc_type, exc_value, traceback):
         self.close()
 
+    def get_alliances(self):
+        list = []
+        ids = self.api.get_json_from("get_alliances")
+        for id in ids:
+            list.append(
+                self.api.get_json_from("get_alliances_alliance_id", alliance_id=id)
+            )
+        return list
+
     def get_npc_corporations(self):
         list = []
-        npc_corp_ids = self.api.get_json_from("get_corporations_npccorps")
-        for npc_corp_id in npc_corp_ids:
+        ids = self.api.get_json_from("get_corporations_npccorps")
+        for id in ids:
             list.append(
                 self.api.get_json_from(
-                    "get_corporations_corporation_id", corporation_id=npc_corp_id
+                    "get_corporations_corporation_id", corporation_id=id
                 )
             )
         return list

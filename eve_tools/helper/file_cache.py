@@ -21,7 +21,7 @@ class FileCache:
         digest = self.digest(key)
         return self.cache[digest]
 
-    def set(self, key, value, expire_seconds=86400):
+    def set(self, key, value, expire_seconds=604800):
         digest = self.digest(key)
         self.cache.set(digest, value, expire=expire_seconds)
 

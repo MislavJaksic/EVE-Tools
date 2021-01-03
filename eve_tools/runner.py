@@ -16,10 +16,12 @@ from eve_tools.helper.data_frame import DataFrame
 def main(args):
     """main() will be run if you run this script directly"""
     with EveDatastore() as datastore:
-        # print(datastore.get_npc_corporations())
+        alliances = datastore.get_alliances()
+        corps = datastore.get_npc_corporations()
         offers = datastore.get_loyalty_point_offers()
-    dataframe = DataFrame("json", offers)
-    dataframe.to_csv("regenerated-offers.csv")
+    dataframe = DataFrame("json", alliances)
+    dataframe.to_csv("alliances.csv")
+
     # lp_db_gen = LPDBGenerator()
     # # lp_db_gen.to_csv("all-stores.csv")
     # # save_unique_ids(lp_db_gen)
