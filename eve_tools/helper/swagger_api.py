@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from eve_tools.helper.file_cache import FileCache
 from eve_tools.helper.swaggerer import Swaggerer
 
@@ -21,20 +23,23 @@ class SwaggerApi:
         else:
             raise AttributeError
 
-    def get_json_from(self, get_operation_id, **parameters):
+    def get_response_from(
+        self, get_operation_id, expire_timedelta=timedelta(days=7), **parameters
+    ):
         key = self.create_key(get_operation_id, parameters)
         if self.cache.exists(key):
             response = self.cache.get(key)
         else:
             response = self.swaggerer.do(get_operation_id, **parameters)
             if response.status == 200:
-                self.cache.set(key, response)
+                self.cache.set(key, response, expire_timedelta=expire_timedelta)
             else:
                 raise Exception(response)
-        return response.json
+        return response
 
     def create_key(self, get_operation_id, parameters):
-        return (get_operation_id, parameters)
+        sorted_parameters = dict(sorted(parameters.items()))
+        return (get_operation_id, sorted_parameters)
 
     def close(self):
         self.cache.close()

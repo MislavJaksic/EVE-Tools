@@ -143,6 +143,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "flatten-json"
+version = "0.1.7"
+description = "Flatten JSON objects"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "idna"
 version = "2.10"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -561,7 +569,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "342fd261469f342bc51edfb1d44a53e230b32cfdd36e267d3413433d408db43b"
+content-hash = "bcc89ec26d33ce9eb2f01963e9e0b8e30a5bbaa02e31effa4f9643211d190a91"
 
 [metadata.files]
 alabaster = [
@@ -666,6 +674,10 @@ diskcache = [
 docutils = [
     {file = "docutils-0.16-py2.py3-none-any.whl", hash = "sha256:0c5b78adfbf7762415433f5515cd5c9e762339e23369dbe8000d84a4bf4ab3af"},
     {file = "docutils-0.16.tar.gz", hash = "sha256:c2de3a60e9e7d07be26b7f2b00ca0309c207e06c100f9cc2a94931fc75a478fc"},
+]
+flatten-json = [
+    {file = "flatten_json-0.1.7-py3-none-any.whl", hash = "sha256:cdb1a0802f0268f892294f51014097912ba5a6fea99996573a7e3f0cc43cfd26"},
+    {file = "flatten_json-0.1.7.tar.gz", hash = "sha256:06341ba64baf2fd9b960b4cacf3d3bab38e1e09a855d9902e79cfd2fe66fa29c"},
 ]
 idna = [
     {file = "idna-2.10-py2.py3-none-any.whl", hash = "sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"},

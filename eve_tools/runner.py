@@ -10,17 +10,20 @@
 import sys
 
 from eve_tools.eve_datastore import EveDatastore
+from eve_tools.eve_calculator import EveCalculator
 from eve_tools.helper.data_frame import DataFrame
 
 
 def main(args):
     """main() will be run if you run this script directly"""
-    with EveDatastore() as datastore:
-        alliances = datastore.get_alliances()
-        corps = datastore.get_npc_corporations()
-        offers = datastore.get_loyalty_point_offers()
-    dataframe = DataFrame("json", alliances)
-    dataframe.to_csv("alliances.csv")
+    with EveCalculator() as calc:
+        with EveDatastore() as datastore:
+            derelik_contracts = datastore.get_region_contracts(
+                calc.region_name_to_id("Derelik")
+            )
+
+    dataframe = DataFrame("json", derelik_contracts)
+    dataframe.to_csv("derelik_contracts.csv")
 
     # lp_db_gen = LPDBGenerator()
     # # lp_db_gen.to_csv("all-stores.csv")

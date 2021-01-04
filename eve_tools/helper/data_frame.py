@@ -1,4 +1,5 @@
 import pandas
+from flatten_json import flatten
 
 
 class DataFrame:
@@ -9,27 +10,12 @@ class DataFrame:
             raise Exception("{} is not a supported data type.".format(type))
 
     def from_json(self, jsons):
-        dic_flattened = (self.flatten_json(d) for d in jsons)
-        df = pandas.json_normalize(dic_flattened)
+        list_of_flat_dicts = list((flatten(d) for d in jsons))
+        df = pandas.json_normalize(list_of_flat_dicts)
         return df
 
-    def flatten_json(self, y):
-        out = {}
-
-        def flatten(x, name=""):
-            if type(x) is dict:
-                for a in x:
-                    flatten(x[a], name + a + "_")
-            elif type(x) is list:
-                i = 0
-                for a in x:
-                    flatten(a, name + str(i) + "_")
-                    i += 1
-            else:
-                out[name[:-1]] = x
-
-        flatten(y)
-        return out
+    def print_all(self):
+        print(self.df.to_string())
 
     def to_csv(self, file_path):
         self.df.to_csv(file_path)

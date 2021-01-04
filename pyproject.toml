@@ -25,6 +25,7 @@ numpy = "1.19.3"
 pandas = "^1.2.0"
 pyswagger = "0.8.39"
 diskcache = "5.1.0"
+flatten-json = "0.1.7"
 
 [tool.poetry.dev-dependencies]
 pytest-cov = "^2.8.1"

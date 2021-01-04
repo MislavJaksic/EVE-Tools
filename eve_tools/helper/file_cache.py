@@ -1,5 +1,6 @@
-from diskcache import Cache
 import hashlib
+from datetime import timedelta
+from diskcache import Cache
 
 
 class FileCache:
@@ -21,9 +22,10 @@ class FileCache:
         digest = self.digest(key)
         return self.cache[digest]
 
-    def set(self, key, value, expire_seconds=604800):
+    def set(self, key, value, expire_timedelta=timedelta(days=7)):
         digest = self.digest(key)
-        self.cache.set(digest, value, expire=expire_seconds)
+        seconds = self.total_seconds(expire_timedelta)
+        self.cache.set(digest, value, expire=seconds)
 
     def delete(self, key):
         digest = self.digest(key)
@@ -31,6 +33,9 @@ class FileCache:
 
     def digest(self, data):
         return hashlib.sha512(str(data).encode()).hexdigest()
+
+    def total_seconds(self, time_delta):
+        return int(time_delta.total_seconds())
 
     def clear(self):
         self.cache.clear()
