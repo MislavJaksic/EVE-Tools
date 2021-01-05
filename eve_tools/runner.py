@@ -18,12 +18,13 @@ def main(args):
     """main() will be run if you run this script directly"""
     with EveCalculator() as calc:
         with EveDatastore() as datastore:
-            derelik_contracts = datastore.get_region_contracts(
+            derelik_exchanges = datastore.get_region_item_exchanges(
                 calc.region_name_to_id("Derelik")
             )
+            print(derelik_exchanges)
 
-    dataframe = DataFrame("json", derelik_contracts)
-    dataframe.to_csv("derelik_contracts.csv")
+    # dataframe = DataFrame("json", derelik_contracts)
+    # dataframe.to_csv("derelik_contracts.csv")
 
     # lp_db_gen = LPDBGenerator()
     # # lp_db_gen.to_csv("all-stores.csv")

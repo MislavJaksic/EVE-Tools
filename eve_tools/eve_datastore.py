@@ -1,6 +1,7 @@
 from datetime import timedelta
 
 from eve_tools.helper.swagger_api import SwaggerApi
+from eve_tools.eve_contract import EveItemExchange
 
 from eve_tools import settings
 
@@ -42,6 +43,25 @@ class EveDatastore:
             region_id=id,
             expire_timedelta=timedelta(hours=12),
         )
+
+    def get_region_item_exchanges(self, id):
+        contracts = self.get_region_contracts(id)
+        list = []
+        for contract in contracts:
+            try:
+                if contract["type"] == "item_exchange":
+                    contract_id = contract["contract_id"]
+                    items = self.get_json_paged(
+                        "get_contracts_public_items_contract_id",
+                        contract_id=contract_id,
+                        expire_timedelta=timedelta(hours=12),
+                    )
+                    exchange = EveItemExchange(contract, items)
+                    print(exchange)
+                    list.append(exchange)
+            except:
+                print("Contract expired")
+        return list
 
     def get_npc_corporations(self):
         list = []
