@@ -27,6 +27,11 @@ class FileCache:
         seconds = self.total_seconds(expire_timedelta)
         self.cache.set(digest, value, expire=seconds)
 
+    def touch(self, key, expire_timedelta):
+        digest = self.digest(key)
+        seconds = self.total_seconds(expire_timedelta)
+        self.cache.touch(digest, expire=seconds)
+
     def delete(self, key):
         digest = self.digest(key)
         del self.cache[digest]

@@ -1,7 +1,7 @@
 from datetime import timedelta
 
 from eve_tools.helper.swagger_api import SwaggerApi
-from eve_tools.eve_contract import EveItemExchange
+from eve_tools.eve_representation import EveItemExchange
 
 from eve_tools import settings
 
@@ -46,21 +46,31 @@ class EveDatastore:
 
     def get_region_item_exchanges(self, id):
         contracts = self.get_region_contracts(id)
+        types = self.get_types_dict()
         list = []
         for contract in contracts:
-            try:
-                if contract["type"] == "item_exchange":
-                    contract_id = contract["contract_id"]
-                    items = self.get_json_paged(
-                        "get_contracts_public_items_contract_id",
-                        contract_id=contract_id,
-                        expire_timedelta=timedelta(hours=12),
-                    )
-                    exchange = EveItemExchange(contract, items)
-                    print(exchange)
-                    list.append(exchange)
-            except:
-                print("Contract expired")
+            if contract["type"] == "item_exchange":
+                contract_id = contract["contract_id"]
+                items = self.get_json_paged(
+                    "get_contracts_public_items_contract_id",
+                    contract_id=contract_id,
+                    expire_timedelta=timedelta(hours=12),
+                )
+
+                for item in items:
+                    item["type"] = types[item["type_id"]]
+
+                exchange = EveItemExchange(contract, items)
+                list.append(exchange)
+        return list
+
+    def get_region_item_exchange_blueprints(self, id):
+        contracts = self.get_region_item_exchanges(id)
+        list = []
+        for contract in contracts:
+            for item in contract.items:
+                if "Blueprint" in item["type"]["name"]:
+                    list.append(contract)
         return list
 
     def get_npc_corporations(self):
@@ -98,18 +108,36 @@ class EveDatastore:
             list.append(data)
         return list
 
+    def get_types(self):
+        ids = self.get_json_paged("get_universe_types")
+        list = []
+        for id in ids:
+            data = self.get_json(
+                "get_universe_types_type_id",
+                type_id=id,
+                language="en-us",
+                expire_timedelta=timedelta(days=30),
+            )
+            list.append(data)
+        return list
+
+    def get_types_dict(self):
+        types = self.get_types()
+        dict = {}
+        for type in types:
+            dict[type["type_id"]] = type
+        return dict
+
     def get_json_paged(self, operation_id, **parameters):
         max_page = self.get_max_page(operation_id, **parameters)
-        page = 1
         list = []
-        if max_page >= page:
+        for page in range(1, max_page + 1):
             data = self.get_json(
                 operation_id,
                 page=page,
                 **parameters,
             )
             list.extend(data)
-            page += 1
         return list
 
     def get_json(self, operation_id, **parameters):

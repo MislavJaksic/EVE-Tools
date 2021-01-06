@@ -8,6 +8,7 @@
     :license: MIT License
 """
 import sys
+import json
 
 from eve_tools.eve_datastore import EveDatastore
 from eve_tools.eve_calculator import EveCalculator
@@ -16,15 +17,17 @@ from eve_tools.helper.data_frame import DataFrame
 
 def main(args):
     """main() will be run if you run this script directly"""
+
     with EveCalculator() as calc:
         with EveDatastore() as datastore:
-            derelik_exchanges = datastore.get_region_item_exchanges(
+            derelik_blueprints = datastore.get_region_item_exchange_blueprints(
                 calc.region_name_to_id("Derelik")
             )
-            print(derelik_exchanges)
+    for contract_blueprint in derelik_blueprints:
+        print(contract_blueprint)
 
-    # dataframe = DataFrame("json", derelik_contracts)
-    # dataframe.to_csv("derelik_contracts.csv")
+    # dataframe = DataFrame("json", derelik_blueprints)
+    # dataframe.to_csv("derelik_blueprints.csv")
 
     # lp_db_gen = LPDBGenerator()
     # # lp_db_gen.to_csv("all-stores.csv")
