@@ -17,17 +17,21 @@ class EveItemExchange(EveContract):
         }
         display_items = []
         for item in self.items:
-
-            display_items.append(
-                {
-                    k: item[k]
-                    for k in item.keys()
-                    & {
-                        "is_blueprint_copy",
-                        "material_efficiency",
-                        "runs",
-                        "time_efficiency",
-                    }
+            bigger = {
+                k: item[k]
+                for k in item.keys()
+                & {
+                    "is_blueprint_copy",
+                    "material_efficiency",
+                    "runs",
+                    "time_efficiency",
+                    "type",
                 }
-            )
+            }
+
+            bigger["type"] = {
+                k: bigger["type"][k] for k in bigger["type"].keys() & {"name"}
+            }
+
+            display_items.append(bigger)
         return str({"metadata": display_metadata, "items": display_items})
