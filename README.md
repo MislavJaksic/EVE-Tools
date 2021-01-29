@@ -96,3 +96,21 @@ Choice:
 Alternatives:
 * [esipy](https://github.com/Kyria/EsiPy): the author abandoned an adjacent project, has poor documentation and short lived cache; easy EVE API access, implemented security, implements swagger api, retries, ETag, ...
 * [swagger-codegen](https://github.com/swagger-api/swagger-codegen): generates an enormous code overhead; creates a whole python project, tests, data models and api function
+
+### More notes
+
+* Differential caching
+* sort BPCs
+* what happens when a contract expires? update cache? ignore (current, but bad)?
+* longer caching (30 days)
+* account for errors like the API returning ([], 200)
+* SDE is required - analyze it
+* do more research
+
+### EVE IPH
+
+* Update Prices - select all items and click Download Prices
+* Blueprints - select one - tick calculate build/buy - see if you should buy or build a component
+* File - add character - login - set as default
+* Manufacturing list - compare all ownd blueprints to figure out which one you should build first
+* SVR stands for Sales Volume Ratio

@@ -127,3 +127,7 @@ dmypy.json
 # Data cached in files
 /.testcache
 /.webcache
+
+# Other data formats
+*.csv
+*.json
