@@ -36,9 +36,9 @@ $: make html
 ### eve
 
 ```
-$: poetry run python ./eve/exploration/runner.py
+$: poetry run python ./eve_tools/exploration/runner.py
 
-$: poetry run python ./eve/runner.py
+$: poetry run python ./eve_tools/runner.py
 ```
 
 ### tests
@@ -112,5 +112,14 @@ Alternatives:
 * Update Prices - select all items and click Download Prices
 * Blueprints - select one - tick calculate build/buy - see if you should buy or build a component
 * File - add character - login - set as default
-* Manufacturing list - compare all ownd blueprints to figure out which one you should build first
+* Manufacturing list - compare all owned blueprints to figure out which one you should build first
 * SVR stands for Sales Volume Ratio
+
+### Plan
+
+* Python <-> SQLite (sqlite3 lib)
+* Describe EVE SDE
+* list SDE locations, headers and description
+* explore the SDE
+* Get data from the SQLite DB
+* Blueprint cost? Example, Vigilant

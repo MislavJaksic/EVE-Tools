@@ -6,18 +6,18 @@ from eve_tools.helper.file_cache import FileCache
 from tests import settings
 
 
-@pytest.fixture(scope="function")
-def cache():
-    with FileCache(settings.test_cache_path) as cache:
-        cache.set("key", "value", expire_seconds=60)
-        cache.set("dict_of_dict", {"Alice": {"Bob": 1}}, expire_seconds=60)
-        yield cache
-        cache.clear()
-
-
-class TestSet:
-    def test_string(self, cache):
-        pass
+# @pytest.fixture(scope="function")
+# def cache():
+#     with FileCache(settings.test_cache_path) as cache:
+#         cache.set("key", "value", expire_seconds=60)
+#         cache.set("dict_of_dict", {"Alice": {"Bob": 1}}, expire_seconds=60)
+#         yield cache
+#         cache.clear()
+#
+#
+# class TestSet:
+#     def test_string(self, cache):
+#         pass
 
 
 # class TestCache:

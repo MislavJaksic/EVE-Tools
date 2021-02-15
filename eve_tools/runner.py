@@ -13,18 +13,22 @@ import json
 from eve_tools.eve_datastore import EveDatastore
 from eve_tools.eve_calculator import EveCalculator
 from eve_tools.helper.data_frame import DataFrame
+from eve_tools.data_layer.sqlite_connection import SQLiteConnection
 
 
 def main(args):
     """main() will be run if you run this script directly"""
 
-    with EveCalculator() as calc:
-        with EveDatastore() as datastore:
-            derelik_blueprints = datastore.get_region_item_exchange_blueprints(
-                calc.region_name_to_id("Derelik")
-            )
-    for contract_blueprint in derelik_blueprints:
-        print(contract_blueprint)
+    with SQLiteConnection("./sde/sqlite-20210127.db") as db:
+        pass
+
+    # with EveCalculator() as calc:
+    #     with EveDatastore() as datastore:
+    #         derelik_blueprints = datastore.get_region_item_exchange_blueprints(
+    #             calc.region_name_to_id("Derelik")
+    #         )
+    # for contract_blueprint in derelik_blueprints:
+    #     print(contract_blueprint)
 
     # dataframe = DataFrame("json", derelik_blueprints)
     # dataframe.to_csv("derelik_blueprints.csv")
