@@ -123,3 +123,21 @@ Alternatives:
 * explore the SDE
 * Get data from the SQLite DB
 * Blueprint cost? Example, Vigilant
+
+
+
+https://developers.eveonline.com/ - register a token
+
+Importants bits of the agreemant:
+Although the rights granted under this Agreement are intended for non-commercial and non-profit use, CCP recognizes that Developer may want to use the Application to increase Developer's status or resources as a Player of EVE. In addition, CCP recognizes that Developer may incur costs to host, maintain, and support the Application. Therefore, the following methods of monetizing an Application are permitted by CCP: (a) Developer may condition the access or use of an Application on payment or other transfer of EVE's valid in-game currency (e.g., ISK) to Developer or to any registered EVE corporation of which Developer is a member; (b) Developer may solicit voluntary donations of money from Players (i.e., U.S. dollars, British Pounds Sterling, etc.) solely to offset Developer's costs of maintaining and supporting an Application, provided that use of the Application is not in any way restricted or conditioned on providing such a donation; or (c) Developer may generate revenue from displaying general advertisements that do not interfere with a Player's access to, or use of, the Application. Revenue from general advertisements includes revenue from partner programs such as Google AdSense, YouTube, Twitch.tv, Ustream.tv, or similar sites. Each of the monetization activities above will be permitted provided they are not carried out in a manner that would otherwise violate EVE's end user license agreement, terms of service, or other rules and conditions accepted as a condition to access EVE. In addition, receipt of advertising revenue must comply with any guidelines published by CCP from time to time. CCP reserves the right, in its sole discretion, to determine whether any method of monetizing an Application complies with the Purpose and the conditions of this Section 4.4.
+
+
+    Developer shall not pay CCP any royalties or fees for the rights granted herein. CCP shall not pay Developer any royalties or fees for the rights granted herein.
+    At a later date, CCP may choose to begin charging fees or collecting royalties for the rights granted herein. However, CCP shall provide Developer of no less than ninety (90) calendar days' notice prior to doing so, and in accordance with Section 6.4, Developer may terminate this Agreement upon written notice to CCP.
+
+Developer shall ensure that EVE and the Licensed Materials retain all proprietary notices necessary to protect CCP's intellectual property rights in the foregoing, including without limitation ownership of all Derivative Works, such notice to be substantially as follows: "© 2014 CCP hf. All rights reserved. "EVE", "EVE Online", "CCP", and all related logos and images are trademarks or registered trademarks of CCP hf."
+
+CCP recognizes that it is not the owner of the Applications(s), and CCP will not contest ownership of the Application(s). In addition, CCP will not register or attempt to register any intellectual property right or other ownership right in the Application(s) (except to the extent necessary to protect CCP's ownership of EVE, the CCP Marks, and the Licensed Materials).
+
+
+Go through the https://developers.eveonline.com/blog as it explains a lot! :D
