@@ -1,9 +1,8 @@
 from tests import context
+from tests import settings
 
 import pytest
 from eve_tools.helper.file_cache import FileCache
-
-from tests import settings
 
 
 # @pytest.fixture(scope="function")

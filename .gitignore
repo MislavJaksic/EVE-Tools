@@ -131,3 +131,4 @@ dmypy.json
 # Other data formats
 *.csv
 *.json
+sde/sqlite-20210127.db

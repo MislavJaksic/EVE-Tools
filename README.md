@@ -90,7 +90,7 @@ https://pypi.org/project/poetry-template/
 ### Notes
 
 Choice:
-* [pyswagger](https://github.com/pyopenapi/pyswagger): doesn't cache easily into a file; implements swagger api
+* [pyswagger](https://github.com/pyopenapi/pyswagger): doesn't cache easily into a file; implements swagger api !!! hasn't been updated for a very long time!
 * [diskcache](http://www.grantjenks.com/docs/diskcache/): can cache files
 
 Alternatives:
@@ -141,3 +141,5 @@ CCP recognizes that it is not the owner of the Applications(s), and CCP will not
 
 
 Go through the https://developers.eveonline.com/blog as it explains a lot! :D
+
+https://developers.eveonline.com/blog/article/updated-esi-quick-reference-for-new-developers
