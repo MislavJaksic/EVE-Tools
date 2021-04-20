@@ -5,7 +5,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
 

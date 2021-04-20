@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class AllianceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_alliances(self, **kwargs):  # noqa: E501
-        """List all alliances  # noqa: E501
+    def get_alliances(self, **kwargs):
+        """List all alliances
 
-        List all active player alliances  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        List all active player alliances  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances(async_req=True)
@@ -51,15 +51,15 @@ class AllianceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_alliances_with_http_info(**kwargs)  # noqa: E501
+            return self.get_alliances_with_http_info(**kwargs)
         else:
-            (data) = self.get_alliances_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_alliances_with_http_info(**kwargs)
             return data
 
-    def get_alliances_with_http_info(self, **kwargs):  # noqa: E501
-        """List all alliances  # noqa: E501
+    def get_alliances_with_http_info(self, **kwargs):
+        """List all alliances
 
-        List all active player alliances  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        List all active player alliances  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_with_http_info(async_req=True)
@@ -73,7 +73,7 @@ class AllianceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -95,11 +95,11 @@ class AllianceApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -107,14 +107,14 @@ class AllianceApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/alliances/', 'GET',
@@ -124,7 +124,7 @@ class AllianceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -132,10 +132,10 @@ class AllianceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_alliances_alliance_id(self, alliance_id, **kwargs):  # noqa: E501
-        """Get alliance information  # noqa: E501
+    def get_alliances_alliance_id(self, alliance_id, **kwargs):
+        """Get alliance information
 
-        Public information about an alliance  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Public information about an alliance  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id(alliance_id, async_req=True)
@@ -151,15 +151,15 @@ class AllianceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_alliances_alliance_id_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            return self.get_alliances_alliance_id_with_http_info(alliance_id, **kwargs)
         else:
-            (data) = self.get_alliances_alliance_id_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            (data) = self.get_alliances_alliance_id_with_http_info(alliance_id, **kwargs)
             return data
 
-    def get_alliances_alliance_id_with_http_info(self, alliance_id, **kwargs):  # noqa: E501
-        """Get alliance information  # noqa: E501
+    def get_alliances_alliance_id_with_http_info(self, alliance_id, **kwargs):
+        """Get alliance information
 
-        Public information about an alliance  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Public information about an alliance  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id_with_http_info(alliance_id, async_req=True)
@@ -174,7 +174,7 @@ class AllianceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['alliance_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['alliance_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -191,24 +191,24 @@ class AllianceApi(object):
         del params['kwargs']
         # verify the required parameter 'alliance_id' is set
         if self.api_client.client_side_validation and ('alliance_id' not in params or
-                                                       params['alliance_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id`")  # noqa: E501
+                                                       params['alliance_id'] is None):
+            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id`")
 
-        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):
+            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'alliance_id' in params:
-            path_params['alliance_id'] = params['alliance_id']  # noqa: E501
+            path_params['alliance_id'] = params['alliance_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -216,14 +216,14 @@ class AllianceApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v3/alliances/{alliance_id}/', 'GET',
@@ -233,7 +233,7 @@ class AllianceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -241,10 +241,10 @@ class AllianceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_alliances_alliance_id_corporations(self, alliance_id, **kwargs):  # noqa: E501
-        """List alliance's corporations  # noqa: E501
+    def get_alliances_alliance_id_corporations(self, alliance_id, **kwargs):
+        """List alliance's corporations
 
-        List all current member corporations of an alliance  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        List all current member corporations of an alliance  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id_corporations(alliance_id, async_req=True)
@@ -260,15 +260,15 @@ class AllianceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_alliances_alliance_id_corporations_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            return self.get_alliances_alliance_id_corporations_with_http_info(alliance_id, **kwargs)
         else:
-            (data) = self.get_alliances_alliance_id_corporations_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            (data) = self.get_alliances_alliance_id_corporations_with_http_info(alliance_id, **kwargs)
             return data
 
-    def get_alliances_alliance_id_corporations_with_http_info(self, alliance_id, **kwargs):  # noqa: E501
-        """List alliance's corporations  # noqa: E501
+    def get_alliances_alliance_id_corporations_with_http_info(self, alliance_id, **kwargs):
+        """List alliance's corporations
 
-        List all current member corporations of an alliance  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        List all current member corporations of an alliance  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id_corporations_with_http_info(alliance_id, async_req=True)
@@ -283,7 +283,7 @@ class AllianceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['alliance_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['alliance_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -300,24 +300,24 @@ class AllianceApi(object):
         del params['kwargs']
         # verify the required parameter 'alliance_id' is set
         if self.api_client.client_side_validation and ('alliance_id' not in params or
-                                                       params['alliance_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id_corporations`")  # noqa: E501
+                                                       params['alliance_id'] is None):
+            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id_corporations`")
 
-        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id_corporations`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):
+            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id_corporations`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'alliance_id' in params:
-            path_params['alliance_id'] = params['alliance_id']  # noqa: E501
+            path_params['alliance_id'] = params['alliance_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -325,14 +325,14 @@ class AllianceApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/alliances/{alliance_id}/corporations/', 'GET',
@@ -342,7 +342,7 @@ class AllianceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -350,10 +350,10 @@ class AllianceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_alliances_alliance_id_icons(self, alliance_id, **kwargs):  # noqa: E501
-        """Get alliance icon  # noqa: E501
+    def get_alliances_alliance_id_icons(self, alliance_id, **kwargs):
+        """Get alliance icon
 
-        Get the icon urls for a alliance  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/icons/)  # noqa: E501
+        Get the icon urls for a alliance  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/icons/)
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id_icons(alliance_id, async_req=True)
@@ -369,15 +369,15 @@ class AllianceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_alliances_alliance_id_icons_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            return self.get_alliances_alliance_id_icons_with_http_info(alliance_id, **kwargs)
         else:
-            (data) = self.get_alliances_alliance_id_icons_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            (data) = self.get_alliances_alliance_id_icons_with_http_info(alliance_id, **kwargs)
             return data
 
-    def get_alliances_alliance_id_icons_with_http_info(self, alliance_id, **kwargs):  # noqa: E501
-        """Get alliance icon  # noqa: E501
+    def get_alliances_alliance_id_icons_with_http_info(self, alliance_id, **kwargs):
+        """Get alliance icon
 
-        Get the icon urls for a alliance  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/icons/)  # noqa: E501
+        Get the icon urls for a alliance  ---  This route expires daily at 11:05  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/alliances/{alliance_id}/icons/)
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id_icons_with_http_info(alliance_id, async_req=True)
@@ -392,7 +392,7 @@ class AllianceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['alliance_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['alliance_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -409,24 +409,24 @@ class AllianceApi(object):
         del params['kwargs']
         # verify the required parameter 'alliance_id' is set
         if self.api_client.client_side_validation and ('alliance_id' not in params or
-                                                       params['alliance_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id_icons`")  # noqa: E501
+                                                       params['alliance_id'] is None):
+            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id_icons`")
 
-        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id_icons`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):
+            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id_icons`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'alliance_id' in params:
-            path_params['alliance_id'] = params['alliance_id']  # noqa: E501
+            path_params['alliance_id'] = params['alliance_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -434,14 +434,14 @@ class AllianceApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/alliances/{alliance_id}/icons/', 'GET',
@@ -451,7 +451,7 @@ class AllianceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

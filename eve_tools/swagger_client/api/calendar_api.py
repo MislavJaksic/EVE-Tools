@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class CalendarApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id_calendar(self, character_id, **kwargs):  # noqa: E501
-        """List calendar event summaries  # noqa: E501
+    def get_characters_character_id_calendar(self, character_id, **kwargs):
+        """List calendar event summaries
 
-        Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_calendar(character_id, async_req=True)
@@ -54,15 +54,15 @@ class CalendarApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_calendar_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_calendar_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_calendar_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_calendar_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_calendar_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """List calendar event summaries  # noqa: E501
+    def get_characters_character_id_calendar_with_http_info(self, character_id, **kwargs):
+        """List calendar event summaries
 
-        Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Get 50 event summaries from the calendar. If no from_event ID is given, the resource will return the next 50 chronological event summaries from now. If a from_event ID is specified, it will return the next 50 chronological event summaries from after that event  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_calendar_with_http_info(character_id, async_req=True)
@@ -79,7 +79,7 @@ class CalendarApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'from_event', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'from_event', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -96,28 +96,28 @@ class CalendarApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_calendar`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_calendar`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_calendar`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_calendar`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'from_event' in params:
-            query_params.append(('from_event', params['from_event']))  # noqa: E501
+            query_params.append(('from_event', params['from_event']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -125,14 +125,14 @@ class CalendarApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/calendar/', 'GET',
@@ -142,7 +142,7 @@ class CalendarApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -150,10 +150,10 @@ class CalendarApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_calendar_event_id(self, character_id, event_id, **kwargs):  # noqa: E501
-        """Get an event  # noqa: E501
+    def get_characters_character_id_calendar_event_id(self, character_id, event_id, **kwargs):
+        """Get an event
 
-        Get all the information for a specific event  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Get all the information for a specific event  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_calendar_event_id(character_id, event_id, async_req=True)
@@ -171,15 +171,15 @@ class CalendarApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, **kwargs)
             return data
 
-    def get_characters_character_id_calendar_event_id_with_http_info(self, character_id, event_id, **kwargs):  # noqa: E501
-        """Get an event  # noqa: E501
+    def get_characters_character_id_calendar_event_id_with_http_info(self, character_id, event_id, **kwargs):
+        """Get an event
 
-        Get all the information for a specific event  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Get all the information for a specific event  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, async_req=True)
@@ -196,7 +196,7 @@ class CalendarApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'event_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'event_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -213,32 +213,32 @@ class CalendarApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_calendar_event_id`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_calendar_event_id`")
         # verify the required parameter 'event_id' is set
         if self.api_client.client_side_validation and ('event_id' not in params or
-                                                       params['event_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `event_id` when calling `get_characters_character_id_calendar_event_id`")  # noqa: E501
+                                                       params['event_id'] is None):
+            raise ValueError("Missing the required parameter `event_id` when calling `get_characters_character_id_calendar_event_id`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_calendar_event_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_calendar_event_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'event_id' in params:
-            path_params['event_id'] = params['event_id']  # noqa: E501
+            path_params['event_id'] = params['event_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -246,14 +246,14 @@ class CalendarApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v3/characters/{character_id}/calendar/{event_id}/', 'GET',
@@ -263,7 +263,7 @@ class CalendarApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -271,10 +271,10 @@ class CalendarApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_calendar_event_id_attendees(self, character_id, event_id, **kwargs):  # noqa: E501
-        """Get attendees  # noqa: E501
+    def get_characters_character_id_calendar_event_id_attendees(self, character_id, event_id, **kwargs):
+        """Get attendees
 
-        Get all invited attendees for a given event  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Get all invited attendees for a given event  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_calendar_event_id_attendees(character_id, event_id, async_req=True)
@@ -292,15 +292,15 @@ class CalendarApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_calendar_event_id_attendees_with_http_info(character_id, event_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_calendar_event_id_attendees_with_http_info(character_id, event_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_calendar_event_id_attendees_with_http_info(character_id, event_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_calendar_event_id_attendees_with_http_info(character_id, event_id, **kwargs)
             return data
 
-    def get_characters_character_id_calendar_event_id_attendees_with_http_info(self, character_id, event_id, **kwargs):  # noqa: E501
-        """Get attendees  # noqa: E501
+    def get_characters_character_id_calendar_event_id_attendees_with_http_info(self, character_id, event_id, **kwargs):
+        """Get attendees
 
-        Get all invited attendees for a given event  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Get all invited attendees for a given event  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_calendar_event_id_attendees_with_http_info(character_id, event_id, async_req=True)
@@ -317,7 +317,7 @@ class CalendarApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'event_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'event_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -334,32 +334,32 @@ class CalendarApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_calendar_event_id_attendees`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_calendar_event_id_attendees`")
         # verify the required parameter 'event_id' is set
         if self.api_client.client_side_validation and ('event_id' not in params or
-                                                       params['event_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `event_id` when calling `get_characters_character_id_calendar_event_id_attendees`")  # noqa: E501
+                                                       params['event_id'] is None):
+            raise ValueError("Missing the required parameter `event_id` when calling `get_characters_character_id_calendar_event_id_attendees`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_calendar_event_id_attendees`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_calendar_event_id_attendees`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'event_id' in params:
-            path_params['event_id'] = params['event_id']  # noqa: E501
+            path_params['event_id'] = params['event_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -367,14 +367,14 @@ class CalendarApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/calendar/{event_id}/attendees/', 'GET',
@@ -384,7 +384,7 @@ class CalendarApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -392,10 +392,10 @@ class CalendarApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_characters_character_id_calendar_event_id(self, character_id, event_id, response, **kwargs):  # noqa: E501
-        """Respond to an event  # noqa: E501
+    def put_characters_character_id_calendar_event_id(self, character_id, event_id, response, **kwargs):
+        """Respond to an event
 
-        Set your response status to an event  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Set your response status to an event  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_characters_character_id_calendar_event_id(character_id, event_id, response, async_req=True)
@@ -413,15 +413,15 @@ class CalendarApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.put_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, response, **kwargs)  # noqa: E501
+            return self.put_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, response, **kwargs)
         else:
-            (data) = self.put_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, response, **kwargs)  # noqa: E501
+            (data) = self.put_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, response, **kwargs)
             return data
 
-    def put_characters_character_id_calendar_event_id_with_http_info(self, character_id, event_id, response, **kwargs):  # noqa: E501
-        """Respond to an event  # noqa: E501
+    def put_characters_character_id_calendar_event_id_with_http_info(self, character_id, event_id, response, **kwargs):
+        """Respond to an event
 
-        Set your response status to an event  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Set your response status to an event  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_characters_character_id_calendar_event_id_with_http_info(character_id, event_id, response, async_req=True)
@@ -438,7 +438,7 @@ class CalendarApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'event_id', 'response', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'event_id', 'response', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -455,32 +455,32 @@ class CalendarApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `put_characters_character_id_calendar_event_id`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `put_characters_character_id_calendar_event_id`")
         # verify the required parameter 'event_id' is set
         if self.api_client.client_side_validation and ('event_id' not in params or
-                                                       params['event_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `event_id` when calling `put_characters_character_id_calendar_event_id`")  # noqa: E501
+                                                       params['event_id'] is None):
+            raise ValueError("Missing the required parameter `event_id` when calling `put_characters_character_id_calendar_event_id`")
         # verify the required parameter 'response' is set
         if self.api_client.client_side_validation and ('response' not in params or
-                                                       params['response'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `response` when calling `put_characters_character_id_calendar_event_id`")  # noqa: E501
+                                                       params['response'] is None):
+            raise ValueError("Missing the required parameter `response` when calling `put_characters_character_id_calendar_event_id`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `put_characters_character_id_calendar_event_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `put_characters_character_id_calendar_event_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'event_id' in params:
-            path_params['event_id'] = params['event_id']  # noqa: E501
+            path_params['event_id'] = params['event_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -492,14 +492,14 @@ class CalendarApi(object):
             body_params = params['response']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v3/characters/{character_id}/calendar/{event_id}/', 'PUT',
@@ -509,7 +509,7 @@ class CalendarApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

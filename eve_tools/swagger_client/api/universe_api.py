@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class UniverseApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_universe_ancestries(self, **kwargs):  # noqa: E501
-        """Get ancestries  # noqa: E501
+    def get_universe_ancestries(self, **kwargs):
+        """Get ancestries
 
-        Get all character ancestries  ---  This route expires daily at 11:05  # noqa: E501
+        Get all character ancestries  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_ancestries(async_req=True)
@@ -53,15 +53,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_ancestries_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_ancestries_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_ancestries_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_ancestries_with_http_info(**kwargs)
             return data
 
-    def get_universe_ancestries_with_http_info(self, **kwargs):  # noqa: E501
-        """Get ancestries  # noqa: E501
+    def get_universe_ancestries_with_http_info(self, **kwargs):
+        """Get ancestries
 
-        Get all character ancestries  ---  This route expires daily at 11:05  # noqa: E501
+        Get all character ancestries  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_ancestries_with_http_info(async_req=True)
@@ -77,7 +77,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -99,15 +99,15 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -115,14 +115,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/ancestries/', 'GET',
@@ -132,7 +132,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -140,10 +140,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_asteroid_belts_asteroid_belt_id(self, asteroid_belt_id, **kwargs):  # noqa: E501
-        """Get asteroid belt information  # noqa: E501
+    def get_universe_asteroid_belts_asteroid_belt_id(self, asteroid_belt_id, **kwargs):
+        """Get asteroid belt information
 
-        Get information on an asteroid belt  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on an asteroid belt  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_asteroid_belts_asteroid_belt_id(asteroid_belt_id, async_req=True)
@@ -159,15 +159,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, **kwargs)  # noqa: E501
+            return self.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, **kwargs)
         else:
-            (data) = self.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, **kwargs)
             return data
 
-    def get_universe_asteroid_belts_asteroid_belt_id_with_http_info(self, asteroid_belt_id, **kwargs):  # noqa: E501
-        """Get asteroid belt information  # noqa: E501
+    def get_universe_asteroid_belts_asteroid_belt_id_with_http_info(self, asteroid_belt_id, **kwargs):
+        """Get asteroid belt information
 
-        Get information on an asteroid belt  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on an asteroid belt  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, async_req=True)
@@ -182,7 +182,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['asteroid_belt_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['asteroid_belt_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -199,22 +199,22 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'asteroid_belt_id' is set
         if self.api_client.client_side_validation and ('asteroid_belt_id' not in params or
-                                                       params['asteroid_belt_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `asteroid_belt_id` when calling `get_universe_asteroid_belts_asteroid_belt_id`")  # noqa: E501
+                                                       params['asteroid_belt_id'] is None):
+            raise ValueError("Missing the required parameter `asteroid_belt_id` when calling `get_universe_asteroid_belts_asteroid_belt_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'asteroid_belt_id' in params:
-            path_params['asteroid_belt_id'] = params['asteroid_belt_id']  # noqa: E501
+            path_params['asteroid_belt_id'] = params['asteroid_belt_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -222,14 +222,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/asteroid_belts/{asteroid_belt_id}/', 'GET',
@@ -239,7 +239,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -247,10 +247,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_bloodlines(self, **kwargs):  # noqa: E501
-        """Get bloodlines  # noqa: E501
+    def get_universe_bloodlines(self, **kwargs):
+        """Get bloodlines
 
-        Get a list of bloodlines  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of bloodlines  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_bloodlines(async_req=True)
@@ -267,15 +267,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_bloodlines_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_bloodlines_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_bloodlines_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_bloodlines_with_http_info(**kwargs)
             return data
 
-    def get_universe_bloodlines_with_http_info(self, **kwargs):  # noqa: E501
-        """Get bloodlines  # noqa: E501
+    def get_universe_bloodlines_with_http_info(self, **kwargs):
+        """Get bloodlines
 
-        Get a list of bloodlines  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of bloodlines  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_bloodlines_with_http_info(async_req=True)
@@ -291,7 +291,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -313,15 +313,15 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -329,14 +329,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/bloodlines/', 'GET',
@@ -346,7 +346,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -354,10 +354,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_categories(self, **kwargs):  # noqa: E501
-        """Get item categories  # noqa: E501
+    def get_universe_categories(self, **kwargs):
+        """Get item categories
 
-        Get a list of item categories  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of item categories  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_categories(async_req=True)
@@ -372,15 +372,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_categories_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_categories_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_categories_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_categories_with_http_info(**kwargs)
             return data
 
-    def get_universe_categories_with_http_info(self, **kwargs):  # noqa: E501
-        """Get item categories  # noqa: E501
+    def get_universe_categories_with_http_info(self, **kwargs):
+        """Get item categories
 
-        Get a list of item categories  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of item categories  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_categories_with_http_info(async_req=True)
@@ -394,7 +394,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -416,11 +416,11 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -428,14 +428,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/categories/', 'GET',
@@ -445,7 +445,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -453,10 +453,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_categories_category_id(self, category_id, **kwargs):  # noqa: E501
-        """Get item category information  # noqa: E501
+    def get_universe_categories_category_id(self, category_id, **kwargs):
+        """Get item category information
 
-        Get information of an item category  ---  This route expires daily at 11:05  # noqa: E501
+        Get information of an item category  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_categories_category_id(category_id, async_req=True)
@@ -474,15 +474,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_categories_category_id_with_http_info(category_id, **kwargs)  # noqa: E501
+            return self.get_universe_categories_category_id_with_http_info(category_id, **kwargs)
         else:
-            (data) = self.get_universe_categories_category_id_with_http_info(category_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_categories_category_id_with_http_info(category_id, **kwargs)
             return data
 
-    def get_universe_categories_category_id_with_http_info(self, category_id, **kwargs):  # noqa: E501
-        """Get item category information  # noqa: E501
+    def get_universe_categories_category_id_with_http_info(self, category_id, **kwargs):
+        """Get item category information
 
-        Get information of an item category  ---  This route expires daily at 11:05  # noqa: E501
+        Get information of an item category  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_categories_category_id_with_http_info(category_id, async_req=True)
@@ -499,7 +499,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['category_id', 'accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['category_id', 'accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -516,26 +516,26 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'category_id' is set
         if self.api_client.client_side_validation and ('category_id' not in params or
-                                                       params['category_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `category_id` when calling `get_universe_categories_category_id`")  # noqa: E501
+                                                       params['category_id'] is None):
+            raise ValueError("Missing the required parameter `category_id` when calling `get_universe_categories_category_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'category_id' in params:
-            path_params['category_id'] = params['category_id']  # noqa: E501
+            path_params['category_id'] = params['category_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -543,14 +543,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/categories/{category_id}/', 'GET',
@@ -560,7 +560,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -568,10 +568,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_constellations(self, **kwargs):  # noqa: E501
-        """Get constellations  # noqa: E501
+    def get_universe_constellations(self, **kwargs):
+        """Get constellations
 
-        Get a list of constellations  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of constellations  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_constellations(async_req=True)
@@ -586,15 +586,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_constellations_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_constellations_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_constellations_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_constellations_with_http_info(**kwargs)
             return data
 
-    def get_universe_constellations_with_http_info(self, **kwargs):  # noqa: E501
-        """Get constellations  # noqa: E501
+    def get_universe_constellations_with_http_info(self, **kwargs):
+        """Get constellations
 
-        Get a list of constellations  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of constellations  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_constellations_with_http_info(async_req=True)
@@ -608,7 +608,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -630,11 +630,11 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -642,14 +642,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/constellations/', 'GET',
@@ -659,7 +659,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -667,10 +667,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_constellations_constellation_id(self, constellation_id, **kwargs):  # noqa: E501
-        """Get constellation information  # noqa: E501
+    def get_universe_constellations_constellation_id(self, constellation_id, **kwargs):
+        """Get constellation information
 
-        Get information on a constellation  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a constellation  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_constellations_constellation_id(constellation_id, async_req=True)
@@ -688,15 +688,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_constellations_constellation_id_with_http_info(constellation_id, **kwargs)  # noqa: E501
+            return self.get_universe_constellations_constellation_id_with_http_info(constellation_id, **kwargs)
         else:
-            (data) = self.get_universe_constellations_constellation_id_with_http_info(constellation_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_constellations_constellation_id_with_http_info(constellation_id, **kwargs)
             return data
 
-    def get_universe_constellations_constellation_id_with_http_info(self, constellation_id, **kwargs):  # noqa: E501
-        """Get constellation information  # noqa: E501
+    def get_universe_constellations_constellation_id_with_http_info(self, constellation_id, **kwargs):
+        """Get constellation information
 
-        Get information on a constellation  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a constellation  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_constellations_constellation_id_with_http_info(constellation_id, async_req=True)
@@ -713,7 +713,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['constellation_id', 'accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['constellation_id', 'accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -730,26 +730,26 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'constellation_id' is set
         if self.api_client.client_side_validation and ('constellation_id' not in params or
-                                                       params['constellation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `constellation_id` when calling `get_universe_constellations_constellation_id`")  # noqa: E501
+                                                       params['constellation_id'] is None):
+            raise ValueError("Missing the required parameter `constellation_id` when calling `get_universe_constellations_constellation_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'constellation_id' in params:
-            path_params['constellation_id'] = params['constellation_id']  # noqa: E501
+            path_params['constellation_id'] = params['constellation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -757,14 +757,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/constellations/{constellation_id}/', 'GET',
@@ -774,7 +774,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -782,10 +782,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_factions(self, **kwargs):  # noqa: E501
-        """Get factions  # noqa: E501
+    def get_universe_factions(self, **kwargs):
+        """Get factions
 
-        Get a list of factions  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of factions  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_factions(async_req=True)
@@ -802,15 +802,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_factions_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_factions_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_factions_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_factions_with_http_info(**kwargs)
             return data
 
-    def get_universe_factions_with_http_info(self, **kwargs):  # noqa: E501
-        """Get factions  # noqa: E501
+    def get_universe_factions_with_http_info(self, **kwargs):
+        """Get factions
 
-        Get a list of factions  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of factions  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_factions_with_http_info(async_req=True)
@@ -826,7 +826,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -848,15 +848,15 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -864,14 +864,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v2/universe/factions/', 'GET',
@@ -881,7 +881,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -889,10 +889,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_graphics(self, **kwargs):  # noqa: E501
-        """Get graphics  # noqa: E501
+    def get_universe_graphics(self, **kwargs):
+        """Get graphics
 
-        Get a list of graphics  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of graphics  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_graphics(async_req=True)
@@ -907,15 +907,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_graphics_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_graphics_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_graphics_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_graphics_with_http_info(**kwargs)
             return data
 
-    def get_universe_graphics_with_http_info(self, **kwargs):  # noqa: E501
-        """Get graphics  # noqa: E501
+    def get_universe_graphics_with_http_info(self, **kwargs):
+        """Get graphics
 
-        Get a list of graphics  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of graphics  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_graphics_with_http_info(async_req=True)
@@ -929,7 +929,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -951,11 +951,11 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -963,14 +963,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/graphics/', 'GET',
@@ -980,7 +980,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -988,10 +988,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_graphics_graphic_id(self, graphic_id, **kwargs):  # noqa: E501
-        """Get graphic information  # noqa: E501
+    def get_universe_graphics_graphic_id(self, graphic_id, **kwargs):
+        """Get graphic information
 
-        Get information on a graphic  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a graphic  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_graphics_graphic_id(graphic_id, async_req=True)
@@ -1007,15 +1007,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_graphics_graphic_id_with_http_info(graphic_id, **kwargs)  # noqa: E501
+            return self.get_universe_graphics_graphic_id_with_http_info(graphic_id, **kwargs)
         else:
-            (data) = self.get_universe_graphics_graphic_id_with_http_info(graphic_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_graphics_graphic_id_with_http_info(graphic_id, **kwargs)
             return data
 
-    def get_universe_graphics_graphic_id_with_http_info(self, graphic_id, **kwargs):  # noqa: E501
-        """Get graphic information  # noqa: E501
+    def get_universe_graphics_graphic_id_with_http_info(self, graphic_id, **kwargs):
+        """Get graphic information
 
-        Get information on a graphic  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a graphic  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_graphics_graphic_id_with_http_info(graphic_id, async_req=True)
@@ -1030,7 +1030,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['graphic_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['graphic_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1047,22 +1047,22 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'graphic_id' is set
         if self.api_client.client_side_validation and ('graphic_id' not in params or
-                                                       params['graphic_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `graphic_id` when calling `get_universe_graphics_graphic_id`")  # noqa: E501
+                                                       params['graphic_id'] is None):
+            raise ValueError("Missing the required parameter `graphic_id` when calling `get_universe_graphics_graphic_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'graphic_id' in params:
-            path_params['graphic_id'] = params['graphic_id']  # noqa: E501
+            path_params['graphic_id'] = params['graphic_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1070,14 +1070,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/graphics/{graphic_id}/', 'GET',
@@ -1087,7 +1087,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1095,10 +1095,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_groups(self, **kwargs):  # noqa: E501
-        """Get item groups  # noqa: E501
+    def get_universe_groups(self, **kwargs):
+        """Get item groups
 
-        Get a list of item groups  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of item groups  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_groups(async_req=True)
@@ -1114,15 +1114,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_groups_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_groups_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_groups_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_groups_with_http_info(**kwargs)
             return data
 
-    def get_universe_groups_with_http_info(self, **kwargs):  # noqa: E501
-        """Get item groups  # noqa: E501
+    def get_universe_groups_with_http_info(self, **kwargs):
+        """Get item groups
 
-        Get a list of item groups  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of item groups  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_groups_with_http_info(async_req=True)
@@ -1137,7 +1137,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match', 'page']  # noqa: E501
+        all_params = ['datasource', 'if_none_match', 'page']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1153,21 +1153,21 @@ class UniverseApi(object):
             params[key] = val
         del params['kwargs']
 
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_universe_groups`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_universe_groups`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1175,14 +1175,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/groups/', 'GET',
@@ -1192,7 +1192,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1200,10 +1200,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_groups_group_id(self, group_id, **kwargs):  # noqa: E501
-        """Get item group information  # noqa: E501
+    def get_universe_groups_group_id(self, group_id, **kwargs):
+        """Get item group information
 
-        Get information on an item group  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on an item group  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_groups_group_id(group_id, async_req=True)
@@ -1221,15 +1221,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_groups_group_id_with_http_info(group_id, **kwargs)  # noqa: E501
+            return self.get_universe_groups_group_id_with_http_info(group_id, **kwargs)
         else:
-            (data) = self.get_universe_groups_group_id_with_http_info(group_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_groups_group_id_with_http_info(group_id, **kwargs)
             return data
 
-    def get_universe_groups_group_id_with_http_info(self, group_id, **kwargs):  # noqa: E501
-        """Get item group information  # noqa: E501
+    def get_universe_groups_group_id_with_http_info(self, group_id, **kwargs):
+        """Get item group information
 
-        Get information on an item group  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on an item group  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_groups_group_id_with_http_info(group_id, async_req=True)
@@ -1246,7 +1246,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['group_id', 'accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1263,26 +1263,26 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'group_id' is set
         if self.api_client.client_side_validation and ('group_id' not in params or
-                                                       params['group_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `group_id` when calling `get_universe_groups_group_id`")  # noqa: E501
+                                                       params['group_id'] is None):
+            raise ValueError("Missing the required parameter `group_id` when calling `get_universe_groups_group_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'group_id' in params:
-            path_params['group_id'] = params['group_id']  # noqa: E501
+            path_params['group_id'] = params['group_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1290,14 +1290,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/groups/{group_id}/', 'GET',
@@ -1307,7 +1307,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1315,10 +1315,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_moons_moon_id(self, moon_id, **kwargs):  # noqa: E501
-        """Get moon information  # noqa: E501
+    def get_universe_moons_moon_id(self, moon_id, **kwargs):
+        """Get moon information
 
-        Get information on a moon  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a moon  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_moons_moon_id(moon_id, async_req=True)
@@ -1334,15 +1334,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_moons_moon_id_with_http_info(moon_id, **kwargs)  # noqa: E501
+            return self.get_universe_moons_moon_id_with_http_info(moon_id, **kwargs)
         else:
-            (data) = self.get_universe_moons_moon_id_with_http_info(moon_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_moons_moon_id_with_http_info(moon_id, **kwargs)
             return data
 
-    def get_universe_moons_moon_id_with_http_info(self, moon_id, **kwargs):  # noqa: E501
-        """Get moon information  # noqa: E501
+    def get_universe_moons_moon_id_with_http_info(self, moon_id, **kwargs):
+        """Get moon information
 
-        Get information on a moon  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a moon  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_moons_moon_id_with_http_info(moon_id, async_req=True)
@@ -1357,7 +1357,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['moon_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['moon_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1374,22 +1374,22 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'moon_id' is set
         if self.api_client.client_side_validation and ('moon_id' not in params or
-                                                       params['moon_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `moon_id` when calling `get_universe_moons_moon_id`")  # noqa: E501
+                                                       params['moon_id'] is None):
+            raise ValueError("Missing the required parameter `moon_id` when calling `get_universe_moons_moon_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'moon_id' in params:
-            path_params['moon_id'] = params['moon_id']  # noqa: E501
+            path_params['moon_id'] = params['moon_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1397,14 +1397,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/moons/{moon_id}/', 'GET',
@@ -1414,7 +1414,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1422,10 +1422,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_planets_planet_id(self, planet_id, **kwargs):  # noqa: E501
-        """Get planet information  # noqa: E501
+    def get_universe_planets_planet_id(self, planet_id, **kwargs):
+        """Get planet information
 
-        Get information on a planet  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a planet  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_planets_planet_id(planet_id, async_req=True)
@@ -1441,15 +1441,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_planets_planet_id_with_http_info(planet_id, **kwargs)  # noqa: E501
+            return self.get_universe_planets_planet_id_with_http_info(planet_id, **kwargs)
         else:
-            (data) = self.get_universe_planets_planet_id_with_http_info(planet_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_planets_planet_id_with_http_info(planet_id, **kwargs)
             return data
 
-    def get_universe_planets_planet_id_with_http_info(self, planet_id, **kwargs):  # noqa: E501
-        """Get planet information  # noqa: E501
+    def get_universe_planets_planet_id_with_http_info(self, planet_id, **kwargs):
+        """Get planet information
 
-        Get information on a planet  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a planet  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_planets_planet_id_with_http_info(planet_id, async_req=True)
@@ -1464,7 +1464,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['planet_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['planet_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1481,22 +1481,22 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'planet_id' is set
         if self.api_client.client_side_validation and ('planet_id' not in params or
-                                                       params['planet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `planet_id` when calling `get_universe_planets_planet_id`")  # noqa: E501
+                                                       params['planet_id'] is None):
+            raise ValueError("Missing the required parameter `planet_id` when calling `get_universe_planets_planet_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'planet_id' in params:
-            path_params['planet_id'] = params['planet_id']  # noqa: E501
+            path_params['planet_id'] = params['planet_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1504,14 +1504,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/planets/{planet_id}/', 'GET',
@@ -1521,7 +1521,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1529,10 +1529,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_races(self, **kwargs):  # noqa: E501
-        """Get character races  # noqa: E501
+    def get_universe_races(self, **kwargs):
+        """Get character races
 
-        Get a list of character races  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of character races  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_races(async_req=True)
@@ -1549,15 +1549,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_races_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_races_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_races_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_races_with_http_info(**kwargs)
             return data
 
-    def get_universe_races_with_http_info(self, **kwargs):  # noqa: E501
-        """Get character races  # noqa: E501
+    def get_universe_races_with_http_info(self, **kwargs):
+        """Get character races
 
-        Get a list of character races  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of character races  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_races_with_http_info(async_req=True)
@@ -1573,7 +1573,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1595,15 +1595,15 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1611,14 +1611,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/races/', 'GET',
@@ -1628,7 +1628,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1636,10 +1636,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_regions(self, **kwargs):  # noqa: E501
-        """Get regions  # noqa: E501
+    def get_universe_regions(self, **kwargs):
+        """Get regions
 
-        Get a list of regions  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of regions  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_regions(async_req=True)
@@ -1654,15 +1654,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_regions_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_regions_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_regions_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_regions_with_http_info(**kwargs)
             return data
 
-    def get_universe_regions_with_http_info(self, **kwargs):  # noqa: E501
-        """Get regions  # noqa: E501
+    def get_universe_regions_with_http_info(self, **kwargs):
+        """Get regions
 
-        Get a list of regions  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of regions  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_regions_with_http_info(async_req=True)
@@ -1676,7 +1676,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1698,11 +1698,11 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1710,14 +1710,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/regions/', 'GET',
@@ -1727,7 +1727,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1735,10 +1735,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_regions_region_id(self, region_id, **kwargs):  # noqa: E501
-        """Get region information  # noqa: E501
+    def get_universe_regions_region_id(self, region_id, **kwargs):
+        """Get region information
 
-        Get information on a region  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a region  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_regions_region_id(region_id, async_req=True)
@@ -1756,15 +1756,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_regions_region_id_with_http_info(region_id, **kwargs)  # noqa: E501
+            return self.get_universe_regions_region_id_with_http_info(region_id, **kwargs)
         else:
-            (data) = self.get_universe_regions_region_id_with_http_info(region_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_regions_region_id_with_http_info(region_id, **kwargs)
             return data
 
-    def get_universe_regions_region_id_with_http_info(self, region_id, **kwargs):  # noqa: E501
-        """Get region information  # noqa: E501
+    def get_universe_regions_region_id_with_http_info(self, region_id, **kwargs):
+        """Get region information
 
-        Get information on a region  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a region  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_regions_region_id_with_http_info(region_id, async_req=True)
@@ -1781,7 +1781,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['region_id', 'accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['region_id', 'accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1798,26 +1798,26 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'region_id' is set
         if self.api_client.client_side_validation and ('region_id' not in params or
-                                                       params['region_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `region_id` when calling `get_universe_regions_region_id`")  # noqa: E501
+                                                       params['region_id'] is None):
+            raise ValueError("Missing the required parameter `region_id` when calling `get_universe_regions_region_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'region_id' in params:
-            path_params['region_id'] = params['region_id']  # noqa: E501
+            path_params['region_id'] = params['region_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1825,14 +1825,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/regions/{region_id}/', 'GET',
@@ -1842,7 +1842,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1850,10 +1850,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_stargates_stargate_id(self, stargate_id, **kwargs):  # noqa: E501
-        """Get stargate information  # noqa: E501
+    def get_universe_stargates_stargate_id(self, stargate_id, **kwargs):
+        """Get stargate information
 
-        Get information on a stargate  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a stargate  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_stargates_stargate_id(stargate_id, async_req=True)
@@ -1869,15 +1869,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_stargates_stargate_id_with_http_info(stargate_id, **kwargs)  # noqa: E501
+            return self.get_universe_stargates_stargate_id_with_http_info(stargate_id, **kwargs)
         else:
-            (data) = self.get_universe_stargates_stargate_id_with_http_info(stargate_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_stargates_stargate_id_with_http_info(stargate_id, **kwargs)
             return data
 
-    def get_universe_stargates_stargate_id_with_http_info(self, stargate_id, **kwargs):  # noqa: E501
-        """Get stargate information  # noqa: E501
+    def get_universe_stargates_stargate_id_with_http_info(self, stargate_id, **kwargs):
+        """Get stargate information
 
-        Get information on a stargate  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a stargate  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_stargates_stargate_id_with_http_info(stargate_id, async_req=True)
@@ -1892,7 +1892,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['stargate_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['stargate_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1909,22 +1909,22 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'stargate_id' is set
         if self.api_client.client_side_validation and ('stargate_id' not in params or
-                                                       params['stargate_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `stargate_id` when calling `get_universe_stargates_stargate_id`")  # noqa: E501
+                                                       params['stargate_id'] is None):
+            raise ValueError("Missing the required parameter `stargate_id` when calling `get_universe_stargates_stargate_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'stargate_id' in params:
-            path_params['stargate_id'] = params['stargate_id']  # noqa: E501
+            path_params['stargate_id'] = params['stargate_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1932,14 +1932,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/stargates/{stargate_id}/', 'GET',
@@ -1949,7 +1949,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1957,10 +1957,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_stars_star_id(self, star_id, **kwargs):  # noqa: E501
-        """Get star information  # noqa: E501
+    def get_universe_stars_star_id(self, star_id, **kwargs):
+        """Get star information
 
-        Get information on a star  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a star  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_stars_star_id(star_id, async_req=True)
@@ -1976,15 +1976,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_stars_star_id_with_http_info(star_id, **kwargs)  # noqa: E501
+            return self.get_universe_stars_star_id_with_http_info(star_id, **kwargs)
         else:
-            (data) = self.get_universe_stars_star_id_with_http_info(star_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_stars_star_id_with_http_info(star_id, **kwargs)
             return data
 
-    def get_universe_stars_star_id_with_http_info(self, star_id, **kwargs):  # noqa: E501
-        """Get star information  # noqa: E501
+    def get_universe_stars_star_id_with_http_info(self, star_id, **kwargs):
+        """Get star information
 
-        Get information on a star  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a star  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_stars_star_id_with_http_info(star_id, async_req=True)
@@ -1999,7 +1999,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['star_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['star_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2016,22 +2016,22 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'star_id' is set
         if self.api_client.client_side_validation and ('star_id' not in params or
-                                                       params['star_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `star_id` when calling `get_universe_stars_star_id`")  # noqa: E501
+                                                       params['star_id'] is None):
+            raise ValueError("Missing the required parameter `star_id` when calling `get_universe_stars_star_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'star_id' in params:
-            path_params['star_id'] = params['star_id']  # noqa: E501
+            path_params['star_id'] = params['star_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2039,14 +2039,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/stars/{star_id}/', 'GET',
@@ -2056,7 +2056,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2064,10 +2064,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_stations_station_id(self, station_id, **kwargs):  # noqa: E501
-        """Get station information  # noqa: E501
+    def get_universe_stations_station_id(self, station_id, **kwargs):
+        """Get station information
 
-        Get information on a station  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a station  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_stations_station_id(station_id, async_req=True)
@@ -2083,15 +2083,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_stations_station_id_with_http_info(station_id, **kwargs)  # noqa: E501
+            return self.get_universe_stations_station_id_with_http_info(station_id, **kwargs)
         else:
-            (data) = self.get_universe_stations_station_id_with_http_info(station_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_stations_station_id_with_http_info(station_id, **kwargs)
             return data
 
-    def get_universe_stations_station_id_with_http_info(self, station_id, **kwargs):  # noqa: E501
-        """Get station information  # noqa: E501
+    def get_universe_stations_station_id_with_http_info(self, station_id, **kwargs):
+        """Get station information
 
-        Get information on a station  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a station  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_stations_station_id_with_http_info(station_id, async_req=True)
@@ -2106,7 +2106,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['station_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['station_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2123,22 +2123,22 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'station_id' is set
         if self.api_client.client_side_validation and ('station_id' not in params or
-                                                       params['station_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `station_id` when calling `get_universe_stations_station_id`")  # noqa: E501
+                                                       params['station_id'] is None):
+            raise ValueError("Missing the required parameter `station_id` when calling `get_universe_stations_station_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'station_id' in params:
-            path_params['station_id'] = params['station_id']  # noqa: E501
+            path_params['station_id'] = params['station_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2146,14 +2146,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v2/universe/stations/{station_id}/', 'GET',
@@ -2163,7 +2163,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2171,10 +2171,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_structures(self, **kwargs):  # noqa: E501
-        """List all public structures  # noqa: E501
+    def get_universe_structures(self, **kwargs):
+        """List all public structures
 
-        List all public structures  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        List all public structures  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_structures(async_req=True)
@@ -2190,15 +2190,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_structures_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_structures_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_structures_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_structures_with_http_info(**kwargs)
             return data
 
-    def get_universe_structures_with_http_info(self, **kwargs):  # noqa: E501
-        """List all public structures  # noqa: E501
+    def get_universe_structures_with_http_info(self, **kwargs):
+        """List all public structures
 
-        List all public structures  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        List all public structures  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_structures_with_http_info(async_req=True)
@@ -2213,7 +2213,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'filter', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'filter', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2235,13 +2235,13 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
+            query_params.append(('filter', params['filter']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2249,14 +2249,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/structures/', 'GET',
@@ -2266,7 +2266,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2274,10 +2274,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_structures_structure_id(self, structure_id, **kwargs):  # noqa: E501
-        """Get structure information  # noqa: E501
+    def get_universe_structures_structure_id(self, structure_id, **kwargs):
+        """Get structure information
 
-        Returns information on requested structure if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Returns information on requested structure if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_structures_structure_id(structure_id, async_req=True)
@@ -2294,15 +2294,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_structures_structure_id_with_http_info(structure_id, **kwargs)  # noqa: E501
+            return self.get_universe_structures_structure_id_with_http_info(structure_id, **kwargs)
         else:
-            (data) = self.get_universe_structures_structure_id_with_http_info(structure_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_structures_structure_id_with_http_info(structure_id, **kwargs)
             return data
 
-    def get_universe_structures_structure_id_with_http_info(self, structure_id, **kwargs):  # noqa: E501
-        """Get structure information  # noqa: E501
+    def get_universe_structures_structure_id_with_http_info(self, structure_id, **kwargs):
+        """Get structure information
 
-        Returns information on requested structure if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Returns information on requested structure if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_structures_structure_id_with_http_info(structure_id, async_req=True)
@@ -2318,7 +2318,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['structure_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['structure_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2335,24 +2335,24 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'structure_id' is set
         if self.api_client.client_side_validation and ('structure_id' not in params or
-                                                       params['structure_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `structure_id` when calling `get_universe_structures_structure_id`")  # noqa: E501
+                                                       params['structure_id'] is None):
+            raise ValueError("Missing the required parameter `structure_id` when calling `get_universe_structures_structure_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'structure_id' in params:
-            path_params['structure_id'] = params['structure_id']  # noqa: E501
+            path_params['structure_id'] = params['structure_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2360,14 +2360,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/universe/structures/{structure_id}/', 'GET',
@@ -2377,7 +2377,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2385,10 +2385,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_system_jumps(self, **kwargs):  # noqa: E501
-        """Get system jumps  # noqa: E501
+    def get_universe_system_jumps(self, **kwargs):
+        """Get system jumps
 
-        Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_system_jumps(async_req=True)
@@ -2403,15 +2403,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_system_jumps_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_system_jumps_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_system_jumps_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_system_jumps_with_http_info(**kwargs)
             return data
 
-    def get_universe_system_jumps_with_http_info(self, **kwargs):  # noqa: E501
-        """Get system jumps  # noqa: E501
+    def get_universe_system_jumps_with_http_info(self, **kwargs):
+        """Get system jumps
 
-        Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_system_jumps_with_http_info(async_req=True)
@@ -2425,7 +2425,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2447,11 +2447,11 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2459,14 +2459,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/system_jumps/', 'GET',
@@ -2476,7 +2476,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2484,10 +2484,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_system_kills(self, **kwargs):  # noqa: E501
-        """Get system kills  # noqa: E501
+    def get_universe_system_kills(self, **kwargs):
+        """Get system kills
 
-        Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_system_kills(async_req=True)
@@ -2502,15 +2502,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_system_kills_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_system_kills_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_system_kills_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_system_kills_with_http_info(**kwargs)
             return data
 
-    def get_universe_system_kills_with_http_info(self, **kwargs):  # noqa: E501
-        """Get system kills  # noqa: E501
+    def get_universe_system_kills_with_http_info(self, **kwargs):
+        """Get system kills
 
-        Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_system_kills_with_http_info(async_req=True)
@@ -2524,7 +2524,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2546,11 +2546,11 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2558,14 +2558,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v2/universe/system_kills/', 'GET',
@@ -2575,7 +2575,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2583,10 +2583,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_systems(self, **kwargs):  # noqa: E501
-        """Get solar systems  # noqa: E501
+    def get_universe_systems(self, **kwargs):
+        """Get solar systems
 
-        Get a list of solar systems  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of solar systems  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_systems(async_req=True)
@@ -2601,15 +2601,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_systems_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_systems_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_systems_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_systems_with_http_info(**kwargs)
             return data
 
-    def get_universe_systems_with_http_info(self, **kwargs):  # noqa: E501
-        """Get solar systems  # noqa: E501
+    def get_universe_systems_with_http_info(self, **kwargs):
+        """Get solar systems
 
-        Get a list of solar systems  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of solar systems  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_systems_with_http_info(async_req=True)
@@ -2623,7 +2623,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2645,11 +2645,11 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2657,14 +2657,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/systems/', 'GET',
@@ -2674,7 +2674,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2682,10 +2682,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_systems_system_id(self, system_id, **kwargs):  # noqa: E501
-        """Get solar system information  # noqa: E501
+    def get_universe_systems_system_id(self, system_id, **kwargs):
+        """Get solar system information
 
-        Get information on a solar system.  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a solar system.  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_systems_system_id(system_id, async_req=True)
@@ -2703,15 +2703,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_systems_system_id_with_http_info(system_id, **kwargs)  # noqa: E501
+            return self.get_universe_systems_system_id_with_http_info(system_id, **kwargs)
         else:
-            (data) = self.get_universe_systems_system_id_with_http_info(system_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_systems_system_id_with_http_info(system_id, **kwargs)
             return data
 
-    def get_universe_systems_system_id_with_http_info(self, system_id, **kwargs):  # noqa: E501
-        """Get solar system information  # noqa: E501
+    def get_universe_systems_system_id_with_http_info(self, system_id, **kwargs):
+        """Get solar system information
 
-        Get information on a solar system.  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a solar system.  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_systems_system_id_with_http_info(system_id, async_req=True)
@@ -2728,7 +2728,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['system_id', 'accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2745,26 +2745,26 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'system_id' is set
         if self.api_client.client_side_validation and ('system_id' not in params or
-                                                       params['system_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `system_id` when calling `get_universe_systems_system_id`")  # noqa: E501
+                                                       params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `get_universe_systems_system_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'system_id' in params:
-            path_params['system_id'] = params['system_id']  # noqa: E501
+            path_params['system_id'] = params['system_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2772,14 +2772,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v4/universe/systems/{system_id}/', 'GET',
@@ -2789,7 +2789,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2797,10 +2797,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_types(self, **kwargs):  # noqa: E501
-        """Get types  # noqa: E501
+    def get_universe_types(self, **kwargs):
+        """Get types
 
-        Get a list of type ids  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of type ids  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_types(async_req=True)
@@ -2816,15 +2816,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_types_with_http_info(**kwargs)  # noqa: E501
+            return self.get_universe_types_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_types_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_universe_types_with_http_info(**kwargs)
             return data
 
-    def get_universe_types_with_http_info(self, **kwargs):  # noqa: E501
-        """Get types  # noqa: E501
+    def get_universe_types_with_http_info(self, **kwargs):
+        """Get types
 
-        Get a list of type ids  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of type ids  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_types_with_http_info(async_req=True)
@@ -2839,7 +2839,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match', 'page']  # noqa: E501
+        all_params = ['datasource', 'if_none_match', 'page']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2855,21 +2855,21 @@ class UniverseApi(object):
             params[key] = val
         del params['kwargs']
 
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_universe_types`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_universe_types`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2877,14 +2877,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/types/', 'GET',
@@ -2894,7 +2894,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2902,10 +2902,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_types_type_id(self, type_id, **kwargs):  # noqa: E501
-        """Get type information  # noqa: E501
+    def get_universe_types_type_id(self, type_id, **kwargs):
+        """Get type information
 
-        Get information on a type  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a type  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_types_type_id(type_id, async_req=True)
@@ -2923,15 +2923,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_universe_types_type_id_with_http_info(type_id, **kwargs)  # noqa: E501
+            return self.get_universe_types_type_id_with_http_info(type_id, **kwargs)
         else:
-            (data) = self.get_universe_types_type_id_with_http_info(type_id, **kwargs)  # noqa: E501
+            (data) = self.get_universe_types_type_id_with_http_info(type_id, **kwargs)
             return data
 
-    def get_universe_types_type_id_with_http_info(self, type_id, **kwargs):  # noqa: E501
-        """Get type information  # noqa: E501
+    def get_universe_types_type_id_with_http_info(self, type_id, **kwargs):
+        """Get type information
 
-        Get information on a type  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a type  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_universe_types_type_id_with_http_info(type_id, async_req=True)
@@ -2948,7 +2948,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type_id', 'accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['type_id', 'accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2965,26 +2965,26 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'type_id' is set
         if self.api_client.client_side_validation and ('type_id' not in params or
-                                                       params['type_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `type_id` when calling `get_universe_types_type_id`")  # noqa: E501
+                                                       params['type_id'] is None):
+            raise ValueError("Missing the required parameter `type_id` when calling `get_universe_types_type_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'type_id' in params:
-            path_params['type_id'] = params['type_id']  # noqa: E501
+            path_params['type_id'] = params['type_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -2992,14 +2992,14 @@ class UniverseApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v3/universe/types/{type_id}/', 'GET',
@@ -3009,7 +3009,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3017,10 +3017,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_universe_ids(self, names, **kwargs):  # noqa: E501
-        """Bulk names to IDs  # noqa: E501
+    def post_universe_ids(self, names, **kwargs):
+        """Bulk names to IDs
 
-        Resolve a set of names to IDs in the following categories: agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems. Only exact matches will be returned. All names searched for are cached for 12 hours  ---   # noqa: E501
+        Resolve a set of names to IDs in the following categories: agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems. Only exact matches will be returned. All names searched for are cached for 12 hours  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_universe_ids(names, async_req=True)
@@ -3037,15 +3037,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_universe_ids_with_http_info(names, **kwargs)  # noqa: E501
+            return self.post_universe_ids_with_http_info(names, **kwargs)
         else:
-            (data) = self.post_universe_ids_with_http_info(names, **kwargs)  # noqa: E501
+            (data) = self.post_universe_ids_with_http_info(names, **kwargs)
             return data
 
-    def post_universe_ids_with_http_info(self, names, **kwargs):  # noqa: E501
-        """Bulk names to IDs  # noqa: E501
+    def post_universe_ids_with_http_info(self, names, **kwargs):
+        """Bulk names to IDs
 
-        Resolve a set of names to IDs in the following categories: agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems. Only exact matches will be returned. All names searched for are cached for 12 hours  ---   # noqa: E501
+        Resolve a set of names to IDs in the following categories: agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems. Only exact matches will be returned. All names searched for are cached for 12 hours  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_universe_ids_with_http_info(names, async_req=True)
@@ -3061,7 +3061,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['names', 'accept_language', 'datasource', 'language']  # noqa: E501
+        all_params = ['names', 'accept_language', 'datasource', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3078,8 +3078,8 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'names' is set
         if self.api_client.client_side_validation and ('names' not in params or
-                                                       params['names'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `names` when calling `post_universe_ids`")  # noqa: E501
+                                                       params['names'] is None):
+            raise ValueError("Missing the required parameter `names` when calling `post_universe_ids`")
 
         collection_formats = {}
 
@@ -3087,13 +3087,13 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
 
         form_params = []
         local_var_files = {}
@@ -3103,14 +3103,14 @@ class UniverseApi(object):
             body_params = params['names']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/universe/ids/', 'POST',
@@ -3120,7 +3120,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3128,10 +3128,10 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_universe_names(self, ids, **kwargs):  # noqa: E501
-        """Get names and categories for a set of IDs  # noqa: E501
+    def post_universe_names(self, ids, **kwargs):
+        """Get names and categories for a set of IDs
 
-        Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types, Factions  ---   # noqa: E501
+        Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types, Factions  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_universe_names(ids, async_req=True)
@@ -3146,15 +3146,15 @@ class UniverseApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_universe_names_with_http_info(ids, **kwargs)  # noqa: E501
+            return self.post_universe_names_with_http_info(ids, **kwargs)
         else:
-            (data) = self.post_universe_names_with_http_info(ids, **kwargs)  # noqa: E501
+            (data) = self.post_universe_names_with_http_info(ids, **kwargs)
             return data
 
-    def post_universe_names_with_http_info(self, ids, **kwargs):  # noqa: E501
-        """Get names and categories for a set of IDs  # noqa: E501
+    def post_universe_names_with_http_info(self, ids, **kwargs):
+        """Get names and categories for a set of IDs
 
-        Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types, Factions  ---   # noqa: E501
+        Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types, Factions  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_universe_names_with_http_info(ids, async_req=True)
@@ -3168,7 +3168,7 @@ class UniverseApi(object):
                  returns the request thread.
         """
 
-        all_params = ['ids', 'datasource']  # noqa: E501
+        all_params = ['ids', 'datasource']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3185,8 +3185,8 @@ class UniverseApi(object):
         del params['kwargs']
         # verify the required parameter 'ids' is set
         if self.api_client.client_side_validation and ('ids' not in params or
-                                                       params['ids'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `ids` when calling `post_universe_names`")  # noqa: E501
+                                                       params['ids'] is None):
+            raise ValueError("Missing the required parameter `ids` when calling `post_universe_names`")
 
         collection_formats = {}
 
@@ -3194,7 +3194,7 @@ class UniverseApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
 
@@ -3206,14 +3206,14 @@ class UniverseApi(object):
             body_params = params['ids']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v3/universe/names/', 'POST',
@@ -3223,7 +3223,7 @@ class UniverseApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

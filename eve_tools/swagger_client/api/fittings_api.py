@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class FittingsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def delete_characters_character_id_fittings_fitting_id(self, character_id, fitting_id, **kwargs):  # noqa: E501
-        """Delete fitting  # noqa: E501
+    def delete_characters_character_id_fittings_fitting_id(self, character_id, fitting_id, **kwargs):
+        """Delete fitting
 
-        Delete a fitting from a character  ---   # noqa: E501
+        Delete a fitting from a character  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_characters_character_id_fittings_fitting_id(character_id, fitting_id, async_req=True)
@@ -53,15 +53,15 @@ class FittingsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_characters_character_id_fittings_fitting_id_with_http_info(character_id, fitting_id, **kwargs)  # noqa: E501
+            return self.delete_characters_character_id_fittings_fitting_id_with_http_info(character_id, fitting_id, **kwargs)
         else:
-            (data) = self.delete_characters_character_id_fittings_fitting_id_with_http_info(character_id, fitting_id, **kwargs)  # noqa: E501
+            (data) = self.delete_characters_character_id_fittings_fitting_id_with_http_info(character_id, fitting_id, **kwargs)
             return data
 
-    def delete_characters_character_id_fittings_fitting_id_with_http_info(self, character_id, fitting_id, **kwargs):  # noqa: E501
-        """Delete fitting  # noqa: E501
+    def delete_characters_character_id_fittings_fitting_id_with_http_info(self, character_id, fitting_id, **kwargs):
+        """Delete fitting
 
-        Delete a fitting from a character  ---   # noqa: E501
+        Delete a fitting from a character  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_characters_character_id_fittings_fitting_id_with_http_info(character_id, fitting_id, async_req=True)
@@ -77,7 +77,7 @@ class FittingsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'fitting_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'fitting_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,28 +94,28 @@ class FittingsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `delete_characters_character_id_fittings_fitting_id`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `delete_characters_character_id_fittings_fitting_id`")
         # verify the required parameter 'fitting_id' is set
         if self.api_client.client_side_validation and ('fitting_id' not in params or
-                                                       params['fitting_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fitting_id` when calling `delete_characters_character_id_fittings_fitting_id`")  # noqa: E501
+                                                       params['fitting_id'] is None):
+            raise ValueError("Missing the required parameter `fitting_id` when calling `delete_characters_character_id_fittings_fitting_id`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `delete_characters_character_id_fittings_fitting_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `delete_characters_character_id_fittings_fitting_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'fitting_id' in params:
-            path_params['fitting_id'] = params['fitting_id']  # noqa: E501
+            path_params['fitting_id'] = params['fitting_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -125,14 +125,14 @@ class FittingsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/fittings/{fitting_id}/', 'DELETE',
@@ -142,7 +142,7 @@ class FittingsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -150,10 +150,10 @@ class FittingsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_fittings(self, character_id, **kwargs):  # noqa: E501
-        """Get fittings  # noqa: E501
+    def get_characters_character_id_fittings(self, character_id, **kwargs):
+        """Get fittings
 
-        Return fittings of a character  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return fittings of a character  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_fittings(character_id, async_req=True)
@@ -170,15 +170,15 @@ class FittingsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_fittings_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_fittings_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_fittings_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_fittings_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_fittings_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get fittings  # noqa: E501
+    def get_characters_character_id_fittings_with_http_info(self, character_id, **kwargs):
+        """Get fittings
 
-        Return fittings of a character  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return fittings of a character  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_fittings_with_http_info(character_id, async_req=True)
@@ -194,7 +194,7 @@ class FittingsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -211,26 +211,26 @@ class FittingsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_fittings`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_fittings`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_fittings`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_fittings`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -238,14 +238,14 @@ class FittingsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/fittings/', 'GET',
@@ -255,7 +255,7 @@ class FittingsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -263,10 +263,10 @@ class FittingsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_characters_character_id_fittings(self, character_id, fitting, **kwargs):  # noqa: E501
-        """Create fitting  # noqa: E501
+    def post_characters_character_id_fittings(self, character_id, fitting, **kwargs):
+        """Create fitting
 
-        Save a new fitting for a character  ---   # noqa: E501
+        Save a new fitting for a character  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_fittings(character_id, fitting, async_req=True)
@@ -283,15 +283,15 @@ class FittingsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_characters_character_id_fittings_with_http_info(character_id, fitting, **kwargs)  # noqa: E501
+            return self.post_characters_character_id_fittings_with_http_info(character_id, fitting, **kwargs)
         else:
-            (data) = self.post_characters_character_id_fittings_with_http_info(character_id, fitting, **kwargs)  # noqa: E501
+            (data) = self.post_characters_character_id_fittings_with_http_info(character_id, fitting, **kwargs)
             return data
 
-    def post_characters_character_id_fittings_with_http_info(self, character_id, fitting, **kwargs):  # noqa: E501
-        """Create fitting  # noqa: E501
+    def post_characters_character_id_fittings_with_http_info(self, character_id, fitting, **kwargs):
+        """Create fitting
 
-        Save a new fitting for a character  ---   # noqa: E501
+        Save a new fitting for a character  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_fittings_with_http_info(character_id, fitting, async_req=True)
@@ -307,7 +307,7 @@ class FittingsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'fitting', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'fitting', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -324,26 +324,26 @@ class FittingsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_fittings`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_fittings`")
         # verify the required parameter 'fitting' is set
         if self.api_client.client_side_validation and ('fitting' not in params or
-                                                       params['fitting'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fitting` when calling `post_characters_character_id_fittings`")  # noqa: E501
+                                                       params['fitting'] is None):
+            raise ValueError("Missing the required parameter `fitting` when calling `post_characters_character_id_fittings`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_fittings`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_fittings`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -355,14 +355,14 @@ class FittingsApi(object):
             body_params = params['fitting']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/fittings/', 'POST',
@@ -372,7 +372,7 @@ class FittingsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

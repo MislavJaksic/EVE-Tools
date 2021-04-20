@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class DogmaApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_dogma_attributes(self, **kwargs):  # noqa: E501
-        """Get attributes  # noqa: E501
+    def get_dogma_attributes(self, **kwargs):
+        """Get attributes
 
-        Get a list of dogma attribute ids  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of dogma attribute ids  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_attributes(async_req=True)
@@ -51,15 +51,15 @@ class DogmaApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_dogma_attributes_with_http_info(**kwargs)  # noqa: E501
+            return self.get_dogma_attributes_with_http_info(**kwargs)
         else:
-            (data) = self.get_dogma_attributes_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_dogma_attributes_with_http_info(**kwargs)
             return data
 
-    def get_dogma_attributes_with_http_info(self, **kwargs):  # noqa: E501
-        """Get attributes  # noqa: E501
+    def get_dogma_attributes_with_http_info(self, **kwargs):
+        """Get attributes
 
-        Get a list of dogma attribute ids  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of dogma attribute ids  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_attributes_with_http_info(async_req=True)
@@ -73,7 +73,7 @@ class DogmaApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -95,11 +95,11 @@ class DogmaApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -107,14 +107,14 @@ class DogmaApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/dogma/attributes/', 'GET',
@@ -124,7 +124,7 @@ class DogmaApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -132,10 +132,10 @@ class DogmaApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_dogma_attributes_attribute_id(self, attribute_id, **kwargs):  # noqa: E501
-        """Get attribute information  # noqa: E501
+    def get_dogma_attributes_attribute_id(self, attribute_id, **kwargs):
+        """Get attribute information
 
-        Get information on a dogma attribute  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a dogma attribute  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_attributes_attribute_id(attribute_id, async_req=True)
@@ -151,15 +151,15 @@ class DogmaApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_dogma_attributes_attribute_id_with_http_info(attribute_id, **kwargs)  # noqa: E501
+            return self.get_dogma_attributes_attribute_id_with_http_info(attribute_id, **kwargs)
         else:
-            (data) = self.get_dogma_attributes_attribute_id_with_http_info(attribute_id, **kwargs)  # noqa: E501
+            (data) = self.get_dogma_attributes_attribute_id_with_http_info(attribute_id, **kwargs)
             return data
 
-    def get_dogma_attributes_attribute_id_with_http_info(self, attribute_id, **kwargs):  # noqa: E501
-        """Get attribute information  # noqa: E501
+    def get_dogma_attributes_attribute_id_with_http_info(self, attribute_id, **kwargs):
+        """Get attribute information
 
-        Get information on a dogma attribute  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a dogma attribute  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_attributes_attribute_id_with_http_info(attribute_id, async_req=True)
@@ -174,7 +174,7 @@ class DogmaApi(object):
                  returns the request thread.
         """
 
-        all_params = ['attribute_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['attribute_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -191,22 +191,22 @@ class DogmaApi(object):
         del params['kwargs']
         # verify the required parameter 'attribute_id' is set
         if self.api_client.client_side_validation and ('attribute_id' not in params or
-                                                       params['attribute_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `attribute_id` when calling `get_dogma_attributes_attribute_id`")  # noqa: E501
+                                                       params['attribute_id'] is None):
+            raise ValueError("Missing the required parameter `attribute_id` when calling `get_dogma_attributes_attribute_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'attribute_id' in params:
-            path_params['attribute_id'] = params['attribute_id']  # noqa: E501
+            path_params['attribute_id'] = params['attribute_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -214,14 +214,14 @@ class DogmaApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/dogma/attributes/{attribute_id}/', 'GET',
@@ -231,7 +231,7 @@ class DogmaApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -239,10 +239,10 @@ class DogmaApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_dogma_dynamic_items_type_id_item_id(self, item_id, type_id, **kwargs):  # noqa: E501
-        """Get dynamic item information  # noqa: E501
+    def get_dogma_dynamic_items_type_id_item_id(self, item_id, type_id, **kwargs):
+        """Get dynamic item information
 
-        Returns info about a dynamic item resulting from mutation with a mutaplasmid.  ---  This route expires daily at 11:05  # noqa: E501
+        Returns info about a dynamic item resulting from mutation with a mutaplasmid.  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_dynamic_items_type_id_item_id(item_id, type_id, async_req=True)
@@ -259,15 +259,15 @@ class DogmaApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_dogma_dynamic_items_type_id_item_id_with_http_info(item_id, type_id, **kwargs)  # noqa: E501
+            return self.get_dogma_dynamic_items_type_id_item_id_with_http_info(item_id, type_id, **kwargs)
         else:
-            (data) = self.get_dogma_dynamic_items_type_id_item_id_with_http_info(item_id, type_id, **kwargs)  # noqa: E501
+            (data) = self.get_dogma_dynamic_items_type_id_item_id_with_http_info(item_id, type_id, **kwargs)
             return data
 
-    def get_dogma_dynamic_items_type_id_item_id_with_http_info(self, item_id, type_id, **kwargs):  # noqa: E501
-        """Get dynamic item information  # noqa: E501
+    def get_dogma_dynamic_items_type_id_item_id_with_http_info(self, item_id, type_id, **kwargs):
+        """Get dynamic item information
 
-        Returns info about a dynamic item resulting from mutation with a mutaplasmid.  ---  This route expires daily at 11:05  # noqa: E501
+        Returns info about a dynamic item resulting from mutation with a mutaplasmid.  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_dynamic_items_type_id_item_id_with_http_info(item_id, type_id, async_req=True)
@@ -283,7 +283,7 @@ class DogmaApi(object):
                  returns the request thread.
         """
 
-        all_params = ['item_id', 'type_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['item_id', 'type_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -300,28 +300,28 @@ class DogmaApi(object):
         del params['kwargs']
         # verify the required parameter 'item_id' is set
         if self.api_client.client_side_validation and ('item_id' not in params or
-                                                       params['item_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `item_id` when calling `get_dogma_dynamic_items_type_id_item_id`")  # noqa: E501
+                                                       params['item_id'] is None):
+            raise ValueError("Missing the required parameter `item_id` when calling `get_dogma_dynamic_items_type_id_item_id`")
         # verify the required parameter 'type_id' is set
         if self.api_client.client_side_validation and ('type_id' not in params or
-                                                       params['type_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `type_id` when calling `get_dogma_dynamic_items_type_id_item_id`")  # noqa: E501
+                                                       params['type_id'] is None):
+            raise ValueError("Missing the required parameter `type_id` when calling `get_dogma_dynamic_items_type_id_item_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'item_id' in params:
-            path_params['item_id'] = params['item_id']  # noqa: E501
+            path_params['item_id'] = params['item_id']
         if 'type_id' in params:
-            path_params['type_id'] = params['type_id']  # noqa: E501
+            path_params['type_id'] = params['type_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -329,14 +329,14 @@ class DogmaApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/dogma/dynamic/items/{type_id}/{item_id}/', 'GET',
@@ -346,7 +346,7 @@ class DogmaApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -354,10 +354,10 @@ class DogmaApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_dogma_effects(self, **kwargs):  # noqa: E501
-        """Get effects  # noqa: E501
+    def get_dogma_effects(self, **kwargs):
+        """Get effects
 
-        Get a list of dogma effect ids  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of dogma effect ids  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_effects(async_req=True)
@@ -372,15 +372,15 @@ class DogmaApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_dogma_effects_with_http_info(**kwargs)  # noqa: E501
+            return self.get_dogma_effects_with_http_info(**kwargs)
         else:
-            (data) = self.get_dogma_effects_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_dogma_effects_with_http_info(**kwargs)
             return data
 
-    def get_dogma_effects_with_http_info(self, **kwargs):  # noqa: E501
-        """Get effects  # noqa: E501
+    def get_dogma_effects_with_http_info(self, **kwargs):
+        """Get effects
 
-        Get a list of dogma effect ids  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of dogma effect ids  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_effects_with_http_info(async_req=True)
@@ -394,7 +394,7 @@ class DogmaApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -416,11 +416,11 @@ class DogmaApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -428,14 +428,14 @@ class DogmaApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/dogma/effects/', 'GET',
@@ -445,7 +445,7 @@ class DogmaApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -453,10 +453,10 @@ class DogmaApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_dogma_effects_effect_id(self, effect_id, **kwargs):  # noqa: E501
-        """Get effect information  # noqa: E501
+    def get_dogma_effects_effect_id(self, effect_id, **kwargs):
+        """Get effect information
 
-        Get information on a dogma effect  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a dogma effect  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_effects_effect_id(effect_id, async_req=True)
@@ -472,15 +472,15 @@ class DogmaApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_dogma_effects_effect_id_with_http_info(effect_id, **kwargs)  # noqa: E501
+            return self.get_dogma_effects_effect_id_with_http_info(effect_id, **kwargs)
         else:
-            (data) = self.get_dogma_effects_effect_id_with_http_info(effect_id, **kwargs)  # noqa: E501
+            (data) = self.get_dogma_effects_effect_id_with_http_info(effect_id, **kwargs)
             return data
 
-    def get_dogma_effects_effect_id_with_http_info(self, effect_id, **kwargs):  # noqa: E501
-        """Get effect information  # noqa: E501
+    def get_dogma_effects_effect_id_with_http_info(self, effect_id, **kwargs):
+        """Get effect information
 
-        Get information on a dogma effect  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on a dogma effect  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_dogma_effects_effect_id_with_http_info(effect_id, async_req=True)
@@ -495,7 +495,7 @@ class DogmaApi(object):
                  returns the request thread.
         """
 
-        all_params = ['effect_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['effect_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -512,22 +512,22 @@ class DogmaApi(object):
         del params['kwargs']
         # verify the required parameter 'effect_id' is set
         if self.api_client.client_side_validation and ('effect_id' not in params or
-                                                       params['effect_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `effect_id` when calling `get_dogma_effects_effect_id`")  # noqa: E501
+                                                       params['effect_id'] is None):
+            raise ValueError("Missing the required parameter `effect_id` when calling `get_dogma_effects_effect_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'effect_id' in params:
-            path_params['effect_id'] = params['effect_id']  # noqa: E501
+            path_params['effect_id'] = params['effect_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -535,14 +535,14 @@ class DogmaApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v2/dogma/effects/{effect_id}/', 'GET',
@@ -552,7 +552,7 @@ class DogmaApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

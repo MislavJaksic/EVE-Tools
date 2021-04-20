@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -42,8 +42,8 @@ class GatewayTimeout(object):
         'timeout': 'timeout'
     }
 
-    def __init__(self, error=None, timeout=None, _configuration=None):  # noqa: E501
-        """GatewayTimeout - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, error=None, timeout=None, _configuration=None):
+        """GatewayTimeout - a model defined in Swagger"""
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
@@ -58,11 +58,11 @@ class GatewayTimeout(object):
 
     @property
     def error(self):
-        """Gets the error of this GatewayTimeout.  # noqa: E501
+        """Gets the error of this GatewayTimeout.
 
-        Gateway timeout message  # noqa: E501
+        Gateway timeout message
 
-        :return: The error of this GatewayTimeout.  # noqa: E501
+        :return: The error of this GatewayTimeout.
         :rtype: str
         """
         return self._error
@@ -71,23 +71,23 @@ class GatewayTimeout(object):
     def error(self, error):
         """Sets the error of this GatewayTimeout.
 
-        Gateway timeout message  # noqa: E501
+        Gateway timeout message
 
-        :param error: The error of this GatewayTimeout.  # noqa: E501
+        :param error: The error of this GatewayTimeout.
         :type: str
         """
         if self._configuration.client_side_validation and error is None:
-            raise ValueError("Invalid value for `error`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `error`, must not be `None`")
 
         self._error = error
 
     @property
     def timeout(self):
-        """Gets the timeout of this GatewayTimeout.  # noqa: E501
+        """Gets the timeout of this GatewayTimeout.
 
-        number of seconds the request was given  # noqa: E501
+        number of seconds the request was given
 
-        :return: The timeout of this GatewayTimeout.  # noqa: E501
+        :return: The timeout of this GatewayTimeout.
         :rtype: int
         """
         return self._timeout
@@ -96,9 +96,9 @@ class GatewayTimeout(object):
     def timeout(self, timeout):
         """Sets the timeout of this GatewayTimeout.
 
-        number of seconds the request was given  # noqa: E501
+        number of seconds the request was given
 
-        :param timeout: The timeout of this GatewayTimeout.  # noqa: E501
+        :param timeout: The timeout of this GatewayTimeout.
         :type: int
         """
 

@@ -2,7 +2,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
 
@@ -483,7 +483,7 @@ class ApiClient(object):
             collection_formats = {}
         for k, v in (
             six.iteritems(params) if isinstance(params, dict) else params
-        ):  # noqa: E501
+        ):
             if k in collection_formats:
                 collection_format = collection_formats[k]
                 if collection_format == "multi":

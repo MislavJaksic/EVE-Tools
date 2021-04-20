@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class MailApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def delete_characters_character_id_mail_labels_label_id(self, character_id, label_id, **kwargs):  # noqa: E501
-        """Delete a mail label  # noqa: E501
+    def delete_characters_character_id_mail_labels_label_id(self, character_id, label_id, **kwargs):
+        """Delete a mail label
 
-        Delete a mail label  ---   # noqa: E501
+        Delete a mail label  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_characters_character_id_mail_labels_label_id(character_id, label_id, async_req=True)
@@ -53,15 +53,15 @@ class MailApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_characters_character_id_mail_labels_label_id_with_http_info(character_id, label_id, **kwargs)  # noqa: E501
+            return self.delete_characters_character_id_mail_labels_label_id_with_http_info(character_id, label_id, **kwargs)
         else:
-            (data) = self.delete_characters_character_id_mail_labels_label_id_with_http_info(character_id, label_id, **kwargs)  # noqa: E501
+            (data) = self.delete_characters_character_id_mail_labels_label_id_with_http_info(character_id, label_id, **kwargs)
             return data
 
-    def delete_characters_character_id_mail_labels_label_id_with_http_info(self, character_id, label_id, **kwargs):  # noqa: E501
-        """Delete a mail label  # noqa: E501
+    def delete_characters_character_id_mail_labels_label_id_with_http_info(self, character_id, label_id, **kwargs):
+        """Delete a mail label
 
-        Delete a mail label  ---   # noqa: E501
+        Delete a mail label  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_characters_character_id_mail_labels_label_id_with_http_info(character_id, label_id, async_req=True)
@@ -77,7 +77,7 @@ class MailApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'label_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'label_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,28 +94,28 @@ class MailApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `delete_characters_character_id_mail_labels_label_id`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `delete_characters_character_id_mail_labels_label_id`")
         # verify the required parameter 'label_id' is set
         if self.api_client.client_side_validation and ('label_id' not in params or
-                                                       params['label_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `label_id` when calling `delete_characters_character_id_mail_labels_label_id`")  # noqa: E501
+                                                       params['label_id'] is None):
+            raise ValueError("Missing the required parameter `label_id` when calling `delete_characters_character_id_mail_labels_label_id`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `delete_characters_character_id_mail_labels_label_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `delete_characters_character_id_mail_labels_label_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'label_id' in params:
-            path_params['label_id'] = params['label_id']  # noqa: E501
+            path_params['label_id'] = params['label_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -125,14 +125,14 @@ class MailApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/mail/labels/{label_id}/', 'DELETE',
@@ -142,7 +142,7 @@ class MailApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -150,10 +150,10 @@ class MailApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_characters_character_id_mail_mail_id(self, character_id, mail_id, **kwargs):  # noqa: E501
-        """Delete a mail  # noqa: E501
+    def delete_characters_character_id_mail_mail_id(self, character_id, mail_id, **kwargs):
+        """Delete a mail
 
-        Delete a mail  ---   # noqa: E501
+        Delete a mail  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_characters_character_id_mail_mail_id(character_id, mail_id, async_req=True)
@@ -170,15 +170,15 @@ class MailApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)  # noqa: E501
+            return self.delete_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)
         else:
-            (data) = self.delete_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)  # noqa: E501
+            (data) = self.delete_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)
             return data
 
-    def delete_characters_character_id_mail_mail_id_with_http_info(self, character_id, mail_id, **kwargs):  # noqa: E501
-        """Delete a mail  # noqa: E501
+    def delete_characters_character_id_mail_mail_id_with_http_info(self, character_id, mail_id, **kwargs):
+        """Delete a mail
 
-        Delete a mail  ---   # noqa: E501
+        Delete a mail  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, async_req=True)
@@ -194,7 +194,7 @@ class MailApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'mail_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'mail_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -211,28 +211,28 @@ class MailApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `delete_characters_character_id_mail_mail_id`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `delete_characters_character_id_mail_mail_id`")
         # verify the required parameter 'mail_id' is set
         if self.api_client.client_side_validation and ('mail_id' not in params or
-                                                       params['mail_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `mail_id` when calling `delete_characters_character_id_mail_mail_id`")  # noqa: E501
+                                                       params['mail_id'] is None):
+            raise ValueError("Missing the required parameter `mail_id` when calling `delete_characters_character_id_mail_mail_id`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `delete_characters_character_id_mail_mail_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `delete_characters_character_id_mail_mail_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'mail_id' in params:
-            path_params['mail_id'] = params['mail_id']  # noqa: E501
+            path_params['mail_id'] = params['mail_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -242,14 +242,14 @@ class MailApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/mail/{mail_id}/', 'DELETE',
@@ -259,7 +259,7 @@ class MailApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -267,10 +267,10 @@ class MailApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_mail(self, character_id, **kwargs):  # noqa: E501
-        """Return mail headers  # noqa: E501
+    def get_characters_character_id_mail(self, character_id, **kwargs):
+        """Return mail headers
 
-        Return the 50 most recent mail headers belonging to the character that match the query criteria. Queries can be filtered by label, and last_mail_id can be used to paginate backwards  ---  This route is cached for up to 30 seconds  # noqa: E501
+        Return the 50 most recent mail headers belonging to the character that match the query criteria. Queries can be filtered by label, and last_mail_id can be used to paginate backwards  ---  This route is cached for up to 30 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mail(character_id, async_req=True)
@@ -289,15 +289,15 @@ class MailApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_mail_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_mail_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_mail_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_mail_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_mail_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Return mail headers  # noqa: E501
+    def get_characters_character_id_mail_with_http_info(self, character_id, **kwargs):
+        """Return mail headers
 
-        Return the 50 most recent mail headers belonging to the character that match the query criteria. Queries can be filtered by label, and last_mail_id can be used to paginate backwards  ---  This route is cached for up to 30 seconds  # noqa: E501
+        Return the 50 most recent mail headers belonging to the character that match the query criteria. Queries can be filtered by label, and last_mail_id can be used to paginate backwards  ---  This route is cached for up to 30 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mail_with_http_info(character_id, async_req=True)
@@ -315,7 +315,7 @@ class MailApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'labels', 'last_mail_id', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'labels', 'last_mail_id', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -332,37 +332,37 @@ class MailApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mail`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mail`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mail`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mail`, must be a value greater than or equal to `1`")
         if self.api_client.client_side_validation and ('labels' in params and
                                             len(params['labels']) > 25):
-            raise ValueError("Invalid value for parameter `labels` when calling `get_characters_character_id_mail`, number of items must be less than or equal to `25`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `labels` when calling `get_characters_character_id_mail`, number of items must be less than or equal to `25`")
         if self.api_client.client_side_validation and ('labels' in params and
                                             len(params['labels']) < 1):
-            raise ValueError("Invalid value for parameter `labels` when calling `get_characters_character_id_mail`, number of items must be greater than or equal to `1`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `labels` when calling `get_characters_character_id_mail`, number of items must be greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'labels' in params:
-            query_params.append(('labels', params['labels']))  # noqa: E501
-            collection_formats['labels'] = 'multi'  # noqa: E501
+            query_params.append(('labels', params['labels']))
+            collection_formats['labels'] = 'multi'
         if 'last_mail_id' in params:
-            query_params.append(('last_mail_id', params['last_mail_id']))  # noqa: E501
+            query_params.append(('last_mail_id', params['last_mail_id']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -370,14 +370,14 @@ class MailApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/mail/', 'GET',
@@ -387,7 +387,7 @@ class MailApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -395,10 +395,10 @@ class MailApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_mail_labels(self, character_id, **kwargs):  # noqa: E501
-        """Get mail labels and unread counts  # noqa: E501
+    def get_characters_character_id_mail_labels(self, character_id, **kwargs):
+        """Get mail labels and unread counts
 
-        Return a list of the users mail labels, unread counts for each label and a total unread count.  ---  This route is cached for up to 30 seconds  # noqa: E501
+        Return a list of the users mail labels, unread counts for each label and a total unread count.  ---  This route is cached for up to 30 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mail_labels(character_id, async_req=True)
@@ -415,15 +415,15 @@ class MailApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_mail_labels_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_mail_labels_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_mail_labels_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_mail_labels_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_mail_labels_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get mail labels and unread counts  # noqa: E501
+    def get_characters_character_id_mail_labels_with_http_info(self, character_id, **kwargs):
+        """Get mail labels and unread counts
 
-        Return a list of the users mail labels, unread counts for each label and a total unread count.  ---  This route is cached for up to 30 seconds  # noqa: E501
+        Return a list of the users mail labels, unread counts for each label and a total unread count.  ---  This route is cached for up to 30 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mail_labels_with_http_info(character_id, async_req=True)
@@ -439,7 +439,7 @@ class MailApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -456,26 +456,26 @@ class MailApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mail_labels`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mail_labels`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mail_labels`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mail_labels`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -483,14 +483,14 @@ class MailApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v3/characters/{character_id}/mail/labels/', 'GET',
@@ -500,7 +500,7 @@ class MailApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -508,10 +508,10 @@ class MailApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_mail_lists(self, character_id, **kwargs):  # noqa: E501
-        """Return mailing list subscriptions  # noqa: E501
+    def get_characters_character_id_mail_lists(self, character_id, **kwargs):
+        """Return mailing list subscriptions
 
-        Return all mailing lists that the character is subscribed to  ---  This route is cached for up to 120 seconds  # noqa: E501
+        Return all mailing lists that the character is subscribed to  ---  This route is cached for up to 120 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mail_lists(character_id, async_req=True)
@@ -528,15 +528,15 @@ class MailApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_mail_lists_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_mail_lists_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_mail_lists_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_mail_lists_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_mail_lists_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Return mailing list subscriptions  # noqa: E501
+    def get_characters_character_id_mail_lists_with_http_info(self, character_id, **kwargs):
+        """Return mailing list subscriptions
 
-        Return all mailing lists that the character is subscribed to  ---  This route is cached for up to 120 seconds  # noqa: E501
+        Return all mailing lists that the character is subscribed to  ---  This route is cached for up to 120 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mail_lists_with_http_info(character_id, async_req=True)
@@ -552,7 +552,7 @@ class MailApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -569,26 +569,26 @@ class MailApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mail_lists`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mail_lists`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mail_lists`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mail_lists`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -596,14 +596,14 @@ class MailApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/mail/lists/', 'GET',
@@ -613,7 +613,7 @@ class MailApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -621,10 +621,10 @@ class MailApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_mail_mail_id(self, character_id, mail_id, **kwargs):  # noqa: E501
-        """Return a mail  # noqa: E501
+    def get_characters_character_id_mail_mail_id(self, character_id, mail_id, **kwargs):
+        """Return a mail
 
-        Return the contents of an EVE mail  ---  This route is cached for up to 30 seconds  # noqa: E501
+        Return the contents of an EVE mail  ---  This route is cached for up to 30 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mail_mail_id(character_id, mail_id, async_req=True)
@@ -642,15 +642,15 @@ class MailApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)
             return data
 
-    def get_characters_character_id_mail_mail_id_with_http_info(self, character_id, mail_id, **kwargs):  # noqa: E501
-        """Return a mail  # noqa: E501
+    def get_characters_character_id_mail_mail_id_with_http_info(self, character_id, mail_id, **kwargs):
+        """Return a mail
 
-        Return the contents of an EVE mail  ---  This route is cached for up to 30 seconds  # noqa: E501
+        Return the contents of an EVE mail  ---  This route is cached for up to 30 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, async_req=True)
@@ -667,7 +667,7 @@ class MailApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'mail_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'mail_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -684,32 +684,32 @@ class MailApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mail_mail_id`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mail_mail_id`")
         # verify the required parameter 'mail_id' is set
         if self.api_client.client_side_validation and ('mail_id' not in params or
-                                                       params['mail_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `mail_id` when calling `get_characters_character_id_mail_mail_id`")  # noqa: E501
+                                                       params['mail_id'] is None):
+            raise ValueError("Missing the required parameter `mail_id` when calling `get_characters_character_id_mail_mail_id`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mail_mail_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mail_mail_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'mail_id' in params:
-            path_params['mail_id'] = params['mail_id']  # noqa: E501
+            path_params['mail_id'] = params['mail_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -717,14 +717,14 @@ class MailApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/mail/{mail_id}/', 'GET',
@@ -734,7 +734,7 @@ class MailApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -742,10 +742,10 @@ class MailApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_characters_character_id_mail(self, character_id, mail, **kwargs):  # noqa: E501
-        """Send a new mail  # noqa: E501
+    def post_characters_character_id_mail(self, character_id, mail, **kwargs):
+        """Send a new mail
 
-        Create and send a new mail  ---   # noqa: E501
+        Create and send a new mail  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_mail(character_id, mail, async_req=True)
@@ -762,15 +762,15 @@ class MailApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_characters_character_id_mail_with_http_info(character_id, mail, **kwargs)  # noqa: E501
+            return self.post_characters_character_id_mail_with_http_info(character_id, mail, **kwargs)
         else:
-            (data) = self.post_characters_character_id_mail_with_http_info(character_id, mail, **kwargs)  # noqa: E501
+            (data) = self.post_characters_character_id_mail_with_http_info(character_id, mail, **kwargs)
             return data
 
-    def post_characters_character_id_mail_with_http_info(self, character_id, mail, **kwargs):  # noqa: E501
-        """Send a new mail  # noqa: E501
+    def post_characters_character_id_mail_with_http_info(self, character_id, mail, **kwargs):
+        """Send a new mail
 
-        Create and send a new mail  ---   # noqa: E501
+        Create and send a new mail  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_mail_with_http_info(character_id, mail, async_req=True)
@@ -786,7 +786,7 @@ class MailApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'mail', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'mail', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -803,26 +803,26 @@ class MailApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_mail`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_mail`")
         # verify the required parameter 'mail' is set
         if self.api_client.client_side_validation and ('mail' not in params or
-                                                       params['mail'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `mail` when calling `post_characters_character_id_mail`")  # noqa: E501
+                                                       params['mail'] is None):
+            raise ValueError("Missing the required parameter `mail` when calling `post_characters_character_id_mail`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_mail`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_mail`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -834,14 +834,14 @@ class MailApi(object):
             body_params = params['mail']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/mail/', 'POST',
@@ -851,7 +851,7 @@ class MailApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='int',  # noqa: E501
+            response_type='int',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -859,10 +859,10 @@ class MailApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_characters_character_id_mail_labels(self, character_id, label, **kwargs):  # noqa: E501
-        """Create a mail label  # noqa: E501
+    def post_characters_character_id_mail_labels(self, character_id, label, **kwargs):
+        """Create a mail label
 
-        Create a mail label  ---   # noqa: E501
+        Create a mail label  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_mail_labels(character_id, label, async_req=True)
@@ -879,15 +879,15 @@ class MailApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_characters_character_id_mail_labels_with_http_info(character_id, label, **kwargs)  # noqa: E501
+            return self.post_characters_character_id_mail_labels_with_http_info(character_id, label, **kwargs)
         else:
-            (data) = self.post_characters_character_id_mail_labels_with_http_info(character_id, label, **kwargs)  # noqa: E501
+            (data) = self.post_characters_character_id_mail_labels_with_http_info(character_id, label, **kwargs)
             return data
 
-    def post_characters_character_id_mail_labels_with_http_info(self, character_id, label, **kwargs):  # noqa: E501
-        """Create a mail label  # noqa: E501
+    def post_characters_character_id_mail_labels_with_http_info(self, character_id, label, **kwargs):
+        """Create a mail label
 
-        Create a mail label  ---   # noqa: E501
+        Create a mail label  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_mail_labels_with_http_info(character_id, label, async_req=True)
@@ -903,7 +903,7 @@ class MailApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'label', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'label', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -920,26 +920,26 @@ class MailApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_mail_labels`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_mail_labels`")
         # verify the required parameter 'label' is set
         if self.api_client.client_side_validation and ('label' not in params or
-                                                       params['label'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `label` when calling `post_characters_character_id_mail_labels`")  # noqa: E501
+                                                       params['label'] is None):
+            raise ValueError("Missing the required parameter `label` when calling `post_characters_character_id_mail_labels`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_mail_labels`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_mail_labels`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -951,14 +951,14 @@ class MailApi(object):
             body_params = params['label']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/mail/labels/', 'POST',
@@ -968,7 +968,7 @@ class MailApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='int',  # noqa: E501
+            response_type='int',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -976,10 +976,10 @@ class MailApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_characters_character_id_mail_mail_id(self, character_id, contents, mail_id, **kwargs):  # noqa: E501
-        """Update metadata about a mail  # noqa: E501
+    def put_characters_character_id_mail_mail_id(self, character_id, contents, mail_id, **kwargs):
+        """Update metadata about a mail
 
-        Update metadata about a mail  ---   # noqa: E501
+        Update metadata about a mail  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_characters_character_id_mail_mail_id(character_id, contents, mail_id, async_req=True)
@@ -997,15 +997,15 @@ class MailApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.put_characters_character_id_mail_mail_id_with_http_info(character_id, contents, mail_id, **kwargs)  # noqa: E501
+            return self.put_characters_character_id_mail_mail_id_with_http_info(character_id, contents, mail_id, **kwargs)
         else:
-            (data) = self.put_characters_character_id_mail_mail_id_with_http_info(character_id, contents, mail_id, **kwargs)  # noqa: E501
+            (data) = self.put_characters_character_id_mail_mail_id_with_http_info(character_id, contents, mail_id, **kwargs)
             return data
 
-    def put_characters_character_id_mail_mail_id_with_http_info(self, character_id, contents, mail_id, **kwargs):  # noqa: E501
-        """Update metadata about a mail  # noqa: E501
+    def put_characters_character_id_mail_mail_id_with_http_info(self, character_id, contents, mail_id, **kwargs):
+        """Update metadata about a mail
 
-        Update metadata about a mail  ---   # noqa: E501
+        Update metadata about a mail  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_characters_character_id_mail_mail_id_with_http_info(character_id, contents, mail_id, async_req=True)
@@ -1022,7 +1022,7 @@ class MailApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'contents', 'mail_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'contents', 'mail_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1039,32 +1039,32 @@ class MailApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `put_characters_character_id_mail_mail_id`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `put_characters_character_id_mail_mail_id`")
         # verify the required parameter 'contents' is set
         if self.api_client.client_side_validation and ('contents' not in params or
-                                                       params['contents'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contents` when calling `put_characters_character_id_mail_mail_id`")  # noqa: E501
+                                                       params['contents'] is None):
+            raise ValueError("Missing the required parameter `contents` when calling `put_characters_character_id_mail_mail_id`")
         # verify the required parameter 'mail_id' is set
         if self.api_client.client_side_validation and ('mail_id' not in params or
-                                                       params['mail_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `mail_id` when calling `put_characters_character_id_mail_mail_id`")  # noqa: E501
+                                                       params['mail_id'] is None):
+            raise ValueError("Missing the required parameter `mail_id` when calling `put_characters_character_id_mail_mail_id`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `put_characters_character_id_mail_mail_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `put_characters_character_id_mail_mail_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'mail_id' in params:
-            path_params['mail_id'] = params['mail_id']  # noqa: E501
+            path_params['mail_id'] = params['mail_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -1076,14 +1076,14 @@ class MailApi(object):
             body_params = params['contents']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/mail/{mail_id}/', 'PUT',
@@ -1093,7 +1093,7 @@ class MailApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class OpportunitiesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id_opportunities(self, character_id, **kwargs):  # noqa: E501
-        """Get a character's completed tasks  # noqa: E501
+    def get_characters_character_id_opportunities(self, character_id, **kwargs):
+        """Get a character's completed tasks
 
-        Return a list of tasks finished by a character  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of tasks finished by a character  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_opportunities(character_id, async_req=True)
@@ -53,15 +53,15 @@ class OpportunitiesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_opportunities_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_opportunities_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_opportunities_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_opportunities_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_opportunities_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get a character's completed tasks  # noqa: E501
+    def get_characters_character_id_opportunities_with_http_info(self, character_id, **kwargs):
+        """Get a character's completed tasks
 
-        Return a list of tasks finished by a character  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of tasks finished by a character  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_opportunities_with_http_info(character_id, async_req=True)
@@ -77,7 +77,7 @@ class OpportunitiesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,26 +94,26 @@ class OpportunitiesApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_opportunities`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_opportunities`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_opportunities`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_opportunities`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -121,14 +121,14 @@ class OpportunitiesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/opportunities/', 'GET',
@@ -138,7 +138,7 @@ class OpportunitiesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -146,10 +146,10 @@ class OpportunitiesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_opportunities_groups(self, **kwargs):  # noqa: E501
-        """Get opportunities groups  # noqa: E501
+    def get_opportunities_groups(self, **kwargs):
+        """Get opportunities groups
 
-        Return a list of opportunities groups  ---  This route expires daily at 11:05  # noqa: E501
+        Return a list of opportunities groups  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_opportunities_groups(async_req=True)
@@ -164,15 +164,15 @@ class OpportunitiesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_opportunities_groups_with_http_info(**kwargs)  # noqa: E501
+            return self.get_opportunities_groups_with_http_info(**kwargs)
         else:
-            (data) = self.get_opportunities_groups_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_opportunities_groups_with_http_info(**kwargs)
             return data
 
-    def get_opportunities_groups_with_http_info(self, **kwargs):  # noqa: E501
-        """Get opportunities groups  # noqa: E501
+    def get_opportunities_groups_with_http_info(self, **kwargs):
+        """Get opportunities groups
 
-        Return a list of opportunities groups  ---  This route expires daily at 11:05  # noqa: E501
+        Return a list of opportunities groups  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_opportunities_groups_with_http_info(async_req=True)
@@ -186,7 +186,7 @@ class OpportunitiesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -208,11 +208,11 @@ class OpportunitiesApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -220,14 +220,14 @@ class OpportunitiesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/opportunities/groups/', 'GET',
@@ -237,7 +237,7 @@ class OpportunitiesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -245,10 +245,10 @@ class OpportunitiesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_opportunities_groups_group_id(self, group_id, **kwargs):  # noqa: E501
-        """Get opportunities group  # noqa: E501
+    def get_opportunities_groups_group_id(self, group_id, **kwargs):
+        """Get opportunities group
 
-        Return information of an opportunities group  ---  This route expires daily at 11:05  # noqa: E501
+        Return information of an opportunities group  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_opportunities_groups_group_id(group_id, async_req=True)
@@ -266,15 +266,15 @@ class OpportunitiesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_opportunities_groups_group_id_with_http_info(group_id, **kwargs)  # noqa: E501
+            return self.get_opportunities_groups_group_id_with_http_info(group_id, **kwargs)
         else:
-            (data) = self.get_opportunities_groups_group_id_with_http_info(group_id, **kwargs)  # noqa: E501
+            (data) = self.get_opportunities_groups_group_id_with_http_info(group_id, **kwargs)
             return data
 
-    def get_opportunities_groups_group_id_with_http_info(self, group_id, **kwargs):  # noqa: E501
-        """Get opportunities group  # noqa: E501
+    def get_opportunities_groups_group_id_with_http_info(self, group_id, **kwargs):
+        """Get opportunities group
 
-        Return information of an opportunities group  ---  This route expires daily at 11:05  # noqa: E501
+        Return information of an opportunities group  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_opportunities_groups_group_id_with_http_info(group_id, async_req=True)
@@ -291,7 +291,7 @@ class OpportunitiesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['group_id', 'accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -308,26 +308,26 @@ class OpportunitiesApi(object):
         del params['kwargs']
         # verify the required parameter 'group_id' is set
         if self.api_client.client_side_validation and ('group_id' not in params or
-                                                       params['group_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `group_id` when calling `get_opportunities_groups_group_id`")  # noqa: E501
+                                                       params['group_id'] is None):
+            raise ValueError("Missing the required parameter `group_id` when calling `get_opportunities_groups_group_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'group_id' in params:
-            path_params['group_id'] = params['group_id']  # noqa: E501
+            path_params['group_id'] = params['group_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -335,14 +335,14 @@ class OpportunitiesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/opportunities/groups/{group_id}/', 'GET',
@@ -352,7 +352,7 @@ class OpportunitiesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -360,10 +360,10 @@ class OpportunitiesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_opportunities_tasks(self, **kwargs):  # noqa: E501
-        """Get opportunities tasks  # noqa: E501
+    def get_opportunities_tasks(self, **kwargs):
+        """Get opportunities tasks
 
-        Return a list of opportunities tasks  ---  This route expires daily at 11:05  # noqa: E501
+        Return a list of opportunities tasks  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_opportunities_tasks(async_req=True)
@@ -378,15 +378,15 @@ class OpportunitiesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_opportunities_tasks_with_http_info(**kwargs)  # noqa: E501
+            return self.get_opportunities_tasks_with_http_info(**kwargs)
         else:
-            (data) = self.get_opportunities_tasks_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_opportunities_tasks_with_http_info(**kwargs)
             return data
 
-    def get_opportunities_tasks_with_http_info(self, **kwargs):  # noqa: E501
-        """Get opportunities tasks  # noqa: E501
+    def get_opportunities_tasks_with_http_info(self, **kwargs):
+        """Get opportunities tasks
 
-        Return a list of opportunities tasks  ---  This route expires daily at 11:05  # noqa: E501
+        Return a list of opportunities tasks  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_opportunities_tasks_with_http_info(async_req=True)
@@ -400,7 +400,7 @@ class OpportunitiesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -422,11 +422,11 @@ class OpportunitiesApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -434,14 +434,14 @@ class OpportunitiesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/opportunities/tasks/', 'GET',
@@ -451,7 +451,7 @@ class OpportunitiesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -459,10 +459,10 @@ class OpportunitiesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_opportunities_tasks_task_id(self, task_id, **kwargs):  # noqa: E501
-        """Get opportunities task  # noqa: E501
+    def get_opportunities_tasks_task_id(self, task_id, **kwargs):
+        """Get opportunities task
 
-        Return information of an opportunities task  ---  This route expires daily at 11:05  # noqa: E501
+        Return information of an opportunities task  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_opportunities_tasks_task_id(task_id, async_req=True)
@@ -478,15 +478,15 @@ class OpportunitiesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_opportunities_tasks_task_id_with_http_info(task_id, **kwargs)  # noqa: E501
+            return self.get_opportunities_tasks_task_id_with_http_info(task_id, **kwargs)
         else:
-            (data) = self.get_opportunities_tasks_task_id_with_http_info(task_id, **kwargs)  # noqa: E501
+            (data) = self.get_opportunities_tasks_task_id_with_http_info(task_id, **kwargs)
             return data
 
-    def get_opportunities_tasks_task_id_with_http_info(self, task_id, **kwargs):  # noqa: E501
-        """Get opportunities task  # noqa: E501
+    def get_opportunities_tasks_task_id_with_http_info(self, task_id, **kwargs):
+        """Get opportunities task
 
-        Return information of an opportunities task  ---  This route expires daily at 11:05  # noqa: E501
+        Return information of an opportunities task  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_opportunities_tasks_task_id_with_http_info(task_id, async_req=True)
@@ -501,7 +501,7 @@ class OpportunitiesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['task_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['task_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -518,22 +518,22 @@ class OpportunitiesApi(object):
         del params['kwargs']
         # verify the required parameter 'task_id' is set
         if self.api_client.client_side_validation and ('task_id' not in params or
-                                                       params['task_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `task_id` when calling `get_opportunities_tasks_task_id`")  # noqa: E501
+                                                       params['task_id'] is None):
+            raise ValueError("Missing the required parameter `task_id` when calling `get_opportunities_tasks_task_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'task_id' in params:
-            path_params['task_id'] = params['task_id']  # noqa: E501
+            path_params['task_id'] = params['task_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -541,14 +541,14 @@ class OpportunitiesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/opportunities/tasks/{task_id}/', 'GET',
@@ -558,7 +558,7 @@ class OpportunitiesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

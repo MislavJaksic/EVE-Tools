@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class FactionWarfareApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id_fw_stats(self, character_id, **kwargs):  # noqa: E501
-        """Overview of a character involved in faction warfare  # noqa: E501
+    def get_characters_character_id_fw_stats(self, character_id, **kwargs):
+        """Overview of a character involved in faction warfare
 
-        Statistical overview of a character involved in faction warfare  ---  This route expires daily at 11:05  # noqa: E501
+        Statistical overview of a character involved in faction warfare  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_fw_stats(character_id, async_req=True)
@@ -53,15 +53,15 @@ class FactionWarfareApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_fw_stats_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_fw_stats_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_fw_stats_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_fw_stats_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_fw_stats_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Overview of a character involved in faction warfare  # noqa: E501
+    def get_characters_character_id_fw_stats_with_http_info(self, character_id, **kwargs):
+        """Overview of a character involved in faction warfare
 
-        Statistical overview of a character involved in faction warfare  ---  This route expires daily at 11:05  # noqa: E501
+        Statistical overview of a character involved in faction warfare  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_fw_stats_with_http_info(character_id, async_req=True)
@@ -77,7 +77,7 @@ class FactionWarfareApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,26 +94,26 @@ class FactionWarfareApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_fw_stats`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_fw_stats`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_fw_stats`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_fw_stats`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -121,14 +121,14 @@ class FactionWarfareApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/fw/stats/', 'GET',
@@ -138,7 +138,7 @@ class FactionWarfareApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -146,10 +146,10 @@ class FactionWarfareApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_fw_stats(self, corporation_id, **kwargs):  # noqa: E501
-        """Overview of a corporation involved in faction warfare  # noqa: E501
+    def get_corporations_corporation_id_fw_stats(self, corporation_id, **kwargs):
+        """Overview of a corporation involved in faction warfare
 
-        Statistics about a corporation involved in faction warfare  ---  This route expires daily at 11:05  # noqa: E501
+        Statistics about a corporation involved in faction warfare  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_fw_stats(corporation_id, async_req=True)
@@ -166,15 +166,15 @@ class FactionWarfareApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_fw_stats_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_fw_stats_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_fw_stats_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_fw_stats_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_fw_stats_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """Overview of a corporation involved in faction warfare  # noqa: E501
+    def get_corporations_corporation_id_fw_stats_with_http_info(self, corporation_id, **kwargs):
+        """Overview of a corporation involved in faction warfare
 
-        Statistics about a corporation involved in faction warfare  ---  This route expires daily at 11:05  # noqa: E501
+        Statistics about a corporation involved in faction warfare  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_fw_stats_with_http_info(corporation_id, async_req=True)
@@ -190,7 +190,7 @@ class FactionWarfareApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -207,26 +207,26 @@ class FactionWarfareApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_fw_stats`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_fw_stats`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_fw_stats`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_fw_stats`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -234,14 +234,14 @@ class FactionWarfareApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporations/{corporation_id}/fw/stats/', 'GET',
@@ -251,7 +251,7 @@ class FactionWarfareApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -259,10 +259,10 @@ class FactionWarfareApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_fw_leaderboards(self, **kwargs):  # noqa: E501
-        """List of the top factions in faction warfare  # noqa: E501
+    def get_fw_leaderboards(self, **kwargs):
+        """List of the top factions in faction warfare
 
-        Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05  # noqa: E501
+        Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_leaderboards(async_req=True)
@@ -277,15 +277,15 @@ class FactionWarfareApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_fw_leaderboards_with_http_info(**kwargs)  # noqa: E501
+            return self.get_fw_leaderboards_with_http_info(**kwargs)
         else:
-            (data) = self.get_fw_leaderboards_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_fw_leaderboards_with_http_info(**kwargs)
             return data
 
-    def get_fw_leaderboards_with_http_info(self, **kwargs):  # noqa: E501
-        """List of the top factions in faction warfare  # noqa: E501
+    def get_fw_leaderboards_with_http_info(self, **kwargs):
+        """List of the top factions in faction warfare
 
-        Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05  # noqa: E501
+        Top 4 leaderboard of factions for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_leaderboards_with_http_info(async_req=True)
@@ -299,7 +299,7 @@ class FactionWarfareApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -321,11 +321,11 @@ class FactionWarfareApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -333,14 +333,14 @@ class FactionWarfareApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/fw/leaderboards/', 'GET',
@@ -350,7 +350,7 @@ class FactionWarfareApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -358,10 +358,10 @@ class FactionWarfareApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_fw_leaderboards_characters(self, **kwargs):  # noqa: E501
-        """List of the top pilots in faction warfare  # noqa: E501
+    def get_fw_leaderboards_characters(self, **kwargs):
+        """List of the top pilots in faction warfare
 
-        Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05  # noqa: E501
+        Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_leaderboards_characters(async_req=True)
@@ -376,15 +376,15 @@ class FactionWarfareApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_fw_leaderboards_characters_with_http_info(**kwargs)  # noqa: E501
+            return self.get_fw_leaderboards_characters_with_http_info(**kwargs)
         else:
-            (data) = self.get_fw_leaderboards_characters_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_fw_leaderboards_characters_with_http_info(**kwargs)
             return data
 
-    def get_fw_leaderboards_characters_with_http_info(self, **kwargs):  # noqa: E501
-        """List of the top pilots in faction warfare  # noqa: E501
+    def get_fw_leaderboards_characters_with_http_info(self, **kwargs):
+        """List of the top pilots in faction warfare
 
-        Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05  # noqa: E501
+        Top 100 leaderboard of pilots for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_leaderboards_characters_with_http_info(async_req=True)
@@ -398,7 +398,7 @@ class FactionWarfareApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -420,11 +420,11 @@ class FactionWarfareApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -432,14 +432,14 @@ class FactionWarfareApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/fw/leaderboards/characters/', 'GET',
@@ -449,7 +449,7 @@ class FactionWarfareApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -457,10 +457,10 @@ class FactionWarfareApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_fw_leaderboards_corporations(self, **kwargs):  # noqa: E501
-        """List of the top corporations in faction warfare  # noqa: E501
+    def get_fw_leaderboards_corporations(self, **kwargs):
+        """List of the top corporations in faction warfare
 
-        Top 10 leaderboard of corporations for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05  # noqa: E501
+        Top 10 leaderboard of corporations for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_leaderboards_corporations(async_req=True)
@@ -475,15 +475,15 @@ class FactionWarfareApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_fw_leaderboards_corporations_with_http_info(**kwargs)  # noqa: E501
+            return self.get_fw_leaderboards_corporations_with_http_info(**kwargs)
         else:
-            (data) = self.get_fw_leaderboards_corporations_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_fw_leaderboards_corporations_with_http_info(**kwargs)
             return data
 
-    def get_fw_leaderboards_corporations_with_http_info(self, **kwargs):  # noqa: E501
-        """List of the top corporations in faction warfare  # noqa: E501
+    def get_fw_leaderboards_corporations_with_http_info(self, **kwargs):
+        """List of the top corporations in faction warfare
 
-        Top 10 leaderboard of corporations for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05  # noqa: E501
+        Top 10 leaderboard of corporations for kills and victory points separated by total, last week and yesterday  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_leaderboards_corporations_with_http_info(async_req=True)
@@ -497,7 +497,7 @@ class FactionWarfareApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -519,11 +519,11 @@ class FactionWarfareApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -531,14 +531,14 @@ class FactionWarfareApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/fw/leaderboards/corporations/', 'GET',
@@ -548,7 +548,7 @@ class FactionWarfareApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -556,10 +556,10 @@ class FactionWarfareApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_fw_stats(self, **kwargs):  # noqa: E501
-        """An overview of statistics about factions involved in faction warfare  # noqa: E501
+    def get_fw_stats(self, **kwargs):
+        """An overview of statistics about factions involved in faction warfare
 
-        Statistical overviews of factions involved in faction warfare  ---  This route expires daily at 11:05  # noqa: E501
+        Statistical overviews of factions involved in faction warfare  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_stats(async_req=True)
@@ -574,15 +574,15 @@ class FactionWarfareApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_fw_stats_with_http_info(**kwargs)  # noqa: E501
+            return self.get_fw_stats_with_http_info(**kwargs)
         else:
-            (data) = self.get_fw_stats_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_fw_stats_with_http_info(**kwargs)
             return data
 
-    def get_fw_stats_with_http_info(self, **kwargs):  # noqa: E501
-        """An overview of statistics about factions involved in faction warfare  # noqa: E501
+    def get_fw_stats_with_http_info(self, **kwargs):
+        """An overview of statistics about factions involved in faction warfare
 
-        Statistical overviews of factions involved in faction warfare  ---  This route expires daily at 11:05  # noqa: E501
+        Statistical overviews of factions involved in faction warfare  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_stats_with_http_info(async_req=True)
@@ -596,7 +596,7 @@ class FactionWarfareApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -618,11 +618,11 @@ class FactionWarfareApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -630,14 +630,14 @@ class FactionWarfareApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/fw/stats/', 'GET',
@@ -647,7 +647,7 @@ class FactionWarfareApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -655,10 +655,10 @@ class FactionWarfareApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_fw_systems(self, **kwargs):  # noqa: E501
-        """Ownership of faction warfare systems  # noqa: E501
+    def get_fw_systems(self, **kwargs):
+        """Ownership of faction warfare systems
 
-        An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds  # noqa: E501
+        An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_systems(async_req=True)
@@ -673,15 +673,15 @@ class FactionWarfareApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_fw_systems_with_http_info(**kwargs)  # noqa: E501
+            return self.get_fw_systems_with_http_info(**kwargs)
         else:
-            (data) = self.get_fw_systems_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_fw_systems_with_http_info(**kwargs)
             return data
 
-    def get_fw_systems_with_http_info(self, **kwargs):  # noqa: E501
-        """Ownership of faction warfare systems  # noqa: E501
+    def get_fw_systems_with_http_info(self, **kwargs):
+        """Ownership of faction warfare systems
 
-        An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds  # noqa: E501
+        An overview of the current ownership of faction warfare solar systems  ---  This route is cached for up to 1800 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_systems_with_http_info(async_req=True)
@@ -695,7 +695,7 @@ class FactionWarfareApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -717,11 +717,11 @@ class FactionWarfareApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -729,14 +729,14 @@ class FactionWarfareApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v2/fw/systems/', 'GET',
@@ -746,7 +746,7 @@ class FactionWarfareApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -754,10 +754,10 @@ class FactionWarfareApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_fw_wars(self, **kwargs):  # noqa: E501
-        """Data about which NPC factions are at war  # noqa: E501
+    def get_fw_wars(self, **kwargs):
+        """Data about which NPC factions are at war
 
-        Data about which NPC factions are at war  ---  This route expires daily at 11:05  # noqa: E501
+        Data about which NPC factions are at war  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_wars(async_req=True)
@@ -772,15 +772,15 @@ class FactionWarfareApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_fw_wars_with_http_info(**kwargs)  # noqa: E501
+            return self.get_fw_wars_with_http_info(**kwargs)
         else:
-            (data) = self.get_fw_wars_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_fw_wars_with_http_info(**kwargs)
             return data
 
-    def get_fw_wars_with_http_info(self, **kwargs):  # noqa: E501
-        """Data about which NPC factions are at war  # noqa: E501
+    def get_fw_wars_with_http_info(self, **kwargs):
+        """Data about which NPC factions are at war
 
-        Data about which NPC factions are at war  ---  This route expires daily at 11:05  # noqa: E501
+        Data about which NPC factions are at war  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fw_wars_with_http_info(async_req=True)
@@ -794,7 +794,7 @@ class FactionWarfareApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -816,11 +816,11 @@ class FactionWarfareApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -828,14 +828,14 @@ class FactionWarfareApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/fw/wars/', 'GET',
@@ -845,7 +845,7 @@ class FactionWarfareApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

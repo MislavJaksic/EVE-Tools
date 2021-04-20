@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class SearchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id_search(self, categories, character_id, search, **kwargs):  # noqa: E501
-        """Search on a string  # noqa: E501
+    def get_characters_character_id_search(self, categories, character_id, search, **kwargs):
+        """Search on a string
 
-        Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_search(categories, character_id, search, async_req=True)
@@ -58,15 +58,15 @@ class SearchApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_search_with_http_info(categories, character_id, search, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_search_with_http_info(categories, character_id, search, **kwargs)
         else:
-            (data) = self.get_characters_character_id_search_with_http_info(categories, character_id, search, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_search_with_http_info(categories, character_id, search, **kwargs)
             return data
 
-    def get_characters_character_id_search_with_http_info(self, categories, character_id, search, **kwargs):  # noqa: E501
-        """Search on a string  # noqa: E501
+    def get_characters_character_id_search_with_http_info(self, categories, character_id, search, **kwargs):
+        """Search on a string
 
-        Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_search_with_http_info(categories, character_id, search, async_req=True)
@@ -87,7 +87,7 @@ class SearchApi(object):
                  returns the request thread.
         """
 
-        all_params = ['categories', 'character_id', 'search', 'accept_language', 'datasource', 'if_none_match', 'language', 'strict', 'token']  # noqa: E501
+        all_params = ['categories', 'character_id', 'search', 'accept_language', 'datasource', 'if_none_match', 'language', 'strict', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -104,54 +104,54 @@ class SearchApi(object):
         del params['kwargs']
         # verify the required parameter 'categories' is set
         if self.api_client.client_side_validation and ('categories' not in params or
-                                                       params['categories'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `categories` when calling `get_characters_character_id_search`")  # noqa: E501
+                                                       params['categories'] is None):
+            raise ValueError("Missing the required parameter `categories` when calling `get_characters_character_id_search`")
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_search`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_search`")
         # verify the required parameter 'search' is set
         if self.api_client.client_side_validation and ('search' not in params or
-                                                       params['search'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `search` when calling `get_characters_character_id_search`")  # noqa: E501
+                                                       params['search'] is None):
+            raise ValueError("Missing the required parameter `search` when calling `get_characters_character_id_search`")
 
         if self.api_client.client_side_validation and ('categories' in params and
                                             len(params['categories']) > 11):
-            raise ValueError("Invalid value for parameter `categories` when calling `get_characters_character_id_search`, number of items must be less than or equal to `11`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `categories` when calling `get_characters_character_id_search`, number of items must be less than or equal to `11`")
         if self.api_client.client_side_validation and ('categories' in params and
                                             len(params['categories']) < 1):
-            raise ValueError("Invalid value for parameter `categories` when calling `get_characters_character_id_search`, number of items must be greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_search`, must be a value greater than or equal to `1`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `categories` when calling `get_characters_character_id_search`, number of items must be greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_search`, must be a value greater than or equal to `1`")
         if self.api_client.client_side_validation and ('search' in params and
                                                        len(params['search']) < 3):
-            raise ValueError("Invalid value for parameter `search` when calling `get_characters_character_id_search`, length must be greater than or equal to `3`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `search` when calling `get_characters_character_id_search`, length must be greater than or equal to `3`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'categories' in params:
-            query_params.append(('categories', params['categories']))  # noqa: E501
-            collection_formats['categories'] = 'multi'  # noqa: E501
+            query_params.append(('categories', params['categories']))
+            collection_formats['categories'] = 'multi'
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
         if 'search' in params:
-            query_params.append(('search', params['search']))  # noqa: E501
+            query_params.append(('search', params['search']))
         if 'strict' in params:
-            query_params.append(('strict', params['strict']))  # noqa: E501
+            query_params.append(('strict', params['strict']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -159,14 +159,14 @@ class SearchApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v3/characters/{character_id}/search/', 'GET',
@@ -176,7 +176,7 @@ class SearchApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -184,10 +184,10 @@ class SearchApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_search(self, categories, search, **kwargs):  # noqa: E501
-        """Search on a string  # noqa: E501
+    def get_search(self, categories, search, **kwargs):
+        """Search on a string
 
-        Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_search(categories, search, async_req=True)
@@ -207,15 +207,15 @@ class SearchApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_search_with_http_info(categories, search, **kwargs)  # noqa: E501
+            return self.get_search_with_http_info(categories, search, **kwargs)
         else:
-            (data) = self.get_search_with_http_info(categories, search, **kwargs)  # noqa: E501
+            (data) = self.get_search_with_http_info(categories, search, **kwargs)
             return data
 
-    def get_search_with_http_info(self, categories, search, **kwargs):  # noqa: E501
-        """Search on a string  # noqa: E501
+    def get_search_with_http_info(self, categories, search, **kwargs):
+        """Search on a string
 
-        Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Search for entities that match a given sub-string.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_search_with_http_info(categories, search, async_req=True)
@@ -234,7 +234,7 @@ class SearchApi(object):
                  returns the request thread.
         """
 
-        all_params = ['categories', 'search', 'accept_language', 'datasource', 'if_none_match', 'language', 'strict']  # noqa: E501
+        all_params = ['categories', 'search', 'accept_language', 'datasource', 'if_none_match', 'language', 'strict']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -251,44 +251,44 @@ class SearchApi(object):
         del params['kwargs']
         # verify the required parameter 'categories' is set
         if self.api_client.client_side_validation and ('categories' not in params or
-                                                       params['categories'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `categories` when calling `get_search`")  # noqa: E501
+                                                       params['categories'] is None):
+            raise ValueError("Missing the required parameter `categories` when calling `get_search`")
         # verify the required parameter 'search' is set
         if self.api_client.client_side_validation and ('search' not in params or
-                                                       params['search'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `search` when calling `get_search`")  # noqa: E501
+                                                       params['search'] is None):
+            raise ValueError("Missing the required parameter `search` when calling `get_search`")
 
         if self.api_client.client_side_validation and ('categories' in params and
                                             len(params['categories']) > 10):
-            raise ValueError("Invalid value for parameter `categories` when calling `get_search`, number of items must be less than or equal to `10`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `categories` when calling `get_search`, number of items must be less than or equal to `10`")
         if self.api_client.client_side_validation and ('categories' in params and
                                             len(params['categories']) < 1):
-            raise ValueError("Invalid value for parameter `categories` when calling `get_search`, number of items must be greater than or equal to `1`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `categories` when calling `get_search`, number of items must be greater than or equal to `1`")
         if self.api_client.client_side_validation and ('search' in params and
                                                        len(params['search']) < 3):
-            raise ValueError("Invalid value for parameter `search` when calling `get_search`, length must be greater than or equal to `3`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `search` when calling `get_search`, length must be greater than or equal to `3`")
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
         if 'categories' in params:
-            query_params.append(('categories', params['categories']))  # noqa: E501
-            collection_formats['categories'] = 'multi'  # noqa: E501
+            query_params.append(('categories', params['categories']))
+            collection_formats['categories'] = 'multi'
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
         if 'search' in params:
-            query_params.append(('search', params['search']))  # noqa: E501
+            query_params.append(('search', params['search']))
         if 'strict' in params:
-            query_params.append(('strict', params['strict']))  # noqa: E501
+            query_params.append(('strict', params['strict']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -296,14 +296,14 @@ class SearchApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v2/search/', 'GET',
@@ -313,7 +313,7 @@ class SearchApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

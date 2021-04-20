@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class FleetsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def delete_fleets_fleet_id_members_member_id(self, fleet_id, member_id, **kwargs):  # noqa: E501
-        """Kick fleet member  # noqa: E501
+    def delete_fleets_fleet_id_members_member_id(self, fleet_id, member_id, **kwargs):
+        """Kick fleet member
 
-        Kick a fleet member  ---   # noqa: E501
+        Kick a fleet member  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_fleets_fleet_id_members_member_id(fleet_id, member_id, async_req=True)
@@ -53,15 +53,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, **kwargs)  # noqa: E501
+            return self.delete_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, **kwargs)
         else:
-            (data) = self.delete_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, **kwargs)  # noqa: E501
+            (data) = self.delete_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, **kwargs)
             return data
 
-    def delete_fleets_fleet_id_members_member_id_with_http_info(self, fleet_id, member_id, **kwargs):  # noqa: E501
-        """Kick fleet member  # noqa: E501
+    def delete_fleets_fleet_id_members_member_id_with_http_info(self, fleet_id, member_id, **kwargs):
+        """Kick fleet member
 
-        Kick a fleet member  ---   # noqa: E501
+        Kick a fleet member  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, async_req=True)
@@ -77,7 +77,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'member_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'member_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,26 +94,26 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `delete_fleets_fleet_id_members_member_id`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `delete_fleets_fleet_id_members_member_id`")
         # verify the required parameter 'member_id' is set
         if self.api_client.client_side_validation and ('member_id' not in params or
-                                                       params['member_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `member_id` when calling `delete_fleets_fleet_id_members_member_id`")  # noqa: E501
+                                                       params['member_id'] is None):
+            raise ValueError("Missing the required parameter `member_id` when calling `delete_fleets_fleet_id_members_member_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
         if 'member_id' in params:
-            path_params['member_id'] = params['member_id']  # noqa: E501
+            path_params['member_id'] = params['member_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -123,14 +123,14 @@ class FleetsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/members/{member_id}/', 'DELETE',
@@ -140,7 +140,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -148,10 +148,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_fleets_fleet_id_squads_squad_id(self, fleet_id, squad_id, **kwargs):  # noqa: E501
-        """Delete fleet squad  # noqa: E501
+    def delete_fleets_fleet_id_squads_squad_id(self, fleet_id, squad_id, **kwargs):
+        """Delete fleet squad
 
-        Delete a fleet squad, only empty squads can be deleted  ---   # noqa: E501
+        Delete a fleet squad, only empty squads can be deleted  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_fleets_fleet_id_squads_squad_id(fleet_id, squad_id, async_req=True)
@@ -168,15 +168,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, squad_id, **kwargs)  # noqa: E501
+            return self.delete_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, squad_id, **kwargs)
         else:
-            (data) = self.delete_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, squad_id, **kwargs)  # noqa: E501
+            (data) = self.delete_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, squad_id, **kwargs)
             return data
 
-    def delete_fleets_fleet_id_squads_squad_id_with_http_info(self, fleet_id, squad_id, **kwargs):  # noqa: E501
-        """Delete fleet squad  # noqa: E501
+    def delete_fleets_fleet_id_squads_squad_id_with_http_info(self, fleet_id, squad_id, **kwargs):
+        """Delete fleet squad
 
-        Delete a fleet squad, only empty squads can be deleted  ---   # noqa: E501
+        Delete a fleet squad, only empty squads can be deleted  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, squad_id, async_req=True)
@@ -192,7 +192,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'squad_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'squad_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -209,26 +209,26 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `delete_fleets_fleet_id_squads_squad_id`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `delete_fleets_fleet_id_squads_squad_id`")
         # verify the required parameter 'squad_id' is set
         if self.api_client.client_side_validation and ('squad_id' not in params or
-                                                       params['squad_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `squad_id` when calling `delete_fleets_fleet_id_squads_squad_id`")  # noqa: E501
+                                                       params['squad_id'] is None):
+            raise ValueError("Missing the required parameter `squad_id` when calling `delete_fleets_fleet_id_squads_squad_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
         if 'squad_id' in params:
-            path_params['squad_id'] = params['squad_id']  # noqa: E501
+            path_params['squad_id'] = params['squad_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -238,14 +238,14 @@ class FleetsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/squads/{squad_id}/', 'DELETE',
@@ -255,7 +255,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -263,10 +263,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_fleets_fleet_id_wings_wing_id(self, fleet_id, wing_id, **kwargs):  # noqa: E501
-        """Delete fleet wing  # noqa: E501
+    def delete_fleets_fleet_id_wings_wing_id(self, fleet_id, wing_id, **kwargs):
+        """Delete fleet wing
 
-        Delete a fleet wing, only empty wings can be deleted. The wing may contain squads, but the squads must be empty  ---   # noqa: E501
+        Delete a fleet wing, only empty wings can be deleted. The wing may contain squads, but the squads must be empty  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_fleets_fleet_id_wings_wing_id(fleet_id, wing_id, async_req=True)
@@ -283,15 +283,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, wing_id, **kwargs)  # noqa: E501
+            return self.delete_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, wing_id, **kwargs)
         else:
-            (data) = self.delete_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, wing_id, **kwargs)  # noqa: E501
+            (data) = self.delete_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, wing_id, **kwargs)
             return data
 
-    def delete_fleets_fleet_id_wings_wing_id_with_http_info(self, fleet_id, wing_id, **kwargs):  # noqa: E501
-        """Delete fleet wing  # noqa: E501
+    def delete_fleets_fleet_id_wings_wing_id_with_http_info(self, fleet_id, wing_id, **kwargs):
+        """Delete fleet wing
 
-        Delete a fleet wing, only empty wings can be deleted. The wing may contain squads, but the squads must be empty  ---   # noqa: E501
+        Delete a fleet wing, only empty wings can be deleted. The wing may contain squads, but the squads must be empty  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, wing_id, async_req=True)
@@ -307,7 +307,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'wing_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'wing_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -324,26 +324,26 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `delete_fleets_fleet_id_wings_wing_id`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `delete_fleets_fleet_id_wings_wing_id`")
         # verify the required parameter 'wing_id' is set
         if self.api_client.client_side_validation and ('wing_id' not in params or
-                                                       params['wing_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `wing_id` when calling `delete_fleets_fleet_id_wings_wing_id`")  # noqa: E501
+                                                       params['wing_id'] is None):
+            raise ValueError("Missing the required parameter `wing_id` when calling `delete_fleets_fleet_id_wings_wing_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
         if 'wing_id' in params:
-            path_params['wing_id'] = params['wing_id']  # noqa: E501
+            path_params['wing_id'] = params['wing_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -353,14 +353,14 @@ class FleetsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/wings/{wing_id}/', 'DELETE',
@@ -370,7 +370,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -378,10 +378,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_fleet(self, character_id, **kwargs):  # noqa: E501
-        """Get character fleet info  # noqa: E501
+    def get_characters_character_id_fleet(self, character_id, **kwargs):
+        """Get character fleet info
 
-        Return the fleet ID the character is in, if any.  ---  This route is cached for up to 60 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/fleet/)  # noqa: E501
+        Return the fleet ID the character is in, if any.  ---  This route is cached for up to 60 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/fleet/)
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_fleet(character_id, async_req=True)
@@ -398,15 +398,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_fleet_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_fleet_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_fleet_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_fleet_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_fleet_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get character fleet info  # noqa: E501
+    def get_characters_character_id_fleet_with_http_info(self, character_id, **kwargs):
+        """Get character fleet info
 
-        Return the fleet ID the character is in, if any.  ---  This route is cached for up to 60 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/fleet/)  # noqa: E501
+        Return the fleet ID the character is in, if any.  ---  This route is cached for up to 60 seconds  --- Warning: This route has an upgrade available  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/fleet/)
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_fleet_with_http_info(character_id, async_req=True)
@@ -422,7 +422,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -439,26 +439,26 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_fleet`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_fleet`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_fleet`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_fleet`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -466,14 +466,14 @@ class FleetsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/fleet/', 'GET',
@@ -483,7 +483,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -491,10 +491,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_fleets_fleet_id(self, fleet_id, **kwargs):  # noqa: E501
-        """Get fleet information  # noqa: E501
+    def get_fleets_fleet_id(self, fleet_id, **kwargs):
+        """Get fleet information
 
-        Return details about a fleet  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Return details about a fleet  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fleets_fleet_id(fleet_id, async_req=True)
@@ -511,15 +511,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_fleets_fleet_id_with_http_info(fleet_id, **kwargs)  # noqa: E501
+            return self.get_fleets_fleet_id_with_http_info(fleet_id, **kwargs)
         else:
-            (data) = self.get_fleets_fleet_id_with_http_info(fleet_id, **kwargs)  # noqa: E501
+            (data) = self.get_fleets_fleet_id_with_http_info(fleet_id, **kwargs)
             return data
 
-    def get_fleets_fleet_id_with_http_info(self, fleet_id, **kwargs):  # noqa: E501
-        """Get fleet information  # noqa: E501
+    def get_fleets_fleet_id_with_http_info(self, fleet_id, **kwargs):
+        """Get fleet information
 
-        Return details about a fleet  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Return details about a fleet  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fleets_fleet_id_with_http_info(fleet_id, async_req=True)
@@ -535,7 +535,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -552,24 +552,24 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `get_fleets_fleet_id`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `get_fleets_fleet_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -577,14 +577,14 @@ class FleetsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/', 'GET',
@@ -594,7 +594,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -602,10 +602,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_fleets_fleet_id_members(self, fleet_id, **kwargs):  # noqa: E501
-        """Get fleet members  # noqa: E501
+    def get_fleets_fleet_id_members(self, fleet_id, **kwargs):
+        """Get fleet members
 
-        Return information about fleet members  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Return information about fleet members  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fleets_fleet_id_members(fleet_id, async_req=True)
@@ -624,15 +624,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_fleets_fleet_id_members_with_http_info(fleet_id, **kwargs)  # noqa: E501
+            return self.get_fleets_fleet_id_members_with_http_info(fleet_id, **kwargs)
         else:
-            (data) = self.get_fleets_fleet_id_members_with_http_info(fleet_id, **kwargs)  # noqa: E501
+            (data) = self.get_fleets_fleet_id_members_with_http_info(fleet_id, **kwargs)
             return data
 
-    def get_fleets_fleet_id_members_with_http_info(self, fleet_id, **kwargs):  # noqa: E501
-        """Get fleet members  # noqa: E501
+    def get_fleets_fleet_id_members_with_http_info(self, fleet_id, **kwargs):
+        """Get fleet members
 
-        Return information about fleet members  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Return information about fleet members  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fleets_fleet_id_members_with_http_info(fleet_id, async_req=True)
@@ -650,7 +650,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'accept_language', 'datasource', 'if_none_match', 'language', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'accept_language', 'datasource', 'if_none_match', 'language', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -667,28 +667,28 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `get_fleets_fleet_id_members`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `get_fleets_fleet_id_members`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -696,14 +696,14 @@ class FleetsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/members/', 'GET',
@@ -713,7 +713,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -721,10 +721,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_fleets_fleet_id_wings(self, fleet_id, **kwargs):  # noqa: E501
-        """Get fleet wings  # noqa: E501
+    def get_fleets_fleet_id_wings(self, fleet_id, **kwargs):
+        """Get fleet wings
 
-        Return information about wings in a fleet  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Return information about wings in a fleet  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fleets_fleet_id_wings(fleet_id, async_req=True)
@@ -743,15 +743,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)  # noqa: E501
+            return self.get_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)
         else:
-            (data) = self.get_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)  # noqa: E501
+            (data) = self.get_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)
             return data
 
-    def get_fleets_fleet_id_wings_with_http_info(self, fleet_id, **kwargs):  # noqa: E501
-        """Get fleet wings  # noqa: E501
+    def get_fleets_fleet_id_wings_with_http_info(self, fleet_id, **kwargs):
+        """Get fleet wings
 
-        Return information about wings in a fleet  ---  This route is cached for up to 5 seconds  # noqa: E501
+        Return information about wings in a fleet  ---  This route is cached for up to 5 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_fleets_fleet_id_wings_with_http_info(fleet_id, async_req=True)
@@ -769,7 +769,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'accept_language', 'datasource', 'if_none_match', 'language', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'accept_language', 'datasource', 'if_none_match', 'language', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -786,28 +786,28 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `get_fleets_fleet_id_wings`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `get_fleets_fleet_id_wings`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -815,14 +815,14 @@ class FleetsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/wings/', 'GET',
@@ -832,7 +832,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -840,10 +840,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_fleets_fleet_id_members(self, fleet_id, invitation, **kwargs):  # noqa: E501
-        """Create fleet invitation  # noqa: E501
+    def post_fleets_fleet_id_members(self, fleet_id, invitation, **kwargs):
+        """Create fleet invitation
 
-        Invite a character into the fleet. If a character has a CSPA charge set it is not possible to invite them to the fleet using ESI  ---   # noqa: E501
+        Invite a character into the fleet. If a character has a CSPA charge set it is not possible to invite them to the fleet using ESI  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_fleets_fleet_id_members(fleet_id, invitation, async_req=True)
@@ -860,15 +860,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_fleets_fleet_id_members_with_http_info(fleet_id, invitation, **kwargs)  # noqa: E501
+            return self.post_fleets_fleet_id_members_with_http_info(fleet_id, invitation, **kwargs)
         else:
-            (data) = self.post_fleets_fleet_id_members_with_http_info(fleet_id, invitation, **kwargs)  # noqa: E501
+            (data) = self.post_fleets_fleet_id_members_with_http_info(fleet_id, invitation, **kwargs)
             return data
 
-    def post_fleets_fleet_id_members_with_http_info(self, fleet_id, invitation, **kwargs):  # noqa: E501
-        """Create fleet invitation  # noqa: E501
+    def post_fleets_fleet_id_members_with_http_info(self, fleet_id, invitation, **kwargs):
+        """Create fleet invitation
 
-        Invite a character into the fleet. If a character has a CSPA charge set it is not possible to invite them to the fleet using ESI  ---   # noqa: E501
+        Invite a character into the fleet. If a character has a CSPA charge set it is not possible to invite them to the fleet using ESI  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_fleets_fleet_id_members_with_http_info(fleet_id, invitation, async_req=True)
@@ -884,7 +884,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'invitation', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'invitation', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -901,24 +901,24 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `post_fleets_fleet_id_members`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `post_fleets_fleet_id_members`")
         # verify the required parameter 'invitation' is set
         if self.api_client.client_side_validation and ('invitation' not in params or
-                                                       params['invitation'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `invitation` when calling `post_fleets_fleet_id_members`")  # noqa: E501
+                                                       params['invitation'] is None):
+            raise ValueError("Missing the required parameter `invitation` when calling `post_fleets_fleet_id_members`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -930,14 +930,14 @@ class FleetsApi(object):
             body_params = params['invitation']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/members/', 'POST',
@@ -947,7 +947,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -955,10 +955,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_fleets_fleet_id_wings(self, fleet_id, **kwargs):  # noqa: E501
-        """Create fleet wing  # noqa: E501
+    def post_fleets_fleet_id_wings(self, fleet_id, **kwargs):
+        """Create fleet wing
 
-        Create a new wing in a fleet  ---   # noqa: E501
+        Create a new wing in a fleet  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_fleets_fleet_id_wings(fleet_id, async_req=True)
@@ -974,15 +974,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)  # noqa: E501
+            return self.post_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)
         else:
-            (data) = self.post_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)  # noqa: E501
+            (data) = self.post_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)
             return data
 
-    def post_fleets_fleet_id_wings_with_http_info(self, fleet_id, **kwargs):  # noqa: E501
-        """Create fleet wing  # noqa: E501
+    def post_fleets_fleet_id_wings_with_http_info(self, fleet_id, **kwargs):
+        """Create fleet wing
 
-        Create a new wing in a fleet  ---   # noqa: E501
+        Create a new wing in a fleet  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_fleets_fleet_id_wings_with_http_info(fleet_id, async_req=True)
@@ -997,7 +997,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1014,20 +1014,20 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `post_fleets_fleet_id_wings`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `post_fleets_fleet_id_wings`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -1037,14 +1037,14 @@ class FleetsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/wings/', 'POST',
@@ -1054,7 +1054,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1062,10 +1062,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_fleets_fleet_id_wings_wing_id_squads(self, fleet_id, wing_id, **kwargs):  # noqa: E501
-        """Create fleet squad  # noqa: E501
+    def post_fleets_fleet_id_wings_wing_id_squads(self, fleet_id, wing_id, **kwargs):
+        """Create fleet squad
 
-        Create a new squad in a fleet  ---   # noqa: E501
+        Create a new squad in a fleet  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_fleets_fleet_id_wings_wing_id_squads(fleet_id, wing_id, async_req=True)
@@ -1082,15 +1082,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_fleets_fleet_id_wings_wing_id_squads_with_http_info(fleet_id, wing_id, **kwargs)  # noqa: E501
+            return self.post_fleets_fleet_id_wings_wing_id_squads_with_http_info(fleet_id, wing_id, **kwargs)
         else:
-            (data) = self.post_fleets_fleet_id_wings_wing_id_squads_with_http_info(fleet_id, wing_id, **kwargs)  # noqa: E501
+            (data) = self.post_fleets_fleet_id_wings_wing_id_squads_with_http_info(fleet_id, wing_id, **kwargs)
             return data
 
-    def post_fleets_fleet_id_wings_wing_id_squads_with_http_info(self, fleet_id, wing_id, **kwargs):  # noqa: E501
-        """Create fleet squad  # noqa: E501
+    def post_fleets_fleet_id_wings_wing_id_squads_with_http_info(self, fleet_id, wing_id, **kwargs):
+        """Create fleet squad
 
-        Create a new squad in a fleet  ---   # noqa: E501
+        Create a new squad in a fleet  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_fleets_fleet_id_wings_wing_id_squads_with_http_info(fleet_id, wing_id, async_req=True)
@@ -1106,7 +1106,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'wing_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'wing_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1123,26 +1123,26 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `post_fleets_fleet_id_wings_wing_id_squads`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `post_fleets_fleet_id_wings_wing_id_squads`")
         # verify the required parameter 'wing_id' is set
         if self.api_client.client_side_validation and ('wing_id' not in params or
-                                                       params['wing_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `wing_id` when calling `post_fleets_fleet_id_wings_wing_id_squads`")  # noqa: E501
+                                                       params['wing_id'] is None):
+            raise ValueError("Missing the required parameter `wing_id` when calling `post_fleets_fleet_id_wings_wing_id_squads`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
         if 'wing_id' in params:
-            path_params['wing_id'] = params['wing_id']  # noqa: E501
+            path_params['wing_id'] = params['wing_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -1152,14 +1152,14 @@ class FleetsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/wings/{wing_id}/squads/', 'POST',
@@ -1169,7 +1169,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1177,10 +1177,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_fleets_fleet_id(self, fleet_id, new_settings, **kwargs):  # noqa: E501
-        """Update fleet  # noqa: E501
+    def put_fleets_fleet_id(self, fleet_id, new_settings, **kwargs):
+        """Update fleet
 
-        Update settings about a fleet  ---   # noqa: E501
+        Update settings about a fleet  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_fleets_fleet_id(fleet_id, new_settings, async_req=True)
@@ -1197,15 +1197,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.put_fleets_fleet_id_with_http_info(fleet_id, new_settings, **kwargs)  # noqa: E501
+            return self.put_fleets_fleet_id_with_http_info(fleet_id, new_settings, **kwargs)
         else:
-            (data) = self.put_fleets_fleet_id_with_http_info(fleet_id, new_settings, **kwargs)  # noqa: E501
+            (data) = self.put_fleets_fleet_id_with_http_info(fleet_id, new_settings, **kwargs)
             return data
 
-    def put_fleets_fleet_id_with_http_info(self, fleet_id, new_settings, **kwargs):  # noqa: E501
-        """Update fleet  # noqa: E501
+    def put_fleets_fleet_id_with_http_info(self, fleet_id, new_settings, **kwargs):
+        """Update fleet
 
-        Update settings about a fleet  ---   # noqa: E501
+        Update settings about a fleet  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_fleets_fleet_id_with_http_info(fleet_id, new_settings, async_req=True)
@@ -1221,7 +1221,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'new_settings', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'new_settings', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1238,24 +1238,24 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `put_fleets_fleet_id`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `put_fleets_fleet_id`")
         # verify the required parameter 'new_settings' is set
         if self.api_client.client_side_validation and ('new_settings' not in params or
-                                                       params['new_settings'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `new_settings` when calling `put_fleets_fleet_id`")  # noqa: E501
+                                                       params['new_settings'] is None):
+            raise ValueError("Missing the required parameter `new_settings` when calling `put_fleets_fleet_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -1267,14 +1267,14 @@ class FleetsApi(object):
             body_params = params['new_settings']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/', 'PUT',
@@ -1284,7 +1284,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1292,10 +1292,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_fleets_fleet_id_members_member_id(self, fleet_id, member_id, movement, **kwargs):  # noqa: E501
-        """Move fleet member  # noqa: E501
+    def put_fleets_fleet_id_members_member_id(self, fleet_id, member_id, movement, **kwargs):
+        """Move fleet member
 
-        Move a fleet member around  ---   # noqa: E501
+        Move a fleet member around  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_fleets_fleet_id_members_member_id(fleet_id, member_id, movement, async_req=True)
@@ -1313,15 +1313,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.put_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, movement, **kwargs)  # noqa: E501
+            return self.put_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, movement, **kwargs)
         else:
-            (data) = self.put_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, movement, **kwargs)  # noqa: E501
+            (data) = self.put_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, movement, **kwargs)
             return data
 
-    def put_fleets_fleet_id_members_member_id_with_http_info(self, fleet_id, member_id, movement, **kwargs):  # noqa: E501
-        """Move fleet member  # noqa: E501
+    def put_fleets_fleet_id_members_member_id_with_http_info(self, fleet_id, member_id, movement, **kwargs):
+        """Move fleet member
 
-        Move a fleet member around  ---   # noqa: E501
+        Move a fleet member around  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, movement, async_req=True)
@@ -1338,7 +1338,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'member_id', 'movement', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'member_id', 'movement', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1355,30 +1355,30 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `put_fleets_fleet_id_members_member_id`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `put_fleets_fleet_id_members_member_id`")
         # verify the required parameter 'member_id' is set
         if self.api_client.client_side_validation and ('member_id' not in params or
-                                                       params['member_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `member_id` when calling `put_fleets_fleet_id_members_member_id`")  # noqa: E501
+                                                       params['member_id'] is None):
+            raise ValueError("Missing the required parameter `member_id` when calling `put_fleets_fleet_id_members_member_id`")
         # verify the required parameter 'movement' is set
         if self.api_client.client_side_validation and ('movement' not in params or
-                                                       params['movement'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `movement` when calling `put_fleets_fleet_id_members_member_id`")  # noqa: E501
+                                                       params['movement'] is None):
+            raise ValueError("Missing the required parameter `movement` when calling `put_fleets_fleet_id_members_member_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
         if 'member_id' in params:
-            path_params['member_id'] = params['member_id']  # noqa: E501
+            path_params['member_id'] = params['member_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -1390,14 +1390,14 @@ class FleetsApi(object):
             body_params = params['movement']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/members/{member_id}/', 'PUT',
@@ -1407,7 +1407,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1415,10 +1415,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_fleets_fleet_id_squads_squad_id(self, fleet_id, naming, squad_id, **kwargs):  # noqa: E501
-        """Rename fleet squad  # noqa: E501
+    def put_fleets_fleet_id_squads_squad_id(self, fleet_id, naming, squad_id, **kwargs):
+        """Rename fleet squad
 
-        Rename a fleet squad  ---   # noqa: E501
+        Rename a fleet squad  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_fleets_fleet_id_squads_squad_id(fleet_id, naming, squad_id, async_req=True)
@@ -1436,15 +1436,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.put_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, naming, squad_id, **kwargs)  # noqa: E501
+            return self.put_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, naming, squad_id, **kwargs)
         else:
-            (data) = self.put_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, naming, squad_id, **kwargs)  # noqa: E501
+            (data) = self.put_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, naming, squad_id, **kwargs)
             return data
 
-    def put_fleets_fleet_id_squads_squad_id_with_http_info(self, fleet_id, naming, squad_id, **kwargs):  # noqa: E501
-        """Rename fleet squad  # noqa: E501
+    def put_fleets_fleet_id_squads_squad_id_with_http_info(self, fleet_id, naming, squad_id, **kwargs):
+        """Rename fleet squad
 
-        Rename a fleet squad  ---   # noqa: E501
+        Rename a fleet squad  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, naming, squad_id, async_req=True)
@@ -1461,7 +1461,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'naming', 'squad_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'naming', 'squad_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1478,30 +1478,30 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `put_fleets_fleet_id_squads_squad_id`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `put_fleets_fleet_id_squads_squad_id`")
         # verify the required parameter 'naming' is set
         if self.api_client.client_side_validation and ('naming' not in params or
-                                                       params['naming'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `naming` when calling `put_fleets_fleet_id_squads_squad_id`")  # noqa: E501
+                                                       params['naming'] is None):
+            raise ValueError("Missing the required parameter `naming` when calling `put_fleets_fleet_id_squads_squad_id`")
         # verify the required parameter 'squad_id' is set
         if self.api_client.client_side_validation and ('squad_id' not in params or
-                                                       params['squad_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `squad_id` when calling `put_fleets_fleet_id_squads_squad_id`")  # noqa: E501
+                                                       params['squad_id'] is None):
+            raise ValueError("Missing the required parameter `squad_id` when calling `put_fleets_fleet_id_squads_squad_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
         if 'squad_id' in params:
-            path_params['squad_id'] = params['squad_id']  # noqa: E501
+            path_params['squad_id'] = params['squad_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -1513,14 +1513,14 @@ class FleetsApi(object):
             body_params = params['naming']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/squads/{squad_id}/', 'PUT',
@@ -1530,7 +1530,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1538,10 +1538,10 @@ class FleetsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_fleets_fleet_id_wings_wing_id(self, fleet_id, naming, wing_id, **kwargs):  # noqa: E501
-        """Rename fleet wing  # noqa: E501
+    def put_fleets_fleet_id_wings_wing_id(self, fleet_id, naming, wing_id, **kwargs):
+        """Rename fleet wing
 
-        Rename a fleet wing  ---   # noqa: E501
+        Rename a fleet wing  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_fleets_fleet_id_wings_wing_id(fleet_id, naming, wing_id, async_req=True)
@@ -1559,15 +1559,15 @@ class FleetsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.put_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, naming, wing_id, **kwargs)  # noqa: E501
+            return self.put_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, naming, wing_id, **kwargs)
         else:
-            (data) = self.put_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, naming, wing_id, **kwargs)  # noqa: E501
+            (data) = self.put_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, naming, wing_id, **kwargs)
             return data
 
-    def put_fleets_fleet_id_wings_wing_id_with_http_info(self, fleet_id, naming, wing_id, **kwargs):  # noqa: E501
-        """Rename fleet wing  # noqa: E501
+    def put_fleets_fleet_id_wings_wing_id_with_http_info(self, fleet_id, naming, wing_id, **kwargs):
+        """Rename fleet wing
 
-        Rename a fleet wing  ---   # noqa: E501
+        Rename a fleet wing  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, naming, wing_id, async_req=True)
@@ -1584,7 +1584,7 @@ class FleetsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['fleet_id', 'naming', 'wing_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['fleet_id', 'naming', 'wing_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1601,30 +1601,30 @@ class FleetsApi(object):
         del params['kwargs']
         # verify the required parameter 'fleet_id' is set
         if self.api_client.client_side_validation and ('fleet_id' not in params or
-                                                       params['fleet_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `fleet_id` when calling `put_fleets_fleet_id_wings_wing_id`")  # noqa: E501
+                                                       params['fleet_id'] is None):
+            raise ValueError("Missing the required parameter `fleet_id` when calling `put_fleets_fleet_id_wings_wing_id`")
         # verify the required parameter 'naming' is set
         if self.api_client.client_side_validation and ('naming' not in params or
-                                                       params['naming'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `naming` when calling `put_fleets_fleet_id_wings_wing_id`")  # noqa: E501
+                                                       params['naming'] is None):
+            raise ValueError("Missing the required parameter `naming` when calling `put_fleets_fleet_id_wings_wing_id`")
         # verify the required parameter 'wing_id' is set
         if self.api_client.client_side_validation and ('wing_id' not in params or
-                                                       params['wing_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `wing_id` when calling `put_fleets_fleet_id_wings_wing_id`")  # noqa: E501
+                                                       params['wing_id'] is None):
+            raise ValueError("Missing the required parameter `wing_id` when calling `put_fleets_fleet_id_wings_wing_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'fleet_id' in params:
-            path_params['fleet_id'] = params['fleet_id']  # noqa: E501
+            path_params['fleet_id'] = params['fleet_id']
         if 'wing_id' in params:
-            path_params['wing_id'] = params['wing_id']  # noqa: E501
+            path_params['wing_id'] = params['wing_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -1636,14 +1636,14 @@ class FleetsApi(object):
             body_params = params['naming']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/fleets/{fleet_id}/wings/{wing_id}/', 'PUT',
@@ -1653,7 +1653,7 @@ class FleetsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class CharacterApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id(self, character_id, **kwargs):  # noqa: E501
-        """Get character's public information  # noqa: E501
+    def get_characters_character_id(self, character_id, **kwargs):
+        """Get character's public information
 
-        Public information about a character  ---  This route is cached for up to 86400 seconds  # noqa: E501
+        Public information about a character  ---  This route is cached for up to 86400 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id(character_id, async_req=True)
@@ -52,15 +52,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get character's public information  # noqa: E501
+    def get_characters_character_id_with_http_info(self, character_id, **kwargs):
+        """Get character's public information
 
-        Public information about a character  ---  This route is cached for up to 86400 seconds  # noqa: E501
+        Public information about a character  ---  This route is cached for up to 86400 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_with_http_info(character_id, async_req=True)
@@ -75,7 +75,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -92,24 +92,24 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -117,14 +117,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v4/characters/{character_id}/', 'GET',
@@ -134,7 +134,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -142,10 +142,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_agents_research(self, character_id, **kwargs):  # noqa: E501
-        """Get agents research  # noqa: E501
+    def get_characters_character_id_agents_research(self, character_id, **kwargs):
+        """Get agents research
 
-        Return a list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_agents_research(character_id, async_req=True)
@@ -162,15 +162,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_agents_research_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_agents_research_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_agents_research_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_agents_research_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_agents_research_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get agents research  # noqa: E501
+    def get_characters_character_id_agents_research_with_http_info(self, character_id, **kwargs):
+        """Get agents research
 
-        Return a list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of agents research information for a character. The formula for finding the current research points with an agent is: currentPoints = remainderPoints + pointsPerDay * days(currentTime - researchStartDate)  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_agents_research_with_http_info(character_id, async_req=True)
@@ -186,7 +186,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -203,26 +203,26 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_agents_research`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_agents_research`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_agents_research`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_agents_research`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -230,14 +230,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/agents_research/', 'GET',
@@ -247,7 +247,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -255,10 +255,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_blueprints(self, character_id, **kwargs):  # noqa: E501
-        """Get blueprints  # noqa: E501
+    def get_characters_character_id_blueprints(self, character_id, **kwargs):
+        """Get blueprints
 
-        Return a list of blueprints the character owns  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of blueprints the character owns  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_blueprints(character_id, async_req=True)
@@ -276,15 +276,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_blueprints_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_blueprints_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_blueprints_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_blueprints_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_blueprints_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get blueprints  # noqa: E501
+    def get_characters_character_id_blueprints_with_http_info(self, character_id, **kwargs):
+        """Get blueprints
 
-        Return a list of blueprints the character owns  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of blueprints the character owns  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_blueprints_with_http_info(character_id, async_req=True)
@@ -301,7 +301,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -318,30 +318,30 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_blueprints`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_blueprints`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_blueprints`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_blueprints`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_blueprints`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_blueprints`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -349,14 +349,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/blueprints/', 'GET',
@@ -366,7 +366,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -374,10 +374,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_corporationhistory(self, character_id, **kwargs):  # noqa: E501
-        """Get corporation history  # noqa: E501
+    def get_characters_character_id_corporationhistory(self, character_id, **kwargs):
+        """Get corporation history
 
-        Get a list of all the corporations a character has been a member of  ---  This route is cached for up to 86400 seconds  # noqa: E501
+        Get a list of all the corporations a character has been a member of  ---  This route is cached for up to 86400 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_corporationhistory(character_id, async_req=True)
@@ -393,15 +393,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_corporationhistory_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_corporationhistory_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_corporationhistory_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_corporationhistory_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_corporationhistory_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get corporation history  # noqa: E501
+    def get_characters_character_id_corporationhistory_with_http_info(self, character_id, **kwargs):
+        """Get corporation history
 
-        Get a list of all the corporations a character has been a member of  ---  This route is cached for up to 86400 seconds  # noqa: E501
+        Get a list of all the corporations a character has been a member of  ---  This route is cached for up to 86400 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_corporationhistory_with_http_info(character_id, async_req=True)
@@ -416,7 +416,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -433,24 +433,24 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_corporationhistory`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_corporationhistory`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_corporationhistory`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_corporationhistory`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -458,14 +458,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/corporationhistory/', 'GET',
@@ -475,7 +475,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -483,10 +483,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_fatigue(self, character_id, **kwargs):  # noqa: E501
-        """Get jump fatigue  # noqa: E501
+    def get_characters_character_id_fatigue(self, character_id, **kwargs):
+        """Get jump fatigue
 
-        Return a character's jump activation and fatigue information  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return a character's jump activation and fatigue information  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_fatigue(character_id, async_req=True)
@@ -503,15 +503,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_fatigue_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_fatigue_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_fatigue_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_fatigue_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_fatigue_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get jump fatigue  # noqa: E501
+    def get_characters_character_id_fatigue_with_http_info(self, character_id, **kwargs):
+        """Get jump fatigue
 
-        Return a character's jump activation and fatigue information  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return a character's jump activation and fatigue information  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_fatigue_with_http_info(character_id, async_req=True)
@@ -527,7 +527,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -544,26 +544,26 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_fatigue`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_fatigue`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_fatigue`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_fatigue`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -571,14 +571,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/fatigue/', 'GET',
@@ -588,7 +588,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -596,10 +596,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_medals(self, character_id, **kwargs):  # noqa: E501
-        """Get medals  # noqa: E501
+    def get_characters_character_id_medals(self, character_id, **kwargs):
+        """Get medals
 
-        Return a list of medals the character has  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of medals the character has  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_medals(character_id, async_req=True)
@@ -616,15 +616,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_medals_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_medals_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_medals_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_medals_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_medals_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get medals  # noqa: E501
+    def get_characters_character_id_medals_with_http_info(self, character_id, **kwargs):
+        """Get medals
 
-        Return a list of medals the character has  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of medals the character has  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_medals_with_http_info(character_id, async_req=True)
@@ -640,7 +640,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -657,26 +657,26 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_medals`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_medals`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_medals`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_medals`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -684,14 +684,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/medals/', 'GET',
@@ -701,7 +701,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -709,10 +709,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_notifications(self, character_id, **kwargs):  # noqa: E501
-        """Get character notifications  # noqa: E501
+    def get_characters_character_id_notifications(self, character_id, **kwargs):
+        """Get character notifications
 
-        Return character notifications  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Return character notifications  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_notifications(character_id, async_req=True)
@@ -729,15 +729,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_notifications_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_notifications_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_notifications_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_notifications_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_notifications_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get character notifications  # noqa: E501
+    def get_characters_character_id_notifications_with_http_info(self, character_id, **kwargs):
+        """Get character notifications
 
-        Return character notifications  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Return character notifications  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_notifications_with_http_info(character_id, async_req=True)
@@ -753,7 +753,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -770,26 +770,26 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_notifications`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_notifications`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_notifications`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_notifications`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -797,14 +797,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v5/characters/{character_id}/notifications/', 'GET',
@@ -814,7 +814,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -822,10 +822,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_notifications_contacts(self, character_id, **kwargs):  # noqa: E501
-        """Get new contact notifications  # noqa: E501
+    def get_characters_character_id_notifications_contacts(self, character_id, **kwargs):
+        """Get new contact notifications
 
-        Return notifications about having been added to someone's contact list  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Return notifications about having been added to someone's contact list  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_notifications_contacts(character_id, async_req=True)
@@ -842,15 +842,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_notifications_contacts_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_notifications_contacts_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_notifications_contacts_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_notifications_contacts_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_notifications_contacts_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get new contact notifications  # noqa: E501
+    def get_characters_character_id_notifications_contacts_with_http_info(self, character_id, **kwargs):
+        """Get new contact notifications
 
-        Return notifications about having been added to someone's contact list  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Return notifications about having been added to someone's contact list  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_notifications_contacts_with_http_info(character_id, async_req=True)
@@ -866,7 +866,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -883,26 +883,26 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_notifications_contacts`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_notifications_contacts`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_notifications_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_notifications_contacts`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -910,14 +910,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/notifications/contacts/', 'GET',
@@ -927,7 +927,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -935,10 +935,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_portrait(self, character_id, **kwargs):  # noqa: E501
-        """Get character portraits  # noqa: E501
+    def get_characters_character_id_portrait(self, character_id, **kwargs):
+        """Get character portraits
 
-        Get portrait urls for a character  ---  This route expires daily at 11:05  # noqa: E501
+        Get portrait urls for a character  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_portrait(character_id, async_req=True)
@@ -954,15 +954,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_portrait_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_portrait_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_portrait_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_portrait_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_portrait_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get character portraits  # noqa: E501
+    def get_characters_character_id_portrait_with_http_info(self, character_id, **kwargs):
+        """Get character portraits
 
-        Get portrait urls for a character  ---  This route expires daily at 11:05  # noqa: E501
+        Get portrait urls for a character  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_portrait_with_http_info(character_id, async_req=True)
@@ -977,7 +977,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -994,24 +994,24 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_portrait`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_portrait`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_portrait`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_portrait`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1019,14 +1019,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/portrait/', 'GET',
@@ -1036,7 +1036,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1044,10 +1044,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_roles(self, character_id, **kwargs):  # noqa: E501
-        """Get character corporation roles  # noqa: E501
+    def get_characters_character_id_roles(self, character_id, **kwargs):
+        """Get character corporation roles
 
-        Returns a character's corporation roles  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Returns a character's corporation roles  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_roles(character_id, async_req=True)
@@ -1064,15 +1064,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_roles_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_roles_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_roles_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_roles_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_roles_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get character corporation roles  # noqa: E501
+    def get_characters_character_id_roles_with_http_info(self, character_id, **kwargs):
+        """Get character corporation roles
 
-        Returns a character's corporation roles  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Returns a character's corporation roles  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_roles_with_http_info(character_id, async_req=True)
@@ -1088,7 +1088,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1105,26 +1105,26 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_roles`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_roles`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_roles`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_roles`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1132,14 +1132,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/roles/', 'GET',
@@ -1149,7 +1149,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1157,10 +1157,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_standings(self, character_id, **kwargs):  # noqa: E501
-        """Get standings  # noqa: E501
+    def get_characters_character_id_standings(self, character_id, **kwargs):
+        """Get standings
 
-        Return character standings from agents, NPC corporations, and factions  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return character standings from agents, NPC corporations, and factions  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_standings(character_id, async_req=True)
@@ -1177,15 +1177,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_standings_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_standings_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_standings_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_standings_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_standings_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get standings  # noqa: E501
+    def get_characters_character_id_standings_with_http_info(self, character_id, **kwargs):
+        """Get standings
 
-        Return character standings from agents, NPC corporations, and factions  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return character standings from agents, NPC corporations, and factions  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_standings_with_http_info(character_id, async_req=True)
@@ -1201,7 +1201,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1218,26 +1218,26 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_standings`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_standings`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_standings`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_standings`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1245,14 +1245,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/standings/', 'GET',
@@ -1262,7 +1262,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1270,10 +1270,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_titles(self, character_id, **kwargs):  # noqa: E501
-        """Get character corporation titles  # noqa: E501
+    def get_characters_character_id_titles(self, character_id, **kwargs):
+        """Get character corporation titles
 
-        Returns a character's titles  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Returns a character's titles  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_titles(character_id, async_req=True)
@@ -1290,15 +1290,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_titles_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_titles_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_titles_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_titles_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_titles_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get character corporation titles  # noqa: E501
+    def get_characters_character_id_titles_with_http_info(self, character_id, **kwargs):
+        """Get character corporation titles
 
-        Returns a character's titles  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Returns a character's titles  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_titles_with_http_info(character_id, async_req=True)
@@ -1314,7 +1314,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1331,26 +1331,26 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_titles`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_titles`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_titles`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_titles`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1358,14 +1358,14 @@ class CharacterApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/titles/', 'GET',
@@ -1375,7 +1375,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1383,10 +1383,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_characters_affiliation(self, characters, **kwargs):  # noqa: E501
-        """Character affiliation  # noqa: E501
+    def post_characters_affiliation(self, characters, **kwargs):
+        """Character affiliation
 
-        Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/affiliation/)  # noqa: E501
+        Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/affiliation/)
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_affiliation(characters, async_req=True)
@@ -1401,15 +1401,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_characters_affiliation_with_http_info(characters, **kwargs)  # noqa: E501
+            return self.post_characters_affiliation_with_http_info(characters, **kwargs)
         else:
-            (data) = self.post_characters_affiliation_with_http_info(characters, **kwargs)  # noqa: E501
+            (data) = self.post_characters_affiliation_with_http_info(characters, **kwargs)
             return data
 
-    def post_characters_affiliation_with_http_info(self, characters, **kwargs):  # noqa: E501
-        """Character affiliation  # noqa: E501
+    def post_characters_affiliation_with_http_info(self, characters, **kwargs):
+        """Character affiliation
 
-        Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/affiliation/)  # noqa: E501
+        Bulk lookup of character IDs to corporation, alliance and faction  ---  This route is cached for up to 3600 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#POST-/characters/affiliation/)
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_affiliation_with_http_info(characters, async_req=True)
@@ -1423,7 +1423,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['characters', 'datasource']  # noqa: E501
+        all_params = ['characters', 'datasource']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1440,8 +1440,8 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'characters' is set
         if self.api_client.client_side_validation and ('characters' not in params or
-                                                       params['characters'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `characters` when calling `post_characters_affiliation`")  # noqa: E501
+                                                       params['characters'] is None):
+            raise ValueError("Missing the required parameter `characters` when calling `post_characters_affiliation`")
 
         collection_formats = {}
 
@@ -1449,7 +1449,7 @@ class CharacterApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
 
@@ -1461,14 +1461,14 @@ class CharacterApi(object):
             body_params = params['characters']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/characters/affiliation/', 'POST',
@@ -1478,7 +1478,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1486,10 +1486,10 @@ class CharacterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_characters_character_id_cspa(self, character_id, characters, **kwargs):  # noqa: E501
-        """Calculate a CSPA charge cost  # noqa: E501
+    def post_characters_character_id_cspa(self, character_id, characters, **kwargs):
+        """Calculate a CSPA charge cost
 
-        Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---  # noqa: E501
+        Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_cspa(character_id, characters, async_req=True)
@@ -1506,15 +1506,15 @@ class CharacterApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_characters_character_id_cspa_with_http_info(character_id, characters, **kwargs)  # noqa: E501
+            return self.post_characters_character_id_cspa_with_http_info(character_id, characters, **kwargs)
         else:
-            (data) = self.post_characters_character_id_cspa_with_http_info(character_id, characters, **kwargs)  # noqa: E501
+            (data) = self.post_characters_character_id_cspa_with_http_info(character_id, characters, **kwargs)
             return data
 
-    def post_characters_character_id_cspa_with_http_info(self, character_id, characters, **kwargs):  # noqa: E501
-        """Calculate a CSPA charge cost  # noqa: E501
+    def post_characters_character_id_cspa_with_http_info(self, character_id, characters, **kwargs):
+        """Calculate a CSPA charge cost
 
-        Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---  # noqa: E501
+        Takes a source character ID in the url and a set of target character ID's in the body, returns a CSPA charge cost  ---
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_cspa_with_http_info(character_id, characters, async_req=True)
@@ -1530,7 +1530,7 @@ class CharacterApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'characters', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'characters', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1547,26 +1547,26 @@ class CharacterApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_cspa`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_cspa`")
         # verify the required parameter 'characters' is set
         if self.api_client.client_side_validation and ('characters' not in params or
-                                                       params['characters'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `characters` when calling `post_characters_character_id_cspa`")  # noqa: E501
+                                                       params['characters'] is None):
+            raise ValueError("Missing the required parameter `characters` when calling `post_characters_character_id_cspa`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_cspa`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_cspa`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -1578,14 +1578,14 @@ class CharacterApi(object):
             body_params = params['characters']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v4/characters/{character_id}/cspa/', 'POST',
@@ -1595,7 +1595,7 @@ class CharacterApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='float',  # noqa: E501
+            response_type='float',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

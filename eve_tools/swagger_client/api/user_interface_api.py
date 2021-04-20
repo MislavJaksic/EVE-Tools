@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class UserInterfaceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def post_ui_autopilot_waypoint(self, add_to_beginning, clear_other_waypoints, destination_id, **kwargs):  # noqa: E501
-        """Set Autopilot Waypoint  # noqa: E501
+    def post_ui_autopilot_waypoint(self, add_to_beginning, clear_other_waypoints, destination_id, **kwargs):
+        """Set Autopilot Waypoint
 
-        Set a solar system as autopilot waypoint  ---   # noqa: E501
+        Set a solar system as autopilot waypoint  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_autopilot_waypoint(add_to_beginning, clear_other_waypoints, destination_id, async_req=True)
@@ -54,15 +54,15 @@ class UserInterfaceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_ui_autopilot_waypoint_with_http_info(add_to_beginning, clear_other_waypoints, destination_id, **kwargs)  # noqa: E501
+            return self.post_ui_autopilot_waypoint_with_http_info(add_to_beginning, clear_other_waypoints, destination_id, **kwargs)
         else:
-            (data) = self.post_ui_autopilot_waypoint_with_http_info(add_to_beginning, clear_other_waypoints, destination_id, **kwargs)  # noqa: E501
+            (data) = self.post_ui_autopilot_waypoint_with_http_info(add_to_beginning, clear_other_waypoints, destination_id, **kwargs)
             return data
 
-    def post_ui_autopilot_waypoint_with_http_info(self, add_to_beginning, clear_other_waypoints, destination_id, **kwargs):  # noqa: E501
-        """Set Autopilot Waypoint  # noqa: E501
+    def post_ui_autopilot_waypoint_with_http_info(self, add_to_beginning, clear_other_waypoints, destination_id, **kwargs):
+        """Set Autopilot Waypoint
 
-        Set a solar system as autopilot waypoint  ---   # noqa: E501
+        Set a solar system as autopilot waypoint  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_autopilot_waypoint_with_http_info(add_to_beginning, clear_other_waypoints, destination_id, async_req=True)
@@ -79,7 +79,7 @@ class UserInterfaceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['add_to_beginning', 'clear_other_waypoints', 'destination_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['add_to_beginning', 'clear_other_waypoints', 'destination_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -96,16 +96,16 @@ class UserInterfaceApi(object):
         del params['kwargs']
         # verify the required parameter 'add_to_beginning' is set
         if self.api_client.client_side_validation and ('add_to_beginning' not in params or
-                                                       params['add_to_beginning'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `add_to_beginning` when calling `post_ui_autopilot_waypoint`")  # noqa: E501
+                                                       params['add_to_beginning'] is None):
+            raise ValueError("Missing the required parameter `add_to_beginning` when calling `post_ui_autopilot_waypoint`")
         # verify the required parameter 'clear_other_waypoints' is set
         if self.api_client.client_side_validation and ('clear_other_waypoints' not in params or
-                                                       params['clear_other_waypoints'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `clear_other_waypoints` when calling `post_ui_autopilot_waypoint`")  # noqa: E501
+                                                       params['clear_other_waypoints'] is None):
+            raise ValueError("Missing the required parameter `clear_other_waypoints` when calling `post_ui_autopilot_waypoint`")
         # verify the required parameter 'destination_id' is set
         if self.api_client.client_side_validation and ('destination_id' not in params or
-                                                       params['destination_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `destination_id` when calling `post_ui_autopilot_waypoint`")  # noqa: E501
+                                                       params['destination_id'] is None):
+            raise ValueError("Missing the required parameter `destination_id` when calling `post_ui_autopilot_waypoint`")
 
         collection_formats = {}
 
@@ -113,15 +113,15 @@ class UserInterfaceApi(object):
 
         query_params = []
         if 'add_to_beginning' in params:
-            query_params.append(('add_to_beginning', params['add_to_beginning']))  # noqa: E501
+            query_params.append(('add_to_beginning', params['add_to_beginning']))
         if 'clear_other_waypoints' in params:
-            query_params.append(('clear_other_waypoints', params['clear_other_waypoints']))  # noqa: E501
+            query_params.append(('clear_other_waypoints', params['clear_other_waypoints']))
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'destination_id' in params:
-            query_params.append(('destination_id', params['destination_id']))  # noqa: E501
+            query_params.append(('destination_id', params['destination_id']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -131,14 +131,14 @@ class UserInterfaceApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/ui/autopilot/waypoint/', 'POST',
@@ -148,7 +148,7 @@ class UserInterfaceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -156,10 +156,10 @@ class UserInterfaceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_ui_openwindow_contract(self, contract_id, **kwargs):  # noqa: E501
-        """Open Contract Window  # noqa: E501
+    def post_ui_openwindow_contract(self, contract_id, **kwargs):
+        """Open Contract Window
 
-        Open the contract window inside the client  ---   # noqa: E501
+        Open the contract window inside the client  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_openwindow_contract(contract_id, async_req=True)
@@ -175,15 +175,15 @@ class UserInterfaceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_ui_openwindow_contract_with_http_info(contract_id, **kwargs)  # noqa: E501
+            return self.post_ui_openwindow_contract_with_http_info(contract_id, **kwargs)
         else:
-            (data) = self.post_ui_openwindow_contract_with_http_info(contract_id, **kwargs)  # noqa: E501
+            (data) = self.post_ui_openwindow_contract_with_http_info(contract_id, **kwargs)
             return data
 
-    def post_ui_openwindow_contract_with_http_info(self, contract_id, **kwargs):  # noqa: E501
-        """Open Contract Window  # noqa: E501
+    def post_ui_openwindow_contract_with_http_info(self, contract_id, **kwargs):
+        """Open Contract Window
 
-        Open the contract window inside the client  ---   # noqa: E501
+        Open the contract window inside the client  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_openwindow_contract_with_http_info(contract_id, async_req=True)
@@ -198,7 +198,7 @@ class UserInterfaceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contract_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['contract_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -215,8 +215,8 @@ class UserInterfaceApi(object):
         del params['kwargs']
         # verify the required parameter 'contract_id' is set
         if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `post_ui_openwindow_contract`")  # noqa: E501
+                                                       params['contract_id'] is None):
+            raise ValueError("Missing the required parameter `contract_id` when calling `post_ui_openwindow_contract`")
 
         collection_formats = {}
 
@@ -224,11 +224,11 @@ class UserInterfaceApi(object):
 
         query_params = []
         if 'contract_id' in params:
-            query_params.append(('contract_id', params['contract_id']))  # noqa: E501
+            query_params.append(('contract_id', params['contract_id']))
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -238,14 +238,14 @@ class UserInterfaceApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/ui/openwindow/contract/', 'POST',
@@ -255,7 +255,7 @@ class UserInterfaceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -263,10 +263,10 @@ class UserInterfaceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_ui_openwindow_information(self, target_id, **kwargs):  # noqa: E501
-        """Open Information Window  # noqa: E501
+    def post_ui_openwindow_information(self, target_id, **kwargs):
+        """Open Information Window
 
-        Open the information window for a character, corporation or alliance inside the client  ---   # noqa: E501
+        Open the information window for a character, corporation or alliance inside the client  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_openwindow_information(target_id, async_req=True)
@@ -282,15 +282,15 @@ class UserInterfaceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_ui_openwindow_information_with_http_info(target_id, **kwargs)  # noqa: E501
+            return self.post_ui_openwindow_information_with_http_info(target_id, **kwargs)
         else:
-            (data) = self.post_ui_openwindow_information_with_http_info(target_id, **kwargs)  # noqa: E501
+            (data) = self.post_ui_openwindow_information_with_http_info(target_id, **kwargs)
             return data
 
-    def post_ui_openwindow_information_with_http_info(self, target_id, **kwargs):  # noqa: E501
-        """Open Information Window  # noqa: E501
+    def post_ui_openwindow_information_with_http_info(self, target_id, **kwargs):
+        """Open Information Window
 
-        Open the information window for a character, corporation or alliance inside the client  ---   # noqa: E501
+        Open the information window for a character, corporation or alliance inside the client  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_openwindow_information_with_http_info(target_id, async_req=True)
@@ -305,7 +305,7 @@ class UserInterfaceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['target_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['target_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -322,8 +322,8 @@ class UserInterfaceApi(object):
         del params['kwargs']
         # verify the required parameter 'target_id' is set
         if self.api_client.client_side_validation and ('target_id' not in params or
-                                                       params['target_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `target_id` when calling `post_ui_openwindow_information`")  # noqa: E501
+                                                       params['target_id'] is None):
+            raise ValueError("Missing the required parameter `target_id` when calling `post_ui_openwindow_information`")
 
         collection_formats = {}
 
@@ -331,11 +331,11 @@ class UserInterfaceApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'target_id' in params:
-            query_params.append(('target_id', params['target_id']))  # noqa: E501
+            query_params.append(('target_id', params['target_id']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -345,14 +345,14 @@ class UserInterfaceApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/ui/openwindow/information/', 'POST',
@@ -362,7 +362,7 @@ class UserInterfaceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -370,10 +370,10 @@ class UserInterfaceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_ui_openwindow_marketdetails(self, type_id, **kwargs):  # noqa: E501
-        """Open Market Details  # noqa: E501
+    def post_ui_openwindow_marketdetails(self, type_id, **kwargs):
+        """Open Market Details
 
-        Open the market details window for a specific typeID inside the client  ---   # noqa: E501
+        Open the market details window for a specific typeID inside the client  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_openwindow_marketdetails(type_id, async_req=True)
@@ -389,15 +389,15 @@ class UserInterfaceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_ui_openwindow_marketdetails_with_http_info(type_id, **kwargs)  # noqa: E501
+            return self.post_ui_openwindow_marketdetails_with_http_info(type_id, **kwargs)
         else:
-            (data) = self.post_ui_openwindow_marketdetails_with_http_info(type_id, **kwargs)  # noqa: E501
+            (data) = self.post_ui_openwindow_marketdetails_with_http_info(type_id, **kwargs)
             return data
 
-    def post_ui_openwindow_marketdetails_with_http_info(self, type_id, **kwargs):  # noqa: E501
-        """Open Market Details  # noqa: E501
+    def post_ui_openwindow_marketdetails_with_http_info(self, type_id, **kwargs):
+        """Open Market Details
 
-        Open the market details window for a specific typeID inside the client  ---   # noqa: E501
+        Open the market details window for a specific typeID inside the client  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_openwindow_marketdetails_with_http_info(type_id, async_req=True)
@@ -412,7 +412,7 @@ class UserInterfaceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['type_id', 'datasource', 'token']  # noqa: E501
+        all_params = ['type_id', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -429,8 +429,8 @@ class UserInterfaceApi(object):
         del params['kwargs']
         # verify the required parameter 'type_id' is set
         if self.api_client.client_side_validation and ('type_id' not in params or
-                                                       params['type_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `type_id` when calling `post_ui_openwindow_marketdetails`")  # noqa: E501
+                                                       params['type_id'] is None):
+            raise ValueError("Missing the required parameter `type_id` when calling `post_ui_openwindow_marketdetails`")
 
         collection_formats = {}
 
@@ -438,11 +438,11 @@ class UserInterfaceApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
         if 'type_id' in params:
-            query_params.append(('type_id', params['type_id']))  # noqa: E501
+            query_params.append(('type_id', params['type_id']))
 
         header_params = {}
 
@@ -452,14 +452,14 @@ class UserInterfaceApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/ui/openwindow/marketdetails/', 'POST',
@@ -469,7 +469,7 @@ class UserInterfaceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -477,10 +477,10 @@ class UserInterfaceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_ui_openwindow_newmail(self, new_mail, **kwargs):  # noqa: E501
-        """Open New Mail Window  # noqa: E501
+    def post_ui_openwindow_newmail(self, new_mail, **kwargs):
+        """Open New Mail Window
 
-        Open the New Mail window, according to settings from the request if applicable  ---   # noqa: E501
+        Open the New Mail window, according to settings from the request if applicable  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_openwindow_newmail(new_mail, async_req=True)
@@ -496,15 +496,15 @@ class UserInterfaceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_ui_openwindow_newmail_with_http_info(new_mail, **kwargs)  # noqa: E501
+            return self.post_ui_openwindow_newmail_with_http_info(new_mail, **kwargs)
         else:
-            (data) = self.post_ui_openwindow_newmail_with_http_info(new_mail, **kwargs)  # noqa: E501
+            (data) = self.post_ui_openwindow_newmail_with_http_info(new_mail, **kwargs)
             return data
 
-    def post_ui_openwindow_newmail_with_http_info(self, new_mail, **kwargs):  # noqa: E501
-        """Open New Mail Window  # noqa: E501
+    def post_ui_openwindow_newmail_with_http_info(self, new_mail, **kwargs):
+        """Open New Mail Window
 
-        Open the New Mail window, according to settings from the request if applicable  ---   # noqa: E501
+        Open the New Mail window, according to settings from the request if applicable  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_ui_openwindow_newmail_with_http_info(new_mail, async_req=True)
@@ -519,7 +519,7 @@ class UserInterfaceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['new_mail', 'datasource', 'token']  # noqa: E501
+        all_params = ['new_mail', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -536,8 +536,8 @@ class UserInterfaceApi(object):
         del params['kwargs']
         # verify the required parameter 'new_mail' is set
         if self.api_client.client_side_validation and ('new_mail' not in params or
-                                                       params['new_mail'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `new_mail` when calling `post_ui_openwindow_newmail`")  # noqa: E501
+                                                       params['new_mail'] is None):
+            raise ValueError("Missing the required parameter `new_mail` when calling `post_ui_openwindow_newmail`")
 
         collection_formats = {}
 
@@ -545,9 +545,9 @@ class UserInterfaceApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -559,14 +559,14 @@ class UserInterfaceApi(object):
             body_params = params['new_mail']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/ui/openwindow/newmail/', 'POST',
@@ -576,7 +576,7 @@ class UserInterfaceApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

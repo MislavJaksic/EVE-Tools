@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class IndustryApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id_industry_jobs(self, character_id, **kwargs):  # noqa: E501
-        """List character industry jobs  # noqa: E501
+    def get_characters_character_id_industry_jobs(self, character_id, **kwargs):
+        """List character industry jobs
 
-        List industry jobs placed by a character  ---  This route is cached for up to 300 seconds  # noqa: E501
+        List industry jobs placed by a character  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_industry_jobs(character_id, async_req=True)
@@ -54,15 +54,15 @@ class IndustryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_industry_jobs_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_industry_jobs_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_industry_jobs_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_industry_jobs_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_industry_jobs_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """List character industry jobs  # noqa: E501
+    def get_characters_character_id_industry_jobs_with_http_info(self, character_id, **kwargs):
+        """List character industry jobs
 
-        List industry jobs placed by a character  ---  This route is cached for up to 300 seconds  # noqa: E501
+        List industry jobs placed by a character  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_industry_jobs_with_http_info(character_id, async_req=True)
@@ -79,7 +79,7 @@ class IndustryApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'include_completed', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'include_completed', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -96,28 +96,28 @@ class IndustryApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_industry_jobs`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_industry_jobs`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_industry_jobs`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_industry_jobs`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'include_completed' in params:
-            query_params.append(('include_completed', params['include_completed']))  # noqa: E501
+            query_params.append(('include_completed', params['include_completed']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -125,14 +125,14 @@ class IndustryApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/industry/jobs/', 'GET',
@@ -142,7 +142,7 @@ class IndustryApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -150,10 +150,10 @@ class IndustryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_mining(self, character_id, **kwargs):  # noqa: E501
-        """Character mining ledger  # noqa: E501
+    def get_characters_character_id_mining(self, character_id, **kwargs):
+        """Character mining ledger
 
-        Paginated record of all mining done by a character for the past 30 days  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Paginated record of all mining done by a character for the past 30 days  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mining(character_id, async_req=True)
@@ -171,15 +171,15 @@ class IndustryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_mining_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_mining_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_mining_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_mining_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_mining_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Character mining ledger  # noqa: E501
+    def get_characters_character_id_mining_with_http_info(self, character_id, **kwargs):
+        """Character mining ledger
 
-        Paginated record of all mining done by a character for the past 30 days  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Paginated record of all mining done by a character for the past 30 days  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_mining_with_http_info(character_id, async_req=True)
@@ -196,7 +196,7 @@ class IndustryApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -213,30 +213,30 @@ class IndustryApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mining`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_mining`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mining`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_mining`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_mining`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_mining`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -244,14 +244,14 @@ class IndustryApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/mining/', 'GET',
@@ -261,7 +261,7 @@ class IndustryApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -269,10 +269,10 @@ class IndustryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporation_corporation_id_mining_extractions(self, corporation_id, **kwargs):  # noqa: E501
-        """Moon extraction timers  # noqa: E501
+    def get_corporation_corporation_id_mining_extractions(self, corporation_id, **kwargs):
+        """Moon extraction timers
 
-        Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds  --- Requires one of the following EVE corporation role(s): Station_Manager  # noqa: E501
+        Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds  --- Requires one of the following EVE corporation role(s): Station_Manager
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporation_corporation_id_mining_extractions(corporation_id, async_req=True)
@@ -290,15 +290,15 @@ class IndustryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporation_corporation_id_mining_extractions_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporation_corporation_id_mining_extractions_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporation_corporation_id_mining_extractions_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporation_corporation_id_mining_extractions_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporation_corporation_id_mining_extractions_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """Moon extraction timers  # noqa: E501
+    def get_corporation_corporation_id_mining_extractions_with_http_info(self, corporation_id, **kwargs):
+        """Moon extraction timers
 
-        Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds  --- Requires one of the following EVE corporation role(s): Station_Manager  # noqa: E501
+        Extraction timers for all moon chunks being extracted by refineries belonging to a corporation.  ---  This route is cached for up to 1800 seconds  --- Requires one of the following EVE corporation role(s): Station_Manager
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporation_corporation_id_mining_extractions_with_http_info(corporation_id, async_req=True)
@@ -315,7 +315,7 @@ class IndustryApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -332,30 +332,30 @@ class IndustryApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporation_corporation_id_mining_extractions`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporation_corporation_id_mining_extractions`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporation_corporation_id_mining_extractions`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporation_corporation_id_mining_extractions`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporation_corporation_id_mining_extractions`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporation_corporation_id_mining_extractions`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -363,14 +363,14 @@ class IndustryApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporation/{corporation_id}/mining/extractions/', 'GET',
@@ -380,7 +380,7 @@ class IndustryApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -388,10 +388,10 @@ class IndustryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporation_corporation_id_mining_observers(self, corporation_id, **kwargs):  # noqa: E501
-        """Corporation mining observers  # noqa: E501
+    def get_corporation_corporation_id_mining_observers(self, corporation_id, **kwargs):
+        """Corporation mining observers
 
-        Paginated list of all entities capable of observing and recording mining for a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant  # noqa: E501
+        Paginated list of all entities capable of observing and recording mining for a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporation_corporation_id_mining_observers(corporation_id, async_req=True)
@@ -409,15 +409,15 @@ class IndustryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporation_corporation_id_mining_observers_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporation_corporation_id_mining_observers_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporation_corporation_id_mining_observers_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporation_corporation_id_mining_observers_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporation_corporation_id_mining_observers_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """Corporation mining observers  # noqa: E501
+    def get_corporation_corporation_id_mining_observers_with_http_info(self, corporation_id, **kwargs):
+        """Corporation mining observers
 
-        Paginated list of all entities capable of observing and recording mining for a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant  # noqa: E501
+        Paginated list of all entities capable of observing and recording mining for a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporation_corporation_id_mining_observers_with_http_info(corporation_id, async_req=True)
@@ -434,7 +434,7 @@ class IndustryApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -451,30 +451,30 @@ class IndustryApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporation_corporation_id_mining_observers`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporation_corporation_id_mining_observers`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporation_corporation_id_mining_observers`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporation_corporation_id_mining_observers`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporation_corporation_id_mining_observers`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporation_corporation_id_mining_observers`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -482,14 +482,14 @@ class IndustryApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporation/{corporation_id}/mining/observers/', 'GET',
@@ -499,7 +499,7 @@ class IndustryApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -507,10 +507,10 @@ class IndustryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporation_corporation_id_mining_observers_observer_id(self, corporation_id, observer_id, **kwargs):  # noqa: E501
-        """Observed corporation mining  # noqa: E501
+    def get_corporation_corporation_id_mining_observers_observer_id(self, corporation_id, observer_id, **kwargs):
+        """Observed corporation mining
 
-        Paginated record of all mining seen by an observer  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant  # noqa: E501
+        Paginated record of all mining seen by an observer  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporation_corporation_id_mining_observers_observer_id(corporation_id, observer_id, async_req=True)
@@ -529,15 +529,15 @@ class IndustryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporation_corporation_id_mining_observers_observer_id_with_http_info(corporation_id, observer_id, **kwargs)  # noqa: E501
+            return self.get_corporation_corporation_id_mining_observers_observer_id_with_http_info(corporation_id, observer_id, **kwargs)
         else:
-            (data) = self.get_corporation_corporation_id_mining_observers_observer_id_with_http_info(corporation_id, observer_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporation_corporation_id_mining_observers_observer_id_with_http_info(corporation_id, observer_id, **kwargs)
             return data
 
-    def get_corporation_corporation_id_mining_observers_observer_id_with_http_info(self, corporation_id, observer_id, **kwargs):  # noqa: E501
-        """Observed corporation mining  # noqa: E501
+    def get_corporation_corporation_id_mining_observers_observer_id_with_http_info(self, corporation_id, observer_id, **kwargs):
+        """Observed corporation mining
 
-        Paginated record of all mining seen by an observer  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant  # noqa: E501
+        Paginated record of all mining seen by an observer  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporation_corporation_id_mining_observers_observer_id_with_http_info(corporation_id, observer_id, async_req=True)
@@ -555,7 +555,7 @@ class IndustryApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'observer_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'observer_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -572,36 +572,36 @@ class IndustryApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporation_corporation_id_mining_observers_observer_id`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporation_corporation_id_mining_observers_observer_id`")
         # verify the required parameter 'observer_id' is set
         if self.api_client.client_side_validation and ('observer_id' not in params or
-                                                       params['observer_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `observer_id` when calling `get_corporation_corporation_id_mining_observers_observer_id`")  # noqa: E501
+                                                       params['observer_id'] is None):
+            raise ValueError("Missing the required parameter `observer_id` when calling `get_corporation_corporation_id_mining_observers_observer_id`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporation_corporation_id_mining_observers_observer_id`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporation_corporation_id_mining_observers_observer_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporation_corporation_id_mining_observers_observer_id`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporation_corporation_id_mining_observers_observer_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
         if 'observer_id' in params:
-            path_params['observer_id'] = params['observer_id']  # noqa: E501
+            path_params['observer_id'] = params['observer_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -609,14 +609,14 @@ class IndustryApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporation/{corporation_id}/mining/observers/{observer_id}/', 'GET',
@@ -626,7 +626,7 @@ class IndustryApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -634,10 +634,10 @@ class IndustryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_industry_jobs(self, corporation_id, **kwargs):  # noqa: E501
-        """List corporation industry jobs  # noqa: E501
+    def get_corporations_corporation_id_industry_jobs(self, corporation_id, **kwargs):
+        """List corporation industry jobs
 
-        List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager  # noqa: E501
+        List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_industry_jobs(corporation_id, async_req=True)
@@ -656,15 +656,15 @@ class IndustryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_industry_jobs_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_industry_jobs_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_industry_jobs_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_industry_jobs_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_industry_jobs_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """List corporation industry jobs  # noqa: E501
+    def get_corporations_corporation_id_industry_jobs_with_http_info(self, corporation_id, **kwargs):
+        """List corporation industry jobs
 
-        List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager  # noqa: E501
+        List industry jobs run by a corporation  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Factory_Manager
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_industry_jobs_with_http_info(corporation_id, async_req=True)
@@ -682,7 +682,7 @@ class IndustryApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'include_completed', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'include_completed', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -699,32 +699,32 @@ class IndustryApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_industry_jobs`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_industry_jobs`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_industry_jobs`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_industry_jobs`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_industry_jobs`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_industry_jobs`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'include_completed' in params:
-            query_params.append(('include_completed', params['include_completed']))  # noqa: E501
+            query_params.append(('include_completed', params['include_completed']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -732,14 +732,14 @@ class IndustryApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporations/{corporation_id}/industry/jobs/', 'GET',
@@ -749,7 +749,7 @@ class IndustryApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -757,10 +757,10 @@ class IndustryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_industry_facilities(self, **kwargs):  # noqa: E501
-        """List industry facilities  # noqa: E501
+    def get_industry_facilities(self, **kwargs):
+        """List industry facilities
 
-        Return a list of industry facilities  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of industry facilities  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_industry_facilities(async_req=True)
@@ -775,15 +775,15 @@ class IndustryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_industry_facilities_with_http_info(**kwargs)  # noqa: E501
+            return self.get_industry_facilities_with_http_info(**kwargs)
         else:
-            (data) = self.get_industry_facilities_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_industry_facilities_with_http_info(**kwargs)
             return data
 
-    def get_industry_facilities_with_http_info(self, **kwargs):  # noqa: E501
-        """List industry facilities  # noqa: E501
+    def get_industry_facilities_with_http_info(self, **kwargs):
+        """List industry facilities
 
-        Return a list of industry facilities  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of industry facilities  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_industry_facilities_with_http_info(async_req=True)
@@ -797,7 +797,7 @@ class IndustryApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -819,11 +819,11 @@ class IndustryApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -831,14 +831,14 @@ class IndustryApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/industry/facilities/', 'GET',
@@ -848,7 +848,7 @@ class IndustryApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -856,10 +856,10 @@ class IndustryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_industry_systems(self, **kwargs):  # noqa: E501
-        """List solar system cost indices  # noqa: E501
+    def get_industry_systems(self, **kwargs):
+        """List solar system cost indices
 
-        Return cost indices for solar systems  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return cost indices for solar systems  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_industry_systems(async_req=True)
@@ -874,15 +874,15 @@ class IndustryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_industry_systems_with_http_info(**kwargs)  # noqa: E501
+            return self.get_industry_systems_with_http_info(**kwargs)
         else:
-            (data) = self.get_industry_systems_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_industry_systems_with_http_info(**kwargs)
             return data
 
-    def get_industry_systems_with_http_info(self, **kwargs):  # noqa: E501
-        """List solar system cost indices  # noqa: E501
+    def get_industry_systems_with_http_info(self, **kwargs):
+        """List solar system cost indices
 
-        Return cost indices for solar systems  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return cost indices for solar systems  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_industry_systems_with_http_info(async_req=True)
@@ -896,7 +896,7 @@ class IndustryApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -918,11 +918,11 @@ class IndustryApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -930,14 +930,14 @@ class IndustryApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/industry/systems/', 'GET',
@@ -947,7 +947,7 @@ class IndustryApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class MarketApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id_orders(self, character_id, **kwargs):  # noqa: E501
-        """List open orders from a character  # noqa: E501
+    def get_characters_character_id_orders(self, character_id, **kwargs):
+        """List open orders from a character
 
-        List open market orders placed by a character  ---  This route is cached for up to 1200 seconds  # noqa: E501
+        List open market orders placed by a character  ---  This route is cached for up to 1200 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_orders(character_id, async_req=True)
@@ -53,15 +53,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_orders_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_orders_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_orders_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_orders_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_orders_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """List open orders from a character  # noqa: E501
+    def get_characters_character_id_orders_with_http_info(self, character_id, **kwargs):
+        """List open orders from a character
 
-        List open market orders placed by a character  ---  This route is cached for up to 1200 seconds  # noqa: E501
+        List open market orders placed by a character  ---  This route is cached for up to 1200 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_orders_with_http_info(character_id, async_req=True)
@@ -77,7 +77,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,26 +94,26 @@ class MarketApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_orders`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_orders`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_orders`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -121,14 +121,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/orders/', 'GET',
@@ -138,7 +138,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -146,10 +146,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_orders_history(self, character_id, **kwargs):  # noqa: E501
-        """List historical orders by a character  # noqa: E501
+    def get_characters_character_id_orders_history(self, character_id, **kwargs):
+        """List historical orders by a character
 
-        List cancelled and expired market orders placed by a character up to 90 days in the past.  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        List cancelled and expired market orders placed by a character up to 90 days in the past.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_orders_history(character_id, async_req=True)
@@ -167,15 +167,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_orders_history_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_orders_history_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_orders_history_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_orders_history_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_orders_history_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """List historical orders by a character  # noqa: E501
+    def get_characters_character_id_orders_history_with_http_info(self, character_id, **kwargs):
+        """List historical orders by a character
 
-        List cancelled and expired market orders placed by a character up to 90 days in the past.  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        List cancelled and expired market orders placed by a character up to 90 days in the past.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_orders_history_with_http_info(character_id, async_req=True)
@@ -192,7 +192,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -209,30 +209,30 @@ class MarketApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_orders_history`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_orders_history`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_orders_history`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_orders_history`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_orders_history`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_orders_history`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -240,14 +240,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/orders/history/', 'GET',
@@ -257,7 +257,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -265,10 +265,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_orders(self, corporation_id, **kwargs):  # noqa: E501
-        """List open orders from a corporation  # noqa: E501
+    def get_corporations_corporation_id_orders(self, corporation_id, **kwargs):
+        """List open orders from a corporation
 
-        List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader  # noqa: E501
+        List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_orders(corporation_id, async_req=True)
@@ -286,15 +286,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_orders_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_orders_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_orders_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_orders_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_orders_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """List open orders from a corporation  # noqa: E501
+    def get_corporations_corporation_id_orders_with_http_info(self, corporation_id, **kwargs):
+        """List open orders from a corporation
 
-        List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader  # noqa: E501
+        List open market orders placed on behalf of a corporation  ---  This route is cached for up to 1200 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_orders_with_http_info(corporation_id, async_req=True)
@@ -311,7 +311,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -328,30 +328,30 @@ class MarketApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_orders`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_orders`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_orders`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_orders`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_orders`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -359,14 +359,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v3/corporations/{corporation_id}/orders/', 'GET',
@@ -376,7 +376,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -384,10 +384,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_orders_history(self, corporation_id, **kwargs):  # noqa: E501
-        """List historical orders from a corporation  # noqa: E501
+    def get_corporations_corporation_id_orders_history(self, corporation_id, **kwargs):
+        """List historical orders from a corporation
 
-        List cancelled and expired market orders placed on behalf of a corporation up to 90 days in the past.  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader  # noqa: E501
+        List cancelled and expired market orders placed on behalf of a corporation up to 90 days in the past.  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_orders_history(corporation_id, async_req=True)
@@ -405,15 +405,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_orders_history_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_orders_history_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_orders_history_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_orders_history_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_orders_history_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """List historical orders from a corporation  # noqa: E501
+    def get_corporations_corporation_id_orders_history_with_http_info(self, corporation_id, **kwargs):
+        """List historical orders from a corporation
 
-        List cancelled and expired market orders placed on behalf of a corporation up to 90 days in the past.  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader  # noqa: E501
+        List cancelled and expired market orders placed on behalf of a corporation up to 90 days in the past.  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Trader
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_orders_history_with_http_info(corporation_id, async_req=True)
@@ -430,7 +430,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -447,30 +447,30 @@ class MarketApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_orders_history`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_orders_history`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_orders_history`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_orders_history`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_orders_history`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_orders_history`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -478,14 +478,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/corporations/{corporation_id}/orders/history/', 'GET',
@@ -495,7 +495,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -503,10 +503,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_markets_groups(self, **kwargs):  # noqa: E501
-        """Get item groups  # noqa: E501
+    def get_markets_groups(self, **kwargs):
+        """Get item groups
 
-        Get a list of item groups  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of item groups  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_groups(async_req=True)
@@ -521,15 +521,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_markets_groups_with_http_info(**kwargs)  # noqa: E501
+            return self.get_markets_groups_with_http_info(**kwargs)
         else:
-            (data) = self.get_markets_groups_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_markets_groups_with_http_info(**kwargs)
             return data
 
-    def get_markets_groups_with_http_info(self, **kwargs):  # noqa: E501
-        """Get item groups  # noqa: E501
+    def get_markets_groups_with_http_info(self, **kwargs):
+        """Get item groups
 
-        Get a list of item groups  ---  This route expires daily at 11:05  # noqa: E501
+        Get a list of item groups  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_groups_with_http_info(async_req=True)
@@ -543,7 +543,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -565,11 +565,11 @@ class MarketApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -577,14 +577,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/markets/groups/', 'GET',
@@ -594,7 +594,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -602,10 +602,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_markets_groups_market_group_id(self, market_group_id, **kwargs):  # noqa: E501
-        """Get item group information  # noqa: E501
+    def get_markets_groups_market_group_id(self, market_group_id, **kwargs):
+        """Get item group information
 
-        Get information on an item group  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on an item group  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_groups_market_group_id(market_group_id, async_req=True)
@@ -623,15 +623,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_markets_groups_market_group_id_with_http_info(market_group_id, **kwargs)  # noqa: E501
+            return self.get_markets_groups_market_group_id_with_http_info(market_group_id, **kwargs)
         else:
-            (data) = self.get_markets_groups_market_group_id_with_http_info(market_group_id, **kwargs)  # noqa: E501
+            (data) = self.get_markets_groups_market_group_id_with_http_info(market_group_id, **kwargs)
             return data
 
-    def get_markets_groups_market_group_id_with_http_info(self, market_group_id, **kwargs):  # noqa: E501
-        """Get item group information  # noqa: E501
+    def get_markets_groups_market_group_id_with_http_info(self, market_group_id, **kwargs):
+        """Get item group information
 
-        Get information on an item group  ---  This route expires daily at 11:05  # noqa: E501
+        Get information on an item group  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_groups_market_group_id_with_http_info(market_group_id, async_req=True)
@@ -648,7 +648,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['market_group_id', 'accept_language', 'datasource', 'if_none_match', 'language']  # noqa: E501
+        all_params = ['market_group_id', 'accept_language', 'datasource', 'if_none_match', 'language']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -665,26 +665,26 @@ class MarketApi(object):
         del params['kwargs']
         # verify the required parameter 'market_group_id' is set
         if self.api_client.client_side_validation and ('market_group_id' not in params or
-                                                       params['market_group_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `market_group_id` when calling `get_markets_groups_market_group_id`")  # noqa: E501
+                                                       params['market_group_id'] is None):
+            raise ValueError("Missing the required parameter `market_group_id` when calling `get_markets_groups_market_group_id`")
 
         collection_formats = {}
 
         path_params = {}
         if 'market_group_id' in params:
-            path_params['market_group_id'] = params['market_group_id']  # noqa: E501
+            path_params['market_group_id'] = params['market_group_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'language' in params:
-            query_params.append(('language', params['language']))  # noqa: E501
+            query_params.append(('language', params['language']))
 
         header_params = {}
         if 'accept_language' in params:
-            header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+            header_params['Accept-Language'] = params['accept_language']
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -692,14 +692,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/markets/groups/{market_group_id}/', 'GET',
@@ -709,7 +709,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -717,10 +717,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_markets_prices(self, **kwargs):  # noqa: E501
-        """List market prices  # noqa: E501
+    def get_markets_prices(self, **kwargs):
+        """List market prices
 
-        Return a list of prices  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of prices  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_prices(async_req=True)
@@ -735,15 +735,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_markets_prices_with_http_info(**kwargs)  # noqa: E501
+            return self.get_markets_prices_with_http_info(**kwargs)
         else:
-            (data) = self.get_markets_prices_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_markets_prices_with_http_info(**kwargs)
             return data
 
-    def get_markets_prices_with_http_info(self, **kwargs):  # noqa: E501
-        """List market prices  # noqa: E501
+    def get_markets_prices_with_http_info(self, **kwargs):
+        """List market prices
 
-        Return a list of prices  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Return a list of prices  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_prices_with_http_info(async_req=True)
@@ -757,7 +757,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -779,11 +779,11 @@ class MarketApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -791,14 +791,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/markets/prices/', 'GET',
@@ -808,7 +808,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -816,10 +816,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_markets_region_id_history(self, region_id, type_id, **kwargs):  # noqa: E501
-        """List historical market statistics in a region  # noqa: E501
+    def get_markets_region_id_history(self, region_id, type_id, **kwargs):
+        """List historical market statistics in a region
 
-        Return a list of historical market statistics for the specified type in a region  ---  This route expires daily at 11:05  # noqa: E501
+        Return a list of historical market statistics for the specified type in a region  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_region_id_history(region_id, type_id, async_req=True)
@@ -836,15 +836,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_markets_region_id_history_with_http_info(region_id, type_id, **kwargs)  # noqa: E501
+            return self.get_markets_region_id_history_with_http_info(region_id, type_id, **kwargs)
         else:
-            (data) = self.get_markets_region_id_history_with_http_info(region_id, type_id, **kwargs)  # noqa: E501
+            (data) = self.get_markets_region_id_history_with_http_info(region_id, type_id, **kwargs)
             return data
 
-    def get_markets_region_id_history_with_http_info(self, region_id, type_id, **kwargs):  # noqa: E501
-        """List historical market statistics in a region  # noqa: E501
+    def get_markets_region_id_history_with_http_info(self, region_id, type_id, **kwargs):
+        """List historical market statistics in a region
 
-        Return a list of historical market statistics for the specified type in a region  ---  This route expires daily at 11:05  # noqa: E501
+        Return a list of historical market statistics for the specified type in a region  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_region_id_history_with_http_info(region_id, type_id, async_req=True)
@@ -860,7 +860,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['region_id', 'type_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['region_id', 'type_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -877,28 +877,28 @@ class MarketApi(object):
         del params['kwargs']
         # verify the required parameter 'region_id' is set
         if self.api_client.client_side_validation and ('region_id' not in params or
-                                                       params['region_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `region_id` when calling `get_markets_region_id_history`")  # noqa: E501
+                                                       params['region_id'] is None):
+            raise ValueError("Missing the required parameter `region_id` when calling `get_markets_region_id_history`")
         # verify the required parameter 'type_id' is set
         if self.api_client.client_side_validation and ('type_id' not in params or
-                                                       params['type_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `type_id` when calling `get_markets_region_id_history`")  # noqa: E501
+                                                       params['type_id'] is None):
+            raise ValueError("Missing the required parameter `type_id` when calling `get_markets_region_id_history`")
 
         collection_formats = {}
 
         path_params = {}
         if 'region_id' in params:
-            path_params['region_id'] = params['region_id']  # noqa: E501
+            path_params['region_id'] = params['region_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'type_id' in params:
-            query_params.append(('type_id', params['type_id']))  # noqa: E501
+            query_params.append(('type_id', params['type_id']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -906,14 +906,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/markets/{region_id}/history/', 'GET',
@@ -923,7 +923,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -931,10 +931,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_markets_region_id_orders(self, order_type, region_id, **kwargs):  # noqa: E501
-        """List orders in a region  # noqa: E501
+    def get_markets_region_id_orders(self, order_type, region_id, **kwargs):
+        """List orders in a region
 
-        Return a list of orders in a region  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return a list of orders in a region  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_region_id_orders(order_type, region_id, async_req=True)
@@ -953,15 +953,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_markets_region_id_orders_with_http_info(order_type, region_id, **kwargs)  # noqa: E501
+            return self.get_markets_region_id_orders_with_http_info(order_type, region_id, **kwargs)
         else:
-            (data) = self.get_markets_region_id_orders_with_http_info(order_type, region_id, **kwargs)  # noqa: E501
+            (data) = self.get_markets_region_id_orders_with_http_info(order_type, region_id, **kwargs)
             return data
 
-    def get_markets_region_id_orders_with_http_info(self, order_type, region_id, **kwargs):  # noqa: E501
-        """List orders in a region  # noqa: E501
+    def get_markets_region_id_orders_with_http_info(self, order_type, region_id, **kwargs):
+        """List orders in a region
 
-        Return a list of orders in a region  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return a list of orders in a region  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_region_id_orders_with_http_info(order_type, region_id, async_req=True)
@@ -979,7 +979,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['order_type', 'region_id', 'datasource', 'if_none_match', 'page', 'type_id']  # noqa: E501
+        all_params = ['order_type', 'region_id', 'datasource', 'if_none_match', 'page', 'type_id']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -996,34 +996,34 @@ class MarketApi(object):
         del params['kwargs']
         # verify the required parameter 'order_type' is set
         if self.api_client.client_side_validation and ('order_type' not in params or
-                                                       params['order_type'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `order_type` when calling `get_markets_region_id_orders`")  # noqa: E501
+                                                       params['order_type'] is None):
+            raise ValueError("Missing the required parameter `order_type` when calling `get_markets_region_id_orders`")
         # verify the required parameter 'region_id' is set
         if self.api_client.client_side_validation and ('region_id' not in params or
-                                                       params['region_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `region_id` when calling `get_markets_region_id_orders`")  # noqa: E501
+                                                       params['region_id'] is None):
+            raise ValueError("Missing the required parameter `region_id` when calling `get_markets_region_id_orders`")
 
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_markets_region_id_orders`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_markets_region_id_orders`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'region_id' in params:
-            path_params['region_id'] = params['region_id']  # noqa: E501
+            path_params['region_id'] = params['region_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'order_type' in params:
-            query_params.append(('order_type', params['order_type']))  # noqa: E501
+            query_params.append(('order_type', params['order_type']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'type_id' in params:
-            query_params.append(('type_id', params['type_id']))  # noqa: E501
+            query_params.append(('type_id', params['type_id']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1031,14 +1031,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/markets/{region_id}/orders/', 'GET',
@@ -1048,7 +1048,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1056,10 +1056,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_markets_region_id_types(self, region_id, **kwargs):  # noqa: E501
-        """List type IDs relevant to a market  # noqa: E501
+    def get_markets_region_id_types(self, region_id, **kwargs):
+        """List type IDs relevant to a market
 
-        Return a list of type IDs that have active orders in the region, for efficient market indexing.  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Return a list of type IDs that have active orders in the region, for efficient market indexing.  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_region_id_types(region_id, async_req=True)
@@ -1076,15 +1076,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_markets_region_id_types_with_http_info(region_id, **kwargs)  # noqa: E501
+            return self.get_markets_region_id_types_with_http_info(region_id, **kwargs)
         else:
-            (data) = self.get_markets_region_id_types_with_http_info(region_id, **kwargs)  # noqa: E501
+            (data) = self.get_markets_region_id_types_with_http_info(region_id, **kwargs)
             return data
 
-    def get_markets_region_id_types_with_http_info(self, region_id, **kwargs):  # noqa: E501
-        """List type IDs relevant to a market  # noqa: E501
+    def get_markets_region_id_types_with_http_info(self, region_id, **kwargs):
+        """List type IDs relevant to a market
 
-        Return a list of type IDs that have active orders in the region, for efficient market indexing.  ---  This route is cached for up to 600 seconds  # noqa: E501
+        Return a list of type IDs that have active orders in the region, for efficient market indexing.  ---  This route is cached for up to 600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_region_id_types_with_http_info(region_id, async_req=True)
@@ -1100,7 +1100,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['region_id', 'datasource', 'if_none_match', 'page']  # noqa: E501
+        all_params = ['region_id', 'datasource', 'if_none_match', 'page']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1117,26 +1117,26 @@ class MarketApi(object):
         del params['kwargs']
         # verify the required parameter 'region_id' is set
         if self.api_client.client_side_validation and ('region_id' not in params or
-                                                       params['region_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `region_id` when calling `get_markets_region_id_types`")  # noqa: E501
+                                                       params['region_id'] is None):
+            raise ValueError("Missing the required parameter `region_id` when calling `get_markets_region_id_types`")
 
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_markets_region_id_types`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_markets_region_id_types`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'region_id' in params:
-            path_params['region_id'] = params['region_id']  # noqa: E501
+            path_params['region_id'] = params['region_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1144,14 +1144,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/markets/{region_id}/types/', 'GET',
@@ -1161,7 +1161,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1169,10 +1169,10 @@ class MarketApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_markets_structures_structure_id(self, structure_id, **kwargs):  # noqa: E501
-        """List orders in a structure  # noqa: E501
+    def get_markets_structures_structure_id(self, structure_id, **kwargs):
+        """List orders in a structure
 
-        Return all orders in a structure  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return all orders in a structure  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_structures_structure_id(structure_id, async_req=True)
@@ -1190,15 +1190,15 @@ class MarketApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_markets_structures_structure_id_with_http_info(structure_id, **kwargs)  # noqa: E501
+            return self.get_markets_structures_structure_id_with_http_info(structure_id, **kwargs)
         else:
-            (data) = self.get_markets_structures_structure_id_with_http_info(structure_id, **kwargs)  # noqa: E501
+            (data) = self.get_markets_structures_structure_id_with_http_info(structure_id, **kwargs)
             return data
 
-    def get_markets_structures_structure_id_with_http_info(self, structure_id, **kwargs):  # noqa: E501
-        """List orders in a structure  # noqa: E501
+    def get_markets_structures_structure_id_with_http_info(self, structure_id, **kwargs):
+        """List orders in a structure
 
-        Return all orders in a structure  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return all orders in a structure  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_markets_structures_structure_id_with_http_info(structure_id, async_req=True)
@@ -1215,7 +1215,7 @@ class MarketApi(object):
                  returns the request thread.
         """
 
-        all_params = ['structure_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['structure_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1232,28 +1232,28 @@ class MarketApi(object):
         del params['kwargs']
         # verify the required parameter 'structure_id' is set
         if self.api_client.client_side_validation and ('structure_id' not in params or
-                                                       params['structure_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `structure_id` when calling `get_markets_structures_structure_id`")  # noqa: E501
+                                                       params['structure_id'] is None):
+            raise ValueError("Missing the required parameter `structure_id` when calling `get_markets_structures_structure_id`")
 
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_markets_structures_structure_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_markets_structures_structure_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'structure_id' in params:
-            path_params['structure_id'] = params['structure_id']  # noqa: E501
+            path_params['structure_id'] = params['structure_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1261,14 +1261,14 @@ class MarketApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/markets/structures/{structure_id}/', 'GET',
@@ -1278,7 +1278,7 @@ class MarketApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class WalletApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id_wallet(self, character_id, **kwargs):  # noqa: E501
-        """Get a character's wallet balance  # noqa: E501
+    def get_characters_character_id_wallet(self, character_id, **kwargs):
+        """Get a character's wallet balance
 
-        Returns a character's wallet balance  ---  This route is cached for up to 120 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)  # noqa: E501
+        Returns a character's wallet balance  ---  This route is cached for up to 120 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_wallet(character_id, async_req=True)
@@ -53,15 +53,15 @@ class WalletApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_wallet_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_wallet_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_wallet_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_wallet_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_wallet_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get a character's wallet balance  # noqa: E501
+    def get_characters_character_id_wallet_with_http_info(self, character_id, **kwargs):
+        """Get a character's wallet balance
 
-        Returns a character's wallet balance  ---  This route is cached for up to 120 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)  # noqa: E501
+        Returns a character's wallet balance  ---  This route is cached for up to 120 seconds  --- [Diff of the upcoming changes](https://esi.evetech.net/diff/latest/dev/#GET-/characters/{character_id}/wallet/)
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_wallet_with_http_info(character_id, async_req=True)
@@ -77,7 +77,7 @@ class WalletApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,26 +94,26 @@ class WalletApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_wallet`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_wallet`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_wallet`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_wallet`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -121,14 +121,14 @@ class WalletApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/wallet/', 'GET',
@@ -138,7 +138,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='float',  # noqa: E501
+            response_type='float',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -146,10 +146,10 @@ class WalletApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_wallet_journal(self, character_id, **kwargs):  # noqa: E501
-        """Get character wallet journal  # noqa: E501
+    def get_characters_character_id_wallet_journal(self, character_id, **kwargs):
+        """Get character wallet journal
 
-        Retrieve the given character's wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Retrieve the given character's wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_wallet_journal(character_id, async_req=True)
@@ -167,15 +167,15 @@ class WalletApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_wallet_journal_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_wallet_journal_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_wallet_journal_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_wallet_journal_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_wallet_journal_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get character wallet journal  # noqa: E501
+    def get_characters_character_id_wallet_journal_with_http_info(self, character_id, **kwargs):
+        """Get character wallet journal
 
-        Retrieve the given character's wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Retrieve the given character's wallet journal going 30 days back  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_wallet_journal_with_http_info(character_id, async_req=True)
@@ -192,7 +192,7 @@ class WalletApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -209,30 +209,30 @@ class WalletApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_wallet_journal`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_wallet_journal`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_wallet_journal`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_wallet_journal`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_wallet_journal`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_wallet_journal`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -240,14 +240,14 @@ class WalletApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v6/characters/{character_id}/wallet/journal/', 'GET',
@@ -257,7 +257,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -265,10 +265,10 @@ class WalletApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_wallet_transactions(self, character_id, **kwargs):  # noqa: E501
-        """Get wallet transactions  # noqa: E501
+    def get_characters_character_id_wallet_transactions(self, character_id, **kwargs):
+        """Get wallet transactions
 
-        Get wallet transactions of a character  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Get wallet transactions of a character  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_wallet_transactions(character_id, async_req=True)
@@ -286,15 +286,15 @@ class WalletApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_wallet_transactions_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_wallet_transactions_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_wallet_transactions_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_wallet_transactions_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_wallet_transactions_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get wallet transactions  # noqa: E501
+    def get_characters_character_id_wallet_transactions_with_http_info(self, character_id, **kwargs):
+        """Get wallet transactions
 
-        Get wallet transactions of a character  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Get wallet transactions of a character  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_wallet_transactions_with_http_info(character_id, async_req=True)
@@ -311,7 +311,7 @@ class WalletApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'from_id', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'from_id', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -328,28 +328,28 @@ class WalletApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_wallet_transactions`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_wallet_transactions`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_wallet_transactions`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_wallet_transactions`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'from_id' in params:
-            query_params.append(('from_id', params['from_id']))  # noqa: E501
+            query_params.append(('from_id', params['from_id']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -357,14 +357,14 @@ class WalletApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/wallet/transactions/', 'GET',
@@ -374,7 +374,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -382,10 +382,10 @@ class WalletApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_wallets(self, corporation_id, **kwargs):  # noqa: E501
-        """Returns a corporation's wallet balance  # noqa: E501
+    def get_corporations_corporation_id_wallets(self, corporation_id, **kwargs):
+        """Returns a corporation's wallet balance
 
-        Get a corporation's wallets  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  # noqa: E501
+        Get a corporation's wallets  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_wallets(corporation_id, async_req=True)
@@ -402,15 +402,15 @@ class WalletApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_wallets_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_wallets_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_wallets_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_wallets_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_wallets_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """Returns a corporation's wallet balance  # noqa: E501
+    def get_corporations_corporation_id_wallets_with_http_info(self, corporation_id, **kwargs):
+        """Returns a corporation's wallet balance
 
-        Get a corporation's wallets  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  # noqa: E501
+        Get a corporation's wallets  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_wallets_with_http_info(corporation_id, async_req=True)
@@ -426,7 +426,7 @@ class WalletApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -443,26 +443,26 @@ class WalletApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_wallets`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_wallets`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_wallets`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_wallets`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -470,14 +470,14 @@ class WalletApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporations/{corporation_id}/wallets/', 'GET',
@@ -487,7 +487,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -495,10 +495,10 @@ class WalletApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_wallets_division_journal(self, corporation_id, division, **kwargs):  # noqa: E501
-        """Get corporation wallet journal  # noqa: E501
+    def get_corporations_corporation_id_wallets_division_journal(self, corporation_id, division, **kwargs):
+        """Get corporation wallet journal
 
-        Retrieve the given corporation's wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  # noqa: E501
+        Retrieve the given corporation's wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_wallets_division_journal(corporation_id, division, async_req=True)
@@ -517,15 +517,15 @@ class WalletApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_wallets_division_journal_with_http_info(corporation_id, division, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_wallets_division_journal_with_http_info(corporation_id, division, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_wallets_division_journal_with_http_info(corporation_id, division, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_wallets_division_journal_with_http_info(corporation_id, division, **kwargs)
             return data
 
-    def get_corporations_corporation_id_wallets_division_journal_with_http_info(self, corporation_id, division, **kwargs):  # noqa: E501
-        """Get corporation wallet journal  # noqa: E501
+    def get_corporations_corporation_id_wallets_division_journal_with_http_info(self, corporation_id, division, **kwargs):
+        """Get corporation wallet journal
 
-        Retrieve the given corporation's wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  # noqa: E501
+        Retrieve the given corporation's wallet journal for the given division going 30 days back  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_wallets_division_journal_with_http_info(corporation_id, division, async_req=True)
@@ -543,7 +543,7 @@ class WalletApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'division', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'division', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -560,40 +560,40 @@ class WalletApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_wallets_division_journal`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_wallets_division_journal`")
         # verify the required parameter 'division' is set
         if self.api_client.client_side_validation and ('division' not in params or
-                                                       params['division'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `division` when calling `get_corporations_corporation_id_wallets_division_journal`")  # noqa: E501
+                                                       params['division'] is None):
+            raise ValueError("Missing the required parameter `division` when calling `get_corporations_corporation_id_wallets_division_journal`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_wallets_division_journal`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('division' in params and params['division'] > 7):  # noqa: E501
-            raise ValueError("Invalid value for parameter `division` when calling `get_corporations_corporation_id_wallets_division_journal`, must be a value less than or equal to `7`")  # noqa: E501
-        if self.api_client.client_side_validation and ('division' in params and params['division'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `division` when calling `get_corporations_corporation_id_wallets_division_journal`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_wallets_division_journal`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_wallets_division_journal`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('division' in params and params['division'] > 7):
+            raise ValueError("Invalid value for parameter `division` when calling `get_corporations_corporation_id_wallets_division_journal`, must be a value less than or equal to `7`")
+        if self.api_client.client_side_validation and ('division' in params and params['division'] < 1):
+            raise ValueError("Invalid value for parameter `division` when calling `get_corporations_corporation_id_wallets_division_journal`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_wallets_division_journal`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
         if 'division' in params:
-            path_params['division'] = params['division']  # noqa: E501
+            path_params['division'] = params['division']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -601,14 +601,14 @@ class WalletApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v4/corporations/{corporation_id}/wallets/{division}/journal/', 'GET',
@@ -618,7 +618,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -626,10 +626,10 @@ class WalletApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_wallets_division_transactions(self, corporation_id, division, **kwargs):  # noqa: E501
-        """Get corporation wallet transactions  # noqa: E501
+    def get_corporations_corporation_id_wallets_division_transactions(self, corporation_id, division, **kwargs):
+        """Get corporation wallet transactions
 
-        Get wallet transactions of a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  # noqa: E501
+        Get wallet transactions of a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_wallets_division_transactions(corporation_id, division, async_req=True)
@@ -648,15 +648,15 @@ class WalletApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_wallets_division_transactions_with_http_info(corporation_id, division, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_wallets_division_transactions_with_http_info(corporation_id, division, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_wallets_division_transactions_with_http_info(corporation_id, division, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_wallets_division_transactions_with_http_info(corporation_id, division, **kwargs)
             return data
 
-    def get_corporations_corporation_id_wallets_division_transactions_with_http_info(self, corporation_id, division, **kwargs):  # noqa: E501
-        """Get corporation wallet transactions  # noqa: E501
+    def get_corporations_corporation_id_wallets_division_transactions_with_http_info(self, corporation_id, division, **kwargs):
+        """Get corporation wallet transactions
 
-        Get wallet transactions of a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant  # noqa: E501
+        Get wallet transactions of a corporation  ---  This route is cached for up to 3600 seconds  --- Requires one of the following EVE corporation role(s): Accountant, Junior_Accountant
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_wallets_division_transactions_with_http_info(corporation_id, division, async_req=True)
@@ -674,7 +674,7 @@ class WalletApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'division', 'datasource', 'from_id', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'division', 'datasource', 'from_id', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -691,38 +691,38 @@ class WalletApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_wallets_division_transactions`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_wallets_division_transactions`")
         # verify the required parameter 'division' is set
         if self.api_client.client_side_validation and ('division' not in params or
-                                                       params['division'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `division` when calling `get_corporations_corporation_id_wallets_division_transactions`")  # noqa: E501
+                                                       params['division'] is None):
+            raise ValueError("Missing the required parameter `division` when calling `get_corporations_corporation_id_wallets_division_transactions`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_wallets_division_transactions`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('division' in params and params['division'] > 7):  # noqa: E501
-            raise ValueError("Invalid value for parameter `division` when calling `get_corporations_corporation_id_wallets_division_transactions`, must be a value less than or equal to `7`")  # noqa: E501
-        if self.api_client.client_side_validation and ('division' in params and params['division'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `division` when calling `get_corporations_corporation_id_wallets_division_transactions`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_wallets_division_transactions`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('division' in params and params['division'] > 7):
+            raise ValueError("Invalid value for parameter `division` when calling `get_corporations_corporation_id_wallets_division_transactions`, must be a value less than or equal to `7`")
+        if self.api_client.client_side_validation and ('division' in params and params['division'] < 1):
+            raise ValueError("Invalid value for parameter `division` when calling `get_corporations_corporation_id_wallets_division_transactions`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
         if 'division' in params:
-            path_params['division'] = params['division']  # noqa: E501
+            path_params['division'] = params['division']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'from_id' in params:
-            query_params.append(('from_id', params['from_id']))  # noqa: E501
+            query_params.append(('from_id', params['from_id']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -730,14 +730,14 @@ class WalletApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporations/{corporation_id}/wallets/{division}/transactions/', 'GET',
@@ -747,7 +747,7 @@ class WalletApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

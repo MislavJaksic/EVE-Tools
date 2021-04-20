@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
 
@@ -13,50 +13,48 @@
 
 from __future__ import absolute_import
 
-import unittest
+from tests import context
+
+import pytest
 
 from eve_tools import swagger_client
-from eve_tools.swagger_client.api.alliance_api import AllianceApi  # noqa: E501
+from eve_tools.swagger_client.api.alliance_api import AllianceApi
 from eve_tools.swagger_client.rest import ApiException
 
 
-class TestAllianceApi(unittest.TestCase):
+@pytest.fixture(scope="module")
+def api():
+    api = AllianceApi()
+    yield api
+
+
+class TestAllianceApi:
     """AllianceApi unit test stubs"""
 
-    def setUp(self):
-        self.api = swagger_client.api.alliance_api.AllianceApi()  # noqa: E501
-
-    def tearDown(self):
-        pass
-
-    def test_get_alliances(self):
+    def test_get_alliances(self, api):
         """Test case for get_alliances
 
-        List all alliances  # noqa: E501
+        List all alliances
         """
         pass
 
-    def test_get_alliances_alliance_id(self):
+    def test_get_alliances_alliance_id(self, api):
         """Test case for get_alliances_alliance_id
 
-        Get alliance information  # noqa: E501
+        Get alliance information
         """
         pass
 
-    def test_get_alliances_alliance_id_corporations(self):
+    def test_get_alliances_alliance_id_corporations(self, api):
         """Test case for get_alliances_alliance_id_corporations
 
-        List alliance's corporations  # noqa: E501
+        List alliance's corporations
         """
         pass
 
-    def test_get_alliances_alliance_id_icons(self):
+    def test_get_alliances_alliance_id_icons(self, api):
         """Test case for get_alliances_alliance_id_icons
 
-        Get alliance icon  # noqa: E501
+        Get alliance icon
         """
         pass
-
-
-if __name__ == "__main__":
-    unittest.main()

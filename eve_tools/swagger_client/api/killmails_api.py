@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class KillmailsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id_killmails_recent(self, character_id, **kwargs):  # noqa: E501
-        """Get a character's recent kills and losses  # noqa: E501
+    def get_characters_character_id_killmails_recent(self, character_id, **kwargs):
+        """Get a character's recent kills and losses
 
-        Return a list of a character's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return a list of a character's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_killmails_recent(character_id, async_req=True)
@@ -54,15 +54,15 @@ class KillmailsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_killmails_recent_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_killmails_recent_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_killmails_recent_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_killmails_recent_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_killmails_recent_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get a character's recent kills and losses  # noqa: E501
+    def get_characters_character_id_killmails_recent_with_http_info(self, character_id, **kwargs):
+        """Get a character's recent kills and losses
 
-        Return a list of a character's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return a list of a character's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_killmails_recent_with_http_info(character_id, async_req=True)
@@ -79,7 +79,7 @@ class KillmailsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -96,30 +96,30 @@ class KillmailsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_killmails_recent`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_killmails_recent`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_killmails_recent`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_killmails_recent`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_killmails_recent`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_killmails_recent`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -127,14 +127,14 @@ class KillmailsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/killmails/recent/', 'GET',
@@ -144,7 +144,7 @@ class KillmailsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -152,10 +152,10 @@ class KillmailsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_killmails_recent(self, corporation_id, **kwargs):  # noqa: E501
-        """Get a corporation's recent kills and losses  # noqa: E501
+    def get_corporations_corporation_id_killmails_recent(self, corporation_id, **kwargs):
+        """Get a corporation's recent kills and losses
 
-        Get a list of a corporation's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Director  # noqa: E501
+        Get a list of a corporation's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Director
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_killmails_recent(corporation_id, async_req=True)
@@ -173,15 +173,15 @@ class KillmailsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_killmails_recent_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_killmails_recent_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_killmails_recent_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_killmails_recent_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_killmails_recent_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """Get a corporation's recent kills and losses  # noqa: E501
+    def get_corporations_corporation_id_killmails_recent_with_http_info(self, corporation_id, **kwargs):
+        """Get a corporation's recent kills and losses
 
-        Get a list of a corporation's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Director  # noqa: E501
+        Get a list of a corporation's kills and losses going back 90 days  ---  This route is cached for up to 300 seconds  --- Requires one of the following EVE corporation role(s): Director
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_killmails_recent_with_http_info(corporation_id, async_req=True)
@@ -198,7 +198,7 @@ class KillmailsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -215,30 +215,30 @@ class KillmailsApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_killmails_recent`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_killmails_recent`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_killmails_recent`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_killmails_recent`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_killmails_recent`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_killmails_recent`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -246,14 +246,14 @@ class KillmailsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporations/{corporation_id}/killmails/recent/', 'GET',
@@ -263,7 +263,7 @@ class KillmailsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -271,10 +271,10 @@ class KillmailsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_killmails_killmail_id_killmail_hash(self, killmail_hash, killmail_id, **kwargs):  # noqa: E501
-        """Get a single killmail  # noqa: E501
+    def get_killmails_killmail_id_killmail_hash(self, killmail_hash, killmail_id, **kwargs):
+        """Get a single killmail
 
-        Return a single killmail from its ID and hash  ---  This route is cached for up to 30758400 seconds  # noqa: E501
+        Return a single killmail from its ID and hash  ---  This route is cached for up to 30758400 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_killmails_killmail_id_killmail_hash(killmail_hash, killmail_id, async_req=True)
@@ -291,15 +291,15 @@ class KillmailsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_killmails_killmail_id_killmail_hash_with_http_info(killmail_hash, killmail_id, **kwargs)  # noqa: E501
+            return self.get_killmails_killmail_id_killmail_hash_with_http_info(killmail_hash, killmail_id, **kwargs)
         else:
-            (data) = self.get_killmails_killmail_id_killmail_hash_with_http_info(killmail_hash, killmail_id, **kwargs)  # noqa: E501
+            (data) = self.get_killmails_killmail_id_killmail_hash_with_http_info(killmail_hash, killmail_id, **kwargs)
             return data
 
-    def get_killmails_killmail_id_killmail_hash_with_http_info(self, killmail_hash, killmail_id, **kwargs):  # noqa: E501
-        """Get a single killmail  # noqa: E501
+    def get_killmails_killmail_id_killmail_hash_with_http_info(self, killmail_hash, killmail_id, **kwargs):
+        """Get a single killmail
 
-        Return a single killmail from its ID and hash  ---  This route is cached for up to 30758400 seconds  # noqa: E501
+        Return a single killmail from its ID and hash  ---  This route is cached for up to 30758400 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_killmails_killmail_id_killmail_hash_with_http_info(killmail_hash, killmail_id, async_req=True)
@@ -315,7 +315,7 @@ class KillmailsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['killmail_hash', 'killmail_id', 'datasource', 'if_none_match']  # noqa: E501
+        all_params = ['killmail_hash', 'killmail_id', 'datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -332,28 +332,28 @@ class KillmailsApi(object):
         del params['kwargs']
         # verify the required parameter 'killmail_hash' is set
         if self.api_client.client_side_validation and ('killmail_hash' not in params or
-                                                       params['killmail_hash'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `killmail_hash` when calling `get_killmails_killmail_id_killmail_hash`")  # noqa: E501
+                                                       params['killmail_hash'] is None):
+            raise ValueError("Missing the required parameter `killmail_hash` when calling `get_killmails_killmail_id_killmail_hash`")
         # verify the required parameter 'killmail_id' is set
         if self.api_client.client_side_validation and ('killmail_id' not in params or
-                                                       params['killmail_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `killmail_id` when calling `get_killmails_killmail_id_killmail_hash`")  # noqa: E501
+                                                       params['killmail_id'] is None):
+            raise ValueError("Missing the required parameter `killmail_id` when calling `get_killmails_killmail_id_killmail_hash`")
 
         collection_formats = {}
 
         path_params = {}
         if 'killmail_hash' in params:
-            path_params['killmail_hash'] = params['killmail_hash']  # noqa: E501
+            path_params['killmail_hash'] = params['killmail_hash']
         if 'killmail_id' in params:
-            path_params['killmail_id'] = params['killmail_id']  # noqa: E501
+            path_params['killmail_id'] = params['killmail_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -361,14 +361,14 @@ class KillmailsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/killmails/{killmail_id}/{killmail_hash}/', 'GET',
@@ -378,7 +378,7 @@ class KillmailsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='object',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

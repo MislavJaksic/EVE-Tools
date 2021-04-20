@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -42,8 +42,8 @@ class Forbidden(object):
         'sso_status': 'sso_status'
     }
 
-    def __init__(self, error=None, sso_status=None, _configuration=None):  # noqa: E501
-        """Forbidden - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, error=None, sso_status=None, _configuration=None):
+        """Forbidden - a model defined in Swagger"""
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
@@ -58,11 +58,11 @@ class Forbidden(object):
 
     @property
     def error(self):
-        """Gets the error of this Forbidden.  # noqa: E501
+        """Gets the error of this Forbidden.
 
-        Forbidden message  # noqa: E501
+        Forbidden message
 
-        :return: The error of this Forbidden.  # noqa: E501
+        :return: The error of this Forbidden.
         :rtype: str
         """
         return self._error
@@ -71,23 +71,23 @@ class Forbidden(object):
     def error(self, error):
         """Sets the error of this Forbidden.
 
-        Forbidden message  # noqa: E501
+        Forbidden message
 
-        :param error: The error of this Forbidden.  # noqa: E501
+        :param error: The error of this Forbidden.
         :type: str
         """
         if self._configuration.client_side_validation and error is None:
-            raise ValueError("Invalid value for `error`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `error`, must not be `None`")
 
         self._error = error
 
     @property
     def sso_status(self):
-        """Gets the sso_status of this Forbidden.  # noqa: E501
+        """Gets the sso_status of this Forbidden.
 
-        status code received from SSO  # noqa: E501
+        status code received from SSO
 
-        :return: The sso_status of this Forbidden.  # noqa: E501
+        :return: The sso_status of this Forbidden.
         :rtype: int
         """
         return self._sso_status
@@ -96,9 +96,9 @@ class Forbidden(object):
     def sso_status(self, sso_status):
         """Sets the sso_status of this Forbidden.
 
-        status code received from SSO  # noqa: E501
+        status code received from SSO
 
-        :param sso_status: The sso_status of this Forbidden.  # noqa: E501
+        :param sso_status: The sso_status of this Forbidden.
         :type: int
         """
 

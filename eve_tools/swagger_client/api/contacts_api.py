@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class ContactsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def delete_characters_character_id_contacts(self, character_id, contact_ids, **kwargs):  # noqa: E501
-        """Delete contacts  # noqa: E501
+    def delete_characters_character_id_contacts(self, character_id, contact_ids, **kwargs):
+        """Delete contacts
 
-        Bulk delete contacts  ---   # noqa: E501
+        Bulk delete contacts  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_characters_character_id_contacts(character_id, contact_ids, async_req=True)
@@ -53,15 +53,15 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_characters_character_id_contacts_with_http_info(character_id, contact_ids, **kwargs)  # noqa: E501
+            return self.delete_characters_character_id_contacts_with_http_info(character_id, contact_ids, **kwargs)
         else:
-            (data) = self.delete_characters_character_id_contacts_with_http_info(character_id, contact_ids, **kwargs)  # noqa: E501
+            (data) = self.delete_characters_character_id_contacts_with_http_info(character_id, contact_ids, **kwargs)
             return data
 
-    def delete_characters_character_id_contacts_with_http_info(self, character_id, contact_ids, **kwargs):  # noqa: E501
-        """Delete contacts  # noqa: E501
+    def delete_characters_character_id_contacts_with_http_info(self, character_id, contact_ids, **kwargs):
+        """Delete contacts
 
-        Bulk delete contacts  ---   # noqa: E501
+        Bulk delete contacts  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_characters_character_id_contacts_with_http_info(character_id, contact_ids, async_req=True)
@@ -77,7 +77,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'contact_ids', 'datasource', 'token']  # noqa: E501
+        all_params = ['character_id', 'contact_ids', 'datasource', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,35 +94,35 @@ class ContactsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `delete_characters_character_id_contacts`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `delete_characters_character_id_contacts`")
         # verify the required parameter 'contact_ids' is set
         if self.api_client.client_side_validation and ('contact_ids' not in params or
-                                                       params['contact_ids'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contact_ids` when calling `delete_characters_character_id_contacts`")  # noqa: E501
+                                                       params['contact_ids'] is None):
+            raise ValueError("Missing the required parameter `contact_ids` when calling `delete_characters_character_id_contacts`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `delete_characters_character_id_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `delete_characters_character_id_contacts`, must be a value greater than or equal to `1`")
         if self.api_client.client_side_validation and ('contact_ids' in params and
                                             len(params['contact_ids']) > 20):
-            raise ValueError("Invalid value for parameter `contact_ids` when calling `delete_characters_character_id_contacts`, number of items must be less than or equal to `20`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `contact_ids` when calling `delete_characters_character_id_contacts`, number of items must be less than or equal to `20`")
         if self.api_client.client_side_validation and ('contact_ids' in params and
                                             len(params['contact_ids']) < 1):
-            raise ValueError("Invalid value for parameter `contact_ids` when calling `delete_characters_character_id_contacts`, number of items must be greater than or equal to `1`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `contact_ids` when calling `delete_characters_character_id_contacts`, number of items must be greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'contact_ids' in params:
-            query_params.append(('contact_ids', params['contact_ids']))  # noqa: E501
-            collection_formats['contact_ids'] = 'multi'  # noqa: E501
+            query_params.append(('contact_ids', params['contact_ids']))
+            collection_formats['contact_ids'] = 'multi'
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -132,14 +132,14 @@ class ContactsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/contacts/', 'DELETE',
@@ -149,7 +149,7 @@ class ContactsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -157,10 +157,10 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_alliances_alliance_id_contacts(self, alliance_id, **kwargs):  # noqa: E501
-        """Get alliance contacts  # noqa: E501
+    def get_alliances_alliance_id_contacts(self, alliance_id, **kwargs):
+        """Get alliance contacts
 
-        Return contacts of an alliance  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return contacts of an alliance  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id_contacts(alliance_id, async_req=True)
@@ -178,15 +178,15 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_alliances_alliance_id_contacts_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            return self.get_alliances_alliance_id_contacts_with_http_info(alliance_id, **kwargs)
         else:
-            (data) = self.get_alliances_alliance_id_contacts_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            (data) = self.get_alliances_alliance_id_contacts_with_http_info(alliance_id, **kwargs)
             return data
 
-    def get_alliances_alliance_id_contacts_with_http_info(self, alliance_id, **kwargs):  # noqa: E501
-        """Get alliance contacts  # noqa: E501
+    def get_alliances_alliance_id_contacts_with_http_info(self, alliance_id, **kwargs):
+        """Get alliance contacts
 
-        Return contacts of an alliance  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return contacts of an alliance  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id_contacts_with_http_info(alliance_id, async_req=True)
@@ -203,7 +203,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['alliance_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['alliance_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -220,30 +220,30 @@ class ContactsApi(object):
         del params['kwargs']
         # verify the required parameter 'alliance_id' is set
         if self.api_client.client_side_validation and ('alliance_id' not in params or
-                                                       params['alliance_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id_contacts`")  # noqa: E501
+                                                       params['alliance_id'] is None):
+            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id_contacts`")
 
-        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_alliances_alliance_id_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):
+            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id_contacts`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_alliances_alliance_id_contacts`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'alliance_id' in params:
-            path_params['alliance_id'] = params['alliance_id']  # noqa: E501
+            path_params['alliance_id'] = params['alliance_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -251,14 +251,14 @@ class ContactsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/alliances/{alliance_id}/contacts/', 'GET',
@@ -268,7 +268,7 @@ class ContactsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -276,10 +276,10 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_alliances_alliance_id_contacts_labels(self, alliance_id, **kwargs):  # noqa: E501
-        """Get alliance contact labels  # noqa: E501
+    def get_alliances_alliance_id_contacts_labels(self, alliance_id, **kwargs):
+        """Get alliance contact labels
 
-        Return custom labels for an alliance's contacts  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return custom labels for an alliance's contacts  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id_contacts_labels(alliance_id, async_req=True)
@@ -296,15 +296,15 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_alliances_alliance_id_contacts_labels_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            return self.get_alliances_alliance_id_contacts_labels_with_http_info(alliance_id, **kwargs)
         else:
-            (data) = self.get_alliances_alliance_id_contacts_labels_with_http_info(alliance_id, **kwargs)  # noqa: E501
+            (data) = self.get_alliances_alliance_id_contacts_labels_with_http_info(alliance_id, **kwargs)
             return data
 
-    def get_alliances_alliance_id_contacts_labels_with_http_info(self, alliance_id, **kwargs):  # noqa: E501
-        """Get alliance contact labels  # noqa: E501
+    def get_alliances_alliance_id_contacts_labels_with_http_info(self, alliance_id, **kwargs):
+        """Get alliance contact labels
 
-        Return custom labels for an alliance's contacts  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return custom labels for an alliance's contacts  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_alliances_alliance_id_contacts_labels_with_http_info(alliance_id, async_req=True)
@@ -320,7 +320,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['alliance_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['alliance_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -337,26 +337,26 @@ class ContactsApi(object):
         del params['kwargs']
         # verify the required parameter 'alliance_id' is set
         if self.api_client.client_side_validation and ('alliance_id' not in params or
-                                                       params['alliance_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id_contacts_labels`")  # noqa: E501
+                                                       params['alliance_id'] is None):
+            raise ValueError("Missing the required parameter `alliance_id` when calling `get_alliances_alliance_id_contacts_labels`")
 
-        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id_contacts_labels`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('alliance_id' in params and params['alliance_id'] < 1):
+            raise ValueError("Invalid value for parameter `alliance_id` when calling `get_alliances_alliance_id_contacts_labels`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'alliance_id' in params:
-            path_params['alliance_id'] = params['alliance_id']  # noqa: E501
+            path_params['alliance_id'] = params['alliance_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -364,14 +364,14 @@ class ContactsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/alliances/{alliance_id}/contacts/labels/', 'GET',
@@ -381,7 +381,7 @@ class ContactsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -389,10 +389,10 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_contacts(self, character_id, **kwargs):  # noqa: E501
-        """Get contacts  # noqa: E501
+    def get_characters_character_id_contacts(self, character_id, **kwargs):
+        """Get contacts
 
-        Return contacts of a character  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return contacts of a character  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contacts(character_id, async_req=True)
@@ -410,15 +410,15 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_contacts_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_contacts_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_contacts_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_contacts_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_contacts_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get contacts  # noqa: E501
+    def get_characters_character_id_contacts_with_http_info(self, character_id, **kwargs):
+        """Get contacts
 
-        Return contacts of a character  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return contacts of a character  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contacts_with_http_info(character_id, async_req=True)
@@ -435,7 +435,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -452,30 +452,30 @@ class ContactsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contacts`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contacts`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contacts`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_contacts`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -483,14 +483,14 @@ class ContactsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/contacts/', 'GET',
@@ -500,7 +500,7 @@ class ContactsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -508,10 +508,10 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_contacts_labels(self, character_id, **kwargs):  # noqa: E501
-        """Get contact labels  # noqa: E501
+    def get_characters_character_id_contacts_labels(self, character_id, **kwargs):
+        """Get contact labels
 
-        Return custom labels for a character's contacts  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return custom labels for a character's contacts  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contacts_labels(character_id, async_req=True)
@@ -528,15 +528,15 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_contacts_labels_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_contacts_labels_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_contacts_labels_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_contacts_labels_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_contacts_labels_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get contact labels  # noqa: E501
+    def get_characters_character_id_contacts_labels_with_http_info(self, character_id, **kwargs):
+        """Get contact labels
 
-        Return custom labels for a character's contacts  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return custom labels for a character's contacts  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contacts_labels_with_http_info(character_id, async_req=True)
@@ -552,7 +552,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -569,26 +569,26 @@ class ContactsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contacts_labels`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contacts_labels`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contacts_labels`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contacts_labels`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -596,14 +596,14 @@ class ContactsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/contacts/labels/', 'GET',
@@ -613,7 +613,7 @@ class ContactsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -621,10 +621,10 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_contacts(self, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contacts  # noqa: E501
+    def get_corporations_corporation_id_contacts(self, corporation_id, **kwargs):
+        """Get corporation contacts
 
-        Return contacts of a corporation  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return contacts of a corporation  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contacts(corporation_id, async_req=True)
@@ -642,15 +642,15 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_contacts_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_contacts_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_contacts_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_contacts_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_contacts_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contacts  # noqa: E501
+    def get_corporations_corporation_id_contacts_with_http_info(self, corporation_id, **kwargs):
+        """Get corporation contacts
 
-        Return contacts of a corporation  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return contacts of a corporation  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contacts_with_http_info(corporation_id, async_req=True)
@@ -667,7 +667,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -684,30 +684,30 @@ class ContactsApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contacts`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contacts`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contacts`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_contacts`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -715,14 +715,14 @@ class ContactsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/corporations/{corporation_id}/contacts/', 'GET',
@@ -732,7 +732,7 @@ class ContactsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -740,10 +740,10 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_contacts_labels(self, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contact labels  # noqa: E501
+    def get_corporations_corporation_id_contacts_labels(self, corporation_id, **kwargs):
+        """Get corporation contact labels
 
-        Return custom labels for a corporation's contacts  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return custom labels for a corporation's contacts  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contacts_labels(corporation_id, async_req=True)
@@ -760,15 +760,15 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_contacts_labels_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_contacts_labels_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_contacts_labels_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_contacts_labels_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_contacts_labels_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contact labels  # noqa: E501
+    def get_corporations_corporation_id_contacts_labels_with_http_info(self, corporation_id, **kwargs):
+        """Get corporation contact labels
 
-        Return custom labels for a corporation's contacts  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return custom labels for a corporation's contacts  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contacts_labels_with_http_info(corporation_id, async_req=True)
@@ -784,7 +784,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -801,26 +801,26 @@ class ContactsApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contacts_labels`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contacts_labels`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contacts_labels`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contacts_labels`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -828,14 +828,14 @@ class ContactsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporations/{corporation_id}/contacts/labels/', 'GET',
@@ -845,7 +845,7 @@ class ContactsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -853,10 +853,10 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def post_characters_character_id_contacts(self, character_id, contact_ids, standing, **kwargs):  # noqa: E501
-        """Add contacts  # noqa: E501
+    def post_characters_character_id_contacts(self, character_id, contact_ids, standing, **kwargs):
+        """Add contacts
 
-        Bulk add contacts with same settings  ---   # noqa: E501
+        Bulk add contacts with same settings  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_contacts(character_id, contact_ids, standing, async_req=True)
@@ -876,15 +876,15 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.post_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, **kwargs)  # noqa: E501
+            return self.post_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, **kwargs)
         else:
-            (data) = self.post_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, **kwargs)  # noqa: E501
+            (data) = self.post_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, **kwargs)
             return data
 
-    def post_characters_character_id_contacts_with_http_info(self, character_id, contact_ids, standing, **kwargs):  # noqa: E501
-        """Add contacts  # noqa: E501
+    def post_characters_character_id_contacts_with_http_info(self, character_id, contact_ids, standing, **kwargs):
+        """Add contacts
 
-        Bulk add contacts with same settings  ---   # noqa: E501
+        Bulk add contacts with same settings  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, async_req=True)
@@ -903,7 +903,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'contact_ids', 'standing', 'datasource', 'label_ids', 'token', 'watched']  # noqa: E501
+        all_params = ['character_id', 'contact_ids', 'standing', 'datasource', 'label_ids', 'token', 'watched']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -920,44 +920,44 @@ class ContactsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_contacts`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `post_characters_character_id_contacts`")
         # verify the required parameter 'contact_ids' is set
         if self.api_client.client_side_validation and ('contact_ids' not in params or
-                                                       params['contact_ids'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contact_ids` when calling `post_characters_character_id_contacts`")  # noqa: E501
+                                                       params['contact_ids'] is None):
+            raise ValueError("Missing the required parameter `contact_ids` when calling `post_characters_character_id_contacts`")
         # verify the required parameter 'standing' is set
         if self.api_client.client_side_validation and ('standing' not in params or
-                                                       params['standing'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `standing` when calling `post_characters_character_id_contacts`")  # noqa: E501
+                                                       params['standing'] is None):
+            raise ValueError("Missing the required parameter `standing` when calling `post_characters_character_id_contacts`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('standing' in params and params['standing'] > 10):  # noqa: E501
-            raise ValueError("Invalid value for parameter `standing` when calling `post_characters_character_id_contacts`, must be a value less than or equal to `10`")  # noqa: E501
-        if self.api_client.client_side_validation and ('standing' in params and params['standing'] < -10):  # noqa: E501
-            raise ValueError("Invalid value for parameter `standing` when calling `post_characters_character_id_contacts`, must be a value greater than or equal to `-10`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `post_characters_character_id_contacts`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('standing' in params and params['standing'] > 10):
+            raise ValueError("Invalid value for parameter `standing` when calling `post_characters_character_id_contacts`, must be a value less than or equal to `10`")
+        if self.api_client.client_side_validation and ('standing' in params and params['standing'] < -10):
+            raise ValueError("Invalid value for parameter `standing` when calling `post_characters_character_id_contacts`, must be a value greater than or equal to `-10`")
         if self.api_client.client_side_validation and ('label_ids' in params and
                                             len(params['label_ids']) > 63):
-            raise ValueError("Invalid value for parameter `label_ids` when calling `post_characters_character_id_contacts`, number of items must be less than or equal to `63`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `label_ids` when calling `post_characters_character_id_contacts`, number of items must be less than or equal to `63`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'label_ids' in params:
-            query_params.append(('label_ids', params['label_ids']))  # noqa: E501
-            collection_formats['label_ids'] = 'multi'  # noqa: E501
+            query_params.append(('label_ids', params['label_ids']))
+            collection_formats['label_ids'] = 'multi'
         if 'standing' in params:
-            query_params.append(('standing', params['standing']))  # noqa: E501
+            query_params.append(('standing', params['standing']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
         if 'watched' in params:
-            query_params.append(('watched', params['watched']))  # noqa: E501
+            query_params.append(('watched', params['watched']))
 
         header_params = {}
 
@@ -969,14 +969,14 @@ class ContactsApi(object):
             body_params = params['contact_ids']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/contacts/', 'POST',
@@ -986,7 +986,7 @@ class ContactsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -994,10 +994,10 @@ class ContactsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_characters_character_id_contacts(self, character_id, contact_ids, standing, **kwargs):  # noqa: E501
-        """Edit contacts  # noqa: E501
+    def put_characters_character_id_contacts(self, character_id, contact_ids, standing, **kwargs):
+        """Edit contacts
 
-        Bulk edit contacts with same settings  ---   # noqa: E501
+        Bulk edit contacts with same settings  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_characters_character_id_contacts(character_id, contact_ids, standing, async_req=True)
@@ -1017,15 +1017,15 @@ class ContactsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.put_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, **kwargs)  # noqa: E501
+            return self.put_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, **kwargs)
         else:
-            (data) = self.put_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, **kwargs)  # noqa: E501
+            (data) = self.put_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, **kwargs)
             return data
 
-    def put_characters_character_id_contacts_with_http_info(self, character_id, contact_ids, standing, **kwargs):  # noqa: E501
-        """Edit contacts  # noqa: E501
+    def put_characters_character_id_contacts_with_http_info(self, character_id, contact_ids, standing, **kwargs):
+        """Edit contacts
 
-        Bulk edit contacts with same settings  ---   # noqa: E501
+        Bulk edit contacts with same settings  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.put_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing, async_req=True)
@@ -1044,7 +1044,7 @@ class ContactsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'contact_ids', 'standing', 'datasource', 'label_ids', 'token', 'watched']  # noqa: E501
+        all_params = ['character_id', 'contact_ids', 'standing', 'datasource', 'label_ids', 'token', 'watched']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1061,44 +1061,44 @@ class ContactsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `put_characters_character_id_contacts`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `put_characters_character_id_contacts`")
         # verify the required parameter 'contact_ids' is set
         if self.api_client.client_side_validation and ('contact_ids' not in params or
-                                                       params['contact_ids'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contact_ids` when calling `put_characters_character_id_contacts`")  # noqa: E501
+                                                       params['contact_ids'] is None):
+            raise ValueError("Missing the required parameter `contact_ids` when calling `put_characters_character_id_contacts`")
         # verify the required parameter 'standing' is set
         if self.api_client.client_side_validation and ('standing' not in params or
-                                                       params['standing'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `standing` when calling `put_characters_character_id_contacts`")  # noqa: E501
+                                                       params['standing'] is None):
+            raise ValueError("Missing the required parameter `standing` when calling `put_characters_character_id_contacts`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `put_characters_character_id_contacts`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('standing' in params and params['standing'] > 10):  # noqa: E501
-            raise ValueError("Invalid value for parameter `standing` when calling `put_characters_character_id_contacts`, must be a value less than or equal to `10`")  # noqa: E501
-        if self.api_client.client_side_validation and ('standing' in params and params['standing'] < -10):  # noqa: E501
-            raise ValueError("Invalid value for parameter `standing` when calling `put_characters_character_id_contacts`, must be a value greater than or equal to `-10`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `put_characters_character_id_contacts`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('standing' in params and params['standing'] > 10):
+            raise ValueError("Invalid value for parameter `standing` when calling `put_characters_character_id_contacts`, must be a value less than or equal to `10`")
+        if self.api_client.client_side_validation and ('standing' in params and params['standing'] < -10):
+            raise ValueError("Invalid value for parameter `standing` when calling `put_characters_character_id_contacts`, must be a value greater than or equal to `-10`")
         if self.api_client.client_side_validation and ('label_ids' in params and
                                             len(params['label_ids']) > 63):
-            raise ValueError("Invalid value for parameter `label_ids` when calling `put_characters_character_id_contacts`, number of items must be less than or equal to `63`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `label_ids` when calling `put_characters_character_id_contacts`, number of items must be less than or equal to `63`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'label_ids' in params:
-            query_params.append(('label_ids', params['label_ids']))  # noqa: E501
-            collection_formats['label_ids'] = 'multi'  # noqa: E501
+            query_params.append(('label_ids', params['label_ids']))
+            collection_formats['label_ids'] = 'multi'
         if 'standing' in params:
-            query_params.append(('standing', params['standing']))  # noqa: E501
+            query_params.append(('standing', params['standing']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
         if 'watched' in params:
-            query_params.append(('watched', params['watched']))  # noqa: E501
+            query_params.append(('watched', params['watched']))
 
         header_params = {}
 
@@ -1110,14 +1110,14 @@ class ContactsApi(object):
             body_params = params['contact_ids']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v2/characters/{character_id}/contacts/', 'PUT',
@@ -1127,7 +1127,7 @@ class ContactsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type=None,
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class RoutesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_route_origin_destination(self, destination, origin, **kwargs):  # noqa: E501
-        """Get route  # noqa: E501
+    def get_route_origin_destination(self, destination, origin, **kwargs):
+        """Get route
 
-        Get the systems between origin and destination  ---  This route is cached for up to 86400 seconds  # noqa: E501
+        Get the systems between origin and destination  ---  This route is cached for up to 86400 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_route_origin_destination(destination, origin, async_req=True)
@@ -56,15 +56,15 @@ class RoutesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_route_origin_destination_with_http_info(destination, origin, **kwargs)  # noqa: E501
+            return self.get_route_origin_destination_with_http_info(destination, origin, **kwargs)
         else:
-            (data) = self.get_route_origin_destination_with_http_info(destination, origin, **kwargs)  # noqa: E501
+            (data) = self.get_route_origin_destination_with_http_info(destination, origin, **kwargs)
             return data
 
-    def get_route_origin_destination_with_http_info(self, destination, origin, **kwargs):  # noqa: E501
-        """Get route  # noqa: E501
+    def get_route_origin_destination_with_http_info(self, destination, origin, **kwargs):
+        """Get route
 
-        Get the systems between origin and destination  ---  This route is cached for up to 86400 seconds  # noqa: E501
+        Get the systems between origin and destination  ---  This route is cached for up to 86400 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_route_origin_destination_with_http_info(destination, origin, async_req=True)
@@ -83,7 +83,7 @@ class RoutesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['destination', 'origin', 'avoid', 'connections', 'datasource', 'flag', 'if_none_match']  # noqa: E501
+        all_params = ['destination', 'origin', 'avoid', 'connections', 'datasource', 'flag', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -100,42 +100,42 @@ class RoutesApi(object):
         del params['kwargs']
         # verify the required parameter 'destination' is set
         if self.api_client.client_side_validation and ('destination' not in params or
-                                                       params['destination'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `destination` when calling `get_route_origin_destination`")  # noqa: E501
+                                                       params['destination'] is None):
+            raise ValueError("Missing the required parameter `destination` when calling `get_route_origin_destination`")
         # verify the required parameter 'origin' is set
         if self.api_client.client_side_validation and ('origin' not in params or
-                                                       params['origin'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `origin` when calling `get_route_origin_destination`")  # noqa: E501
+                                                       params['origin'] is None):
+            raise ValueError("Missing the required parameter `origin` when calling `get_route_origin_destination`")
 
         if self.api_client.client_side_validation and ('avoid' in params and
                                             len(params['avoid']) > 100):
-            raise ValueError("Invalid value for parameter `avoid` when calling `get_route_origin_destination`, number of items must be less than or equal to `100`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `avoid` when calling `get_route_origin_destination`, number of items must be less than or equal to `100`")
         if self.api_client.client_side_validation and ('connections' in params and
                                             len(params['connections']) > 100):
-            raise ValueError("Invalid value for parameter `connections` when calling `get_route_origin_destination`, number of items must be less than or equal to `100`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `connections` when calling `get_route_origin_destination`, number of items must be less than or equal to `100`")
         collection_formats = {}
 
         path_params = {}
         if 'destination' in params:
-            path_params['destination'] = params['destination']  # noqa: E501
+            path_params['destination'] = params['destination']
         if 'origin' in params:
-            path_params['origin'] = params['origin']  # noqa: E501
+            path_params['origin'] = params['origin']
 
         query_params = []
         if 'avoid' in params:
-            query_params.append(('avoid', params['avoid']))  # noqa: E501
-            collection_formats['avoid'] = 'multi'  # noqa: E501
+            query_params.append(('avoid', params['avoid']))
+            collection_formats['avoid'] = 'multi'
         if 'connections' in params:
-            query_params.append(('connections', params['connections']))  # noqa: E501
-            collection_formats['connections'] = 'multi'  # noqa: E501
+            query_params.append(('connections', params['connections']))
+            collection_formats['connections'] = 'multi'
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'flag' in params:
-            query_params.append(('flag', params['flag']))  # noqa: E501
+            query_params.append(('flag', params['flag']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -143,14 +143,14 @@ class RoutesApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/route/{origin}/{destination}/', 'GET',
@@ -160,7 +160,7 @@ class RoutesApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[int]',  # noqa: E501
+            response_type='list[int]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

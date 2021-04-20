@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class ContractsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_characters_character_id_contracts(self, character_id, **kwargs):  # noqa: E501
-        """Get contracts  # noqa: E501
+    def get_characters_character_id_contracts(self, character_id, **kwargs):
+        """Get contracts
 
-        Returns contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Returns contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contracts(character_id, async_req=True)
@@ -54,15 +54,15 @@ class ContractsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_contracts_with_http_info(character_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_contracts_with_http_info(character_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_contracts_with_http_info(character_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_contracts_with_http_info(character_id, **kwargs)
             return data
 
-    def get_characters_character_id_contracts_with_http_info(self, character_id, **kwargs):  # noqa: E501
-        """Get contracts  # noqa: E501
+    def get_characters_character_id_contracts_with_http_info(self, character_id, **kwargs):
+        """Get contracts
 
-        Returns contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Returns contracts available to a character, only if the character is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contracts_with_http_info(character_id, async_req=True)
@@ -79,7 +79,7 @@ class ContractsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['character_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -96,30 +96,30 @@ class ContractsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contracts`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contracts`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contracts`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_contracts`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contracts`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_characters_character_id_contracts`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -127,14 +127,14 @@ class ContractsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/contracts/', 'GET',
@@ -144,7 +144,7 @@ class ContractsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -152,10 +152,10 @@ class ContractsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_contracts_contract_id_bids(self, character_id, contract_id, **kwargs):  # noqa: E501
-        """Get contract bids  # noqa: E501
+    def get_characters_character_id_contracts_contract_id_bids(self, character_id, contract_id, **kwargs):
+        """Get contract bids
 
-        Lists bids on a particular auction contract  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Lists bids on a particular auction contract  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contracts_contract_id_bids(character_id, contract_id, async_req=True)
@@ -173,15 +173,15 @@ class ContractsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_contracts_contract_id_bids_with_http_info(character_id, contract_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_contracts_contract_id_bids_with_http_info(character_id, contract_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_contracts_contract_id_bids_with_http_info(character_id, contract_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_contracts_contract_id_bids_with_http_info(character_id, contract_id, **kwargs)
             return data
 
-    def get_characters_character_id_contracts_contract_id_bids_with_http_info(self, character_id, contract_id, **kwargs):  # noqa: E501
-        """Get contract bids  # noqa: E501
+    def get_characters_character_id_contracts_contract_id_bids_with_http_info(self, character_id, contract_id, **kwargs):
+        """Get contract bids
 
-        Lists bids on a particular auction contract  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Lists bids on a particular auction contract  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contracts_contract_id_bids_with_http_info(character_id, contract_id, async_req=True)
@@ -198,7 +198,7 @@ class ContractsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'contract_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'contract_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -215,32 +215,32 @@ class ContractsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contracts_contract_id_bids`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contracts_contract_id_bids`")
         # verify the required parameter 'contract_id' is set
         if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `get_characters_character_id_contracts_contract_id_bids`")  # noqa: E501
+                                                       params['contract_id'] is None):
+            raise ValueError("Missing the required parameter `contract_id` when calling `get_characters_character_id_contracts_contract_id_bids`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contracts_contract_id_bids`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contracts_contract_id_bids`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'contract_id' in params:
-            path_params['contract_id'] = params['contract_id']  # noqa: E501
+            path_params['contract_id'] = params['contract_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -248,14 +248,14 @@ class ContractsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/contracts/{contract_id}/bids/', 'GET',
@@ -265,7 +265,7 @@ class ContractsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -273,10 +273,10 @@ class ContractsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_characters_character_id_contracts_contract_id_items(self, character_id, contract_id, **kwargs):  # noqa: E501
-        """Get contract items  # noqa: E501
+    def get_characters_character_id_contracts_contract_id_items(self, character_id, contract_id, **kwargs):
+        """Get contract items
 
-        Lists items of a particular contract  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Lists items of a particular contract  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contracts_contract_id_items(character_id, contract_id, async_req=True)
@@ -294,15 +294,15 @@ class ContractsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_characters_character_id_contracts_contract_id_items_with_http_info(character_id, contract_id, **kwargs)  # noqa: E501
+            return self.get_characters_character_id_contracts_contract_id_items_with_http_info(character_id, contract_id, **kwargs)
         else:
-            (data) = self.get_characters_character_id_contracts_contract_id_items_with_http_info(character_id, contract_id, **kwargs)  # noqa: E501
+            (data) = self.get_characters_character_id_contracts_contract_id_items_with_http_info(character_id, contract_id, **kwargs)
             return data
 
-    def get_characters_character_id_contracts_contract_id_items_with_http_info(self, character_id, contract_id, **kwargs):  # noqa: E501
-        """Get contract items  # noqa: E501
+    def get_characters_character_id_contracts_contract_id_items_with_http_info(self, character_id, contract_id, **kwargs):
+        """Get contract items
 
-        Lists items of a particular contract  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Lists items of a particular contract  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_characters_character_id_contracts_contract_id_items_with_http_info(character_id, contract_id, async_req=True)
@@ -319,7 +319,7 @@ class ContractsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['character_id', 'contract_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['character_id', 'contract_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -336,32 +336,32 @@ class ContractsApi(object):
         del params['kwargs']
         # verify the required parameter 'character_id' is set
         if self.api_client.client_side_validation and ('character_id' not in params or
-                                                       params['character_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contracts_contract_id_items`")  # noqa: E501
+                                                       params['character_id'] is None):
+            raise ValueError("Missing the required parameter `character_id` when calling `get_characters_character_id_contracts_contract_id_items`")
         # verify the required parameter 'contract_id' is set
         if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `get_characters_character_id_contracts_contract_id_items`")  # noqa: E501
+                                                       params['contract_id'] is None):
+            raise ValueError("Missing the required parameter `contract_id` when calling `get_characters_character_id_contracts_contract_id_items`")
 
-        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contracts_contract_id_items`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('character_id' in params and params['character_id'] < 1):
+            raise ValueError("Invalid value for parameter `character_id` when calling `get_characters_character_id_contracts_contract_id_items`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'character_id' in params:
-            path_params['character_id'] = params['character_id']  # noqa: E501
+            path_params['character_id'] = params['character_id']
         if 'contract_id' in params:
-            path_params['contract_id'] = params['contract_id']  # noqa: E501
+            path_params['contract_id'] = params['contract_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -369,14 +369,14 @@ class ContractsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/characters/{character_id}/contracts/{contract_id}/items/', 'GET',
@@ -386,7 +386,7 @@ class ContractsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -394,10 +394,10 @@ class ContractsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_contracts_public_bids_contract_id(self, contract_id, **kwargs):  # noqa: E501
-        """Get public contract bids  # noqa: E501
+    def get_contracts_public_bids_contract_id(self, contract_id, **kwargs):
+        """Get public contract bids
 
-        Lists bids on a public auction contract  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Lists bids on a public auction contract  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_contracts_public_bids_contract_id(contract_id, async_req=True)
@@ -414,15 +414,15 @@ class ContractsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_contracts_public_bids_contract_id_with_http_info(contract_id, **kwargs)  # noqa: E501
+            return self.get_contracts_public_bids_contract_id_with_http_info(contract_id, **kwargs)
         else:
-            (data) = self.get_contracts_public_bids_contract_id_with_http_info(contract_id, **kwargs)  # noqa: E501
+            (data) = self.get_contracts_public_bids_contract_id_with_http_info(contract_id, **kwargs)
             return data
 
-    def get_contracts_public_bids_contract_id_with_http_info(self, contract_id, **kwargs):  # noqa: E501
-        """Get public contract bids  # noqa: E501
+    def get_contracts_public_bids_contract_id_with_http_info(self, contract_id, **kwargs):
+        """Get public contract bids
 
-        Lists bids on a public auction contract  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Lists bids on a public auction contract  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_contracts_public_bids_contract_id_with_http_info(contract_id, async_req=True)
@@ -438,7 +438,7 @@ class ContractsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contract_id', 'datasource', 'if_none_match', 'page']  # noqa: E501
+        all_params = ['contract_id', 'datasource', 'if_none_match', 'page']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -455,26 +455,26 @@ class ContractsApi(object):
         del params['kwargs']
         # verify the required parameter 'contract_id' is set
         if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `get_contracts_public_bids_contract_id`")  # noqa: E501
+                                                       params['contract_id'] is None):
+            raise ValueError("Missing the required parameter `contract_id` when calling `get_contracts_public_bids_contract_id`")
 
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_contracts_public_bids_contract_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_contracts_public_bids_contract_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'contract_id' in params:
-            path_params['contract_id'] = params['contract_id']  # noqa: E501
+            path_params['contract_id'] = params['contract_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -482,14 +482,14 @@ class ContractsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/contracts/public/bids/{contract_id}/', 'GET',
@@ -499,7 +499,7 @@ class ContractsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -507,10 +507,10 @@ class ContractsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_contracts_public_items_contract_id(self, contract_id, **kwargs):  # noqa: E501
-        """Get public contract items  # noqa: E501
+    def get_contracts_public_items_contract_id(self, contract_id, **kwargs):
+        """Get public contract items
 
-        Lists items of a public contract  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Lists items of a public contract  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_contracts_public_items_contract_id(contract_id, async_req=True)
@@ -527,15 +527,15 @@ class ContractsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_contracts_public_items_contract_id_with_http_info(contract_id, **kwargs)  # noqa: E501
+            return self.get_contracts_public_items_contract_id_with_http_info(contract_id, **kwargs)
         else:
-            (data) = self.get_contracts_public_items_contract_id_with_http_info(contract_id, **kwargs)  # noqa: E501
+            (data) = self.get_contracts_public_items_contract_id_with_http_info(contract_id, **kwargs)
             return data
 
-    def get_contracts_public_items_contract_id_with_http_info(self, contract_id, **kwargs):  # noqa: E501
-        """Get public contract items  # noqa: E501
+    def get_contracts_public_items_contract_id_with_http_info(self, contract_id, **kwargs):
+        """Get public contract items
 
-        Lists items of a public contract  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Lists items of a public contract  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_contracts_public_items_contract_id_with_http_info(contract_id, async_req=True)
@@ -551,7 +551,7 @@ class ContractsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contract_id', 'datasource', 'if_none_match', 'page']  # noqa: E501
+        all_params = ['contract_id', 'datasource', 'if_none_match', 'page']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -568,26 +568,26 @@ class ContractsApi(object):
         del params['kwargs']
         # verify the required parameter 'contract_id' is set
         if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `get_contracts_public_items_contract_id`")  # noqa: E501
+                                                       params['contract_id'] is None):
+            raise ValueError("Missing the required parameter `contract_id` when calling `get_contracts_public_items_contract_id`")
 
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_contracts_public_items_contract_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_contracts_public_items_contract_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'contract_id' in params:
-            path_params['contract_id'] = params['contract_id']  # noqa: E501
+            path_params['contract_id'] = params['contract_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -595,14 +595,14 @@ class ContractsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/contracts/public/items/{contract_id}/', 'GET',
@@ -612,7 +612,7 @@ class ContractsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -620,10 +620,10 @@ class ContractsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_contracts_public_region_id(self, region_id, **kwargs):  # noqa: E501
-        """Get public contracts  # noqa: E501
+    def get_contracts_public_region_id(self, region_id, **kwargs):
+        """Get public contracts
 
-        Returns a paginated list of all public contracts in the given region  ---  This route is cached for up to 1800 seconds  # noqa: E501
+        Returns a paginated list of all public contracts in the given region  ---  This route is cached for up to 1800 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_contracts_public_region_id(region_id, async_req=True)
@@ -640,15 +640,15 @@ class ContractsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_contracts_public_region_id_with_http_info(region_id, **kwargs)  # noqa: E501
+            return self.get_contracts_public_region_id_with_http_info(region_id, **kwargs)
         else:
-            (data) = self.get_contracts_public_region_id_with_http_info(region_id, **kwargs)  # noqa: E501
+            (data) = self.get_contracts_public_region_id_with_http_info(region_id, **kwargs)
             return data
 
-    def get_contracts_public_region_id_with_http_info(self, region_id, **kwargs):  # noqa: E501
-        """Get public contracts  # noqa: E501
+    def get_contracts_public_region_id_with_http_info(self, region_id, **kwargs):
+        """Get public contracts
 
-        Returns a paginated list of all public contracts in the given region  ---  This route is cached for up to 1800 seconds  # noqa: E501
+        Returns a paginated list of all public contracts in the given region  ---  This route is cached for up to 1800 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_contracts_public_region_id_with_http_info(region_id, async_req=True)
@@ -664,7 +664,7 @@ class ContractsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['region_id', 'datasource', 'if_none_match', 'page']  # noqa: E501
+        all_params = ['region_id', 'datasource', 'if_none_match', 'page']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -681,26 +681,26 @@ class ContractsApi(object):
         del params['kwargs']
         # verify the required parameter 'region_id' is set
         if self.api_client.client_side_validation and ('region_id' not in params or
-                                                       params['region_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `region_id` when calling `get_contracts_public_region_id`")  # noqa: E501
+                                                       params['region_id'] is None):
+            raise ValueError("Missing the required parameter `region_id` when calling `get_contracts_public_region_id`")
 
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_contracts_public_region_id`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_contracts_public_region_id`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'region_id' in params:
-            path_params['region_id'] = params['region_id']  # noqa: E501
+            path_params['region_id'] = params['region_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -708,14 +708,14 @@ class ContractsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/contracts/public/{region_id}/', 'GET',
@@ -725,7 +725,7 @@ class ContractsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -733,10 +733,10 @@ class ContractsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_contracts(self, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contracts  # noqa: E501
+    def get_corporations_corporation_id_contracts(self, corporation_id, **kwargs):
+        """Get corporation contracts
 
-        Returns contracts available to a corporation, only if the corporation is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Returns contracts available to a corporation, only if the corporation is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contracts(corporation_id, async_req=True)
@@ -754,15 +754,15 @@ class ContractsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_contracts_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_contracts_with_http_info(corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_contracts_with_http_info(corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_contracts_with_http_info(corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_contracts_with_http_info(self, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contracts  # noqa: E501
+    def get_corporations_corporation_id_contracts_with_http_info(self, corporation_id, **kwargs):
+        """Get corporation contracts
 
-        Returns contracts available to a corporation, only if the corporation is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Returns contracts available to a corporation, only if the corporation is issuer, acceptor or assignee. Only returns contracts no older than 30 days, or if the status is \"in_progress\".  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contracts_with_http_info(corporation_id, async_req=True)
@@ -779,7 +779,7 @@ class ContractsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['corporation_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -796,30 +796,30 @@ class ContractsApi(object):
         del params['kwargs']
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contracts`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contracts`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contracts`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_contracts`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contracts`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_contracts`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -827,14 +827,14 @@ class ContractsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporations/{corporation_id}/contracts/', 'GET',
@@ -844,7 +844,7 @@ class ContractsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -852,10 +852,10 @@ class ContractsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_contracts_contract_id_bids(self, contract_id, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contract bids  # noqa: E501
+    def get_corporations_corporation_id_contracts_contract_id_bids(self, contract_id, corporation_id, **kwargs):
+        """Get corporation contract bids
 
-        Lists bids on a particular auction contract  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Lists bids on a particular auction contract  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contracts_contract_id_bids(contract_id, corporation_id, async_req=True)
@@ -874,15 +874,15 @@ class ContractsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_contracts_contract_id_bids_with_http_info(contract_id, corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_contracts_contract_id_bids_with_http_info(contract_id, corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_contracts_contract_id_bids_with_http_info(contract_id, corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_contracts_contract_id_bids_with_http_info(contract_id, corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_contracts_contract_id_bids_with_http_info(self, contract_id, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contract bids  # noqa: E501
+    def get_corporations_corporation_id_contracts_contract_id_bids_with_http_info(self, contract_id, corporation_id, **kwargs):
+        """Get corporation contract bids
 
-        Lists bids on a particular auction contract  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Lists bids on a particular auction contract  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contracts_contract_id_bids_with_http_info(contract_id, corporation_id, async_req=True)
@@ -900,7 +900,7 @@ class ContractsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contract_id', 'corporation_id', 'datasource', 'if_none_match', 'page', 'token']  # noqa: E501
+        all_params = ['contract_id', 'corporation_id', 'datasource', 'if_none_match', 'page', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -917,36 +917,36 @@ class ContractsApi(object):
         del params['kwargs']
         # verify the required parameter 'contract_id' is set
         if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `get_corporations_corporation_id_contracts_contract_id_bids`")  # noqa: E501
+                                                       params['contract_id'] is None):
+            raise ValueError("Missing the required parameter `contract_id` when calling `get_corporations_corporation_id_contracts_contract_id_bids`")
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contracts_contract_id_bids`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contracts_contract_id_bids`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contracts_contract_id_bids`, must be a value greater than or equal to `1`")  # noqa: E501
-        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_contracts_contract_id_bids`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contracts_contract_id_bids`, must be a value greater than or equal to `1`")
+        if self.api_client.client_side_validation and ('page' in params and params['page'] < 1):
+            raise ValueError("Invalid value for parameter `page` when calling `get_corporations_corporation_id_contracts_contract_id_bids`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'contract_id' in params:
-            path_params['contract_id'] = params['contract_id']  # noqa: E501
+            path_params['contract_id'] = params['contract_id']
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'page' in params:
-            query_params.append(('page', params['page']))  # noqa: E501
+            query_params.append(('page', params['page']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -954,14 +954,14 @@ class ContractsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporations/{corporation_id}/contracts/{contract_id}/bids/', 'GET',
@@ -971,7 +971,7 @@ class ContractsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -979,10 +979,10 @@ class ContractsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_corporations_corporation_id_contracts_contract_id_items(self, contract_id, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contract items  # noqa: E501
+    def get_corporations_corporation_id_contracts_contract_id_items(self, contract_id, corporation_id, **kwargs):
+        """Get corporation contract items
 
-        Lists items of a particular contract  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Lists items of a particular contract  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contracts_contract_id_items(contract_id, corporation_id, async_req=True)
@@ -1000,15 +1000,15 @@ class ContractsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_corporations_corporation_id_contracts_contract_id_items_with_http_info(contract_id, corporation_id, **kwargs)  # noqa: E501
+            return self.get_corporations_corporation_id_contracts_contract_id_items_with_http_info(contract_id, corporation_id, **kwargs)
         else:
-            (data) = self.get_corporations_corporation_id_contracts_contract_id_items_with_http_info(contract_id, corporation_id, **kwargs)  # noqa: E501
+            (data) = self.get_corporations_corporation_id_contracts_contract_id_items_with_http_info(contract_id, corporation_id, **kwargs)
             return data
 
-    def get_corporations_corporation_id_contracts_contract_id_items_with_http_info(self, contract_id, corporation_id, **kwargs):  # noqa: E501
-        """Get corporation contract items  # noqa: E501
+    def get_corporations_corporation_id_contracts_contract_id_items_with_http_info(self, contract_id, corporation_id, **kwargs):
+        """Get corporation contract items
 
-        Lists items of a particular contract  ---  This route is cached for up to 3600 seconds  # noqa: E501
+        Lists items of a particular contract  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_corporations_corporation_id_contracts_contract_id_items_with_http_info(contract_id, corporation_id, async_req=True)
@@ -1025,7 +1025,7 @@ class ContractsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['contract_id', 'corporation_id', 'datasource', 'if_none_match', 'token']  # noqa: E501
+        all_params = ['contract_id', 'corporation_id', 'datasource', 'if_none_match', 'token']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1042,32 +1042,32 @@ class ContractsApi(object):
         del params['kwargs']
         # verify the required parameter 'contract_id' is set
         if self.api_client.client_side_validation and ('contract_id' not in params or
-                                                       params['contract_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `contract_id` when calling `get_corporations_corporation_id_contracts_contract_id_items`")  # noqa: E501
+                                                       params['contract_id'] is None):
+            raise ValueError("Missing the required parameter `contract_id` when calling `get_corporations_corporation_id_contracts_contract_id_items`")
         # verify the required parameter 'corporation_id' is set
         if self.api_client.client_side_validation and ('corporation_id' not in params or
-                                                       params['corporation_id'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contracts_contract_id_items`")  # noqa: E501
+                                                       params['corporation_id'] is None):
+            raise ValueError("Missing the required parameter `corporation_id` when calling `get_corporations_corporation_id_contracts_contract_id_items`")
 
-        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):  # noqa: E501
-            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contracts_contract_id_items`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('corporation_id' in params and params['corporation_id'] < 1):
+            raise ValueError("Invalid value for parameter `corporation_id` when calling `get_corporations_corporation_id_contracts_contract_id_items`, must be a value greater than or equal to `1`")
         collection_formats = {}
 
         path_params = {}
         if 'contract_id' in params:
-            path_params['contract_id'] = params['contract_id']  # noqa: E501
+            path_params['contract_id'] = params['contract_id']
         if 'corporation_id' in params:
-            path_params['corporation_id'] = params['corporation_id']  # noqa: E501
+            path_params['corporation_id'] = params['corporation_id']
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
         if 'token' in params:
-            query_params.append(('token', params['token']))  # noqa: E501
+            query_params.append(('token', params['token']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -1075,14 +1075,14 @@ class ContractsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = ['evesso']  # noqa: E501
+        auth_settings = ['evesso']
 
         return self.api_client.call_api(
             '/v1/corporations/{corporation_id}/contracts/{contract_id}/items/', 'GET',
@@ -1092,7 +1092,7 @@ class ContractsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

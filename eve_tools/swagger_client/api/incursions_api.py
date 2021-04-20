@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -33,10 +33,10 @@ class IncursionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_incursions(self, **kwargs):  # noqa: E501
-        """List incursions  # noqa: E501
+    def get_incursions(self, **kwargs):
+        """List incursions
 
-        Return a list of current incursions  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return a list of current incursions  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_incursions(async_req=True)
@@ -51,15 +51,15 @@ class IncursionsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_incursions_with_http_info(**kwargs)  # noqa: E501
+            return self.get_incursions_with_http_info(**kwargs)
         else:
-            (data) = self.get_incursions_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_incursions_with_http_info(**kwargs)
             return data
 
-    def get_incursions_with_http_info(self, **kwargs):  # noqa: E501
-        """List incursions  # noqa: E501
+    def get_incursions_with_http_info(self, **kwargs):
+        """List incursions
 
-        Return a list of current incursions  ---  This route is cached for up to 300 seconds  # noqa: E501
+        Return a list of current incursions  ---  This route is cached for up to 300 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_incursions_with_http_info(async_req=True)
@@ -73,7 +73,7 @@ class IncursionsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['datasource', 'if_none_match']  # noqa: E501
+        all_params = ['datasource', 'if_none_match']
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -95,11 +95,11 @@ class IncursionsApi(object):
 
         query_params = []
         if 'datasource' in params:
-            query_params.append(('datasource', params['datasource']))  # noqa: E501
+            query_params.append(('datasource', params['datasource']))
 
         header_params = {}
         if 'if_none_match' in params:
-            header_params['If-None-Match'] = params['if_none_match']  # noqa: E501
+            header_params['If-None-Match'] = params['if_none_match']
 
         form_params = []
         local_var_files = {}
@@ -107,14 +107,14 @@ class IncursionsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
+            ['application/json'])
 
         # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = []
 
         return self.api_client.call_api(
             '/v1/incursions/', 'GET',
@@ -124,7 +124,7 @@ class IncursionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[object]',  # noqa: E501
+            response_type='list[object]',
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

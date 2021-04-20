@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -40,8 +40,8 @@ class ServiceUnavailable(object):
         'error': 'error'
     }
 
-    def __init__(self, error=None, _configuration=None):  # noqa: E501
-        """ServiceUnavailable - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, error=None, _configuration=None):
+        """ServiceUnavailable - a model defined in Swagger"""
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
@@ -53,11 +53,11 @@ class ServiceUnavailable(object):
 
     @property
     def error(self):
-        """Gets the error of this ServiceUnavailable.  # noqa: E501
+        """Gets the error of this ServiceUnavailable.
 
-        Service unavailable message  # noqa: E501
+        Service unavailable message
 
-        :return: The error of this ServiceUnavailable.  # noqa: E501
+        :return: The error of this ServiceUnavailable.
         :rtype: str
         """
         return self._error
@@ -66,13 +66,13 @@ class ServiceUnavailable(object):
     def error(self, error):
         """Sets the error of this ServiceUnavailable.
 
-        Service unavailable message  # noqa: E501
+        Service unavailable message
 
-        :param error: The error of this ServiceUnavailable.  # noqa: E501
+        :param error: The error of this ServiceUnavailable.
         :type: str
         """
         if self._configuration.client_side_validation and error is None:
-            raise ValueError("Invalid value for `error`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `error`, must not be `None`")
 
         self._error = error
 

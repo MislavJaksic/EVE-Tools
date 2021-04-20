@@ -3,7 +3,7 @@
 """
     EVE Swagger Interface
 
-    An OpenAPI for EVE Online  # noqa: E501
+    An OpenAPI for EVE Online
 
     OpenAPI spec version: 1.7.15
     
@@ -40,8 +40,8 @@ class BadRequest(object):
         'error': 'error'
     }
 
-    def __init__(self, error=None, _configuration=None):  # noqa: E501
-        """BadRequest - a model defined in Swagger"""  # noqa: E501
+    def __init__(self, error=None, _configuration=None):
+        """BadRequest - a model defined in Swagger"""
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
@@ -53,11 +53,11 @@ class BadRequest(object):
 
     @property
     def error(self):
-        """Gets the error of this BadRequest.  # noqa: E501
+        """Gets the error of this BadRequest.
 
-        Bad request message  # noqa: E501
+        Bad request message
 
-        :return: The error of this BadRequest.  # noqa: E501
+        :return: The error of this BadRequest.
         :rtype: str
         """
         return self._error
@@ -66,13 +66,13 @@ class BadRequest(object):
     def error(self, error):
         """Sets the error of this BadRequest.
 
-        Bad request message  # noqa: E501
+        Bad request message
 
-        :param error: The error of this BadRequest.  # noqa: E501
+        :param error: The error of this BadRequest.
         :type: str
         """
         if self._configuration.client_side_validation and error is None:
-            raise ValueError("Invalid value for `error`, must not be `None`")  # noqa: E501
+            raise ValueError("Invalid value for `error`, must not be `None`")
 
         self._error = error
 
