@@ -14,18 +14,17 @@ from __future__ import absolute_import
 import datetime
 import json
 import mimetypes
-from multiprocessing.pool import ThreadPool
 import os
 import re
 import tempfile
+from multiprocessing.pool import ThreadPool
 
 # python 2 and python 3 compatibility library
 import six
 from six.moves.urllib.parse import quote
 
-from eve_tools.swagger_client.configuration import Configuration
-from eve_tools.swagger_client import models
 from eve_tools.swagger_client import rest
+from eve_tools.swagger_client.configuration import Configuration
 
 
 class ApiClient(object):
@@ -61,7 +60,7 @@ class ApiClient(object):
     }
 
     def __init__(
-        self, configuration=None, header_name=None, header_value=None, cookie=None
+            self, configuration=None, header_name=None, header_value=None, cookie=None
     ):
         if configuration is None:
             configuration = Configuration()
@@ -102,21 +101,21 @@ class ApiClient(object):
         self.default_headers[header_name] = header_value
 
     def __call_api(
-        self,
-        resource_path,
-        method,
-        path_params=None,
-        query_params=None,
-        header_params=None,
-        body=None,
-        post_params=None,
-        files=None,
-        response_type=None,
-        auth_settings=None,
-        _return_http_data_only=None,
-        collection_formats=None,
-        _preload_content=True,
-        _request_timeout=None,
+            self,
+            resource_path,
+            method,
+            path_params=None,
+            query_params=None,
+            header_params=None,
+            body=None,
+            post_params=None,
+            files=None,
+            response_type=None,
+            auth_settings=None,
+            _return_http_data_only=None,
+            collection_formats=None,
+            _preload_content=True,
+            _request_timeout=None,
     ):
 
         config = self.configuration
@@ -296,22 +295,22 @@ class ApiClient(object):
             return self.__deserialize_model(data, klass)
 
     def call_api(
-        self,
-        resource_path,
-        method,
-        path_params=None,
-        query_params=None,
-        header_params=None,
-        body=None,
-        post_params=None,
-        files=None,
-        response_type=None,
-        auth_settings=None,
-        async_req=None,
-        _return_http_data_only=None,
-        collection_formats=None,
-        _preload_content=True,
-        _request_timeout=None,
+            self,
+            resource_path,
+            method,
+            path_params=None,
+            query_params=None,
+            header_params=None,
+            body=None,
+            post_params=None,
+            files=None,
+            response_type=None,
+            auth_settings=None,
+            async_req=None,
+            _return_http_data_only=None,
+            collection_formats=None,
+            _preload_content=True,
+            _request_timeout=None,
     ):
         """Makes the HTTP request (synchronous) and returns deserialized data.
 
@@ -389,15 +388,15 @@ class ApiClient(object):
         return thread
 
     def request(
-        self,
-        method,
-        url,
-        query_params=None,
-        headers=None,
-        post_params=None,
-        body=None,
-        _preload_content=True,
-        _request_timeout=None,
+            self,
+            method,
+            url,
+            query_params=None,
+            headers=None,
+            post_params=None,
+            body=None,
+            _preload_content=True,
+            _request_timeout=None,
     ):
         """Makes the HTTP request using RESTClient."""
         if method == "GET":
@@ -482,7 +481,7 @@ class ApiClient(object):
         if collection_formats is None:
             collection_formats = {}
         for k, v in (
-            six.iteritems(params) if isinstance(params, dict) else params
+                six.iteritems(params) if isinstance(params, dict) else params
         ):
             if k in collection_formats:
                 collection_format = collection_formats[k]
@@ -524,8 +523,8 @@ class ApiClient(object):
                         filename = os.path.basename(f.name)
                         filedata = f.read()
                         mimetype = (
-                            mimetypes.guess_type(filename)[0]
-                            or "application/octet-stream"
+                                mimetypes.guess_type(filename)[0]
+                                or "application/octet-stream"
                         )
                         params.append(tuple([k, tuple([filename, filedata, mimetype])]))
 
@@ -683,7 +682,7 @@ class ApiClient(object):
         """
 
         if not klass.swagger_types and not self.__hasattr(
-            klass, "get_real_child_model"
+                klass, "get_real_child_model"
         ):
             return data
 
@@ -691,9 +690,9 @@ class ApiClient(object):
         if klass.swagger_types is not None:
             for attr, attr_type in six.iteritems(klass.swagger_types):
                 if (
-                    data is not None
-                    and klass.attribute_map[attr] in data
-                    and isinstance(data, (list, dict))
+                        data is not None
+                        and klass.attribute_map[attr] in data
+                        and isinstance(data, (list, dict))
                 ):
                     value = data[klass.attribute_map[attr]]
                     kwargs[attr] = self.__deserialize(value, attr_type)
@@ -701,9 +700,9 @@ class ApiClient(object):
         instance = klass(**kwargs)
 
         if (
-            isinstance(instance, dict)
-            and klass.swagger_types is not None
-            and isinstance(data, dict)
+                isinstance(instance, dict)
+                and klass.swagger_types is not None
+                and isinstance(data, dict)
         ):
             for key, value in data.items():
                 if key not in klass.swagger_types:

@@ -1,7 +1,5 @@
 from __future__ import absolute_import
 
-# flake8: noqa
-
 # import apis into api package
 from eve_tools.swagger_client.api.alliance_api import AllianceApi
 from eve_tools.swagger_client.api.assets_api import AssetsApi
@@ -37,3 +35,5 @@ from eve_tools.swagger_client.api.universe_api import UniverseApi
 from eve_tools.swagger_client.api.user_interface_api import UserInterfaceApi
 from eve_tools.swagger_client.api.wallet_api import WalletApi
 from eve_tools.swagger_client.api.wars_api import WarsApi
+
+# flake8: noqa

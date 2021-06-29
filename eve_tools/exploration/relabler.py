@@ -1,6 +1,3 @@
-import re
-
-
 start_id = 1
 
 
@@ -32,6 +29,7 @@ class DataBlock(object):
 
         output = output[:-1]
         return output
+
 
 with open("data.txt", "r") as file:
     summer = {}

@@ -1,14 +1,14 @@
-from os import listdir
-from os.path import isfile, join
-from datetime import datetime
 import codecs
 import re
+from datetime import datetime
+from os import listdir
+from os.path import isfile, join
 
 directory = "C:/Users/Korisnik/Documents/EVE/logs/Chatlogs"
 time_format = "%Y.%m.%d %H:%M:%S"
 
 
-class ChatFilter(object):
+class ChatFilter:
     def __init__(self, chat_channel):
         self.chat_channel = chat_channel
 
@@ -63,7 +63,7 @@ class ChatFilter(object):
         self.filter_end_datetime = datetime.strptime(string_time, time_format)
 
 
-class ChatChannel(object):
+class ChatChannel:
     def __init__(self, file):
         self.metadata = ChatChannelMetadata(file)
         self.messages = []
@@ -79,7 +79,7 @@ class ChatChannel(object):
         return output
 
 
-class ChatChannelMetadata(object):
+class ChatChannelMetadata:
     def __init__(self, file):
         head = [next(file) for x in range(12)]
         self.channel_id = re.search(":(.*)", head[6]).group(1).strip()
@@ -101,15 +101,15 @@ class ChatChannelMetadata(object):
         return output
 
 
-class ChatLogMessage(object):
-    def __init__(self, line):
+class ChatLogMessage:
+    def __init__(self, line: str):
         match = re.search("\[ ([0-9\.:\s]*) \] ([^>]*) >(.*)", line.strip())
         if match:
-            self.timestamp = self._string_to_date(match.group(1).strip())
+            self.timestamp = self.string_to_date(match.group(1).strip())
             self.character = match.group(2).strip()
             self.text = match.group(3).strip()
 
-    def _string_to_date(self, string_time):
+    def string_to_date(self, string_time: str) -> datetime:
         return datetime.strptime(string_time, time_format)
 
     def __str__(self):

@@ -1,7 +1,3 @@
-from datetime import timedelta
-
-from eve_tools import settings
-
 from eve_tools.swagger_client.api.universe_api import UniverseApi
 
 

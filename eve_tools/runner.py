@@ -7,15 +7,19 @@
     :copyrgiht: 2019 MislavJaksic
     :license: MIT License
 """
+import datetime
 import sys
-import json
+from time import sleep
+
+from loguru import logger
 
 from eve_tools.eve_datastore import EveDatastore
-
 # from eve_tools.eve_calculator import EveCalculator
 from eve_tools.helper.data_frame import DataFrame
 
 # from eve_tools.data_layer.sqlite_connection import SQLiteConnection
+
+log_message = "update?={update}"
 
 
 def main(args):
@@ -25,7 +29,30 @@ def main(args):
     kills = datastore.get_universe_system_kills()
 
     dataframe = DataFrame("json", kills)
-    dataframe.to_csv("kills.csv")
+    dataframe.to_csv("kills" + str(datetime.datetime.now().timestamp()) + ".csv")
+
+    counter = 0
+    while counter < 1000:
+        counter += 1
+        sleep(600)
+        if kills == datastore.get_universe_system_kills():
+            updated = False
+        else:
+            updated = True
+            dataframe = DataFrame("json", kills)
+            dataframe.to_csv(
+                "kills" + str(datetime.datetime.now().timestamp()) + ".csv"
+            )
+
+        logger.info(
+            log_message,
+            update=updated,
+        )
+
+        kills = datastore.get_universe_system_kills()
+
+    # dataframe = DataFrame("json", kills)
+    # dataframe.to_csv("kills.csv")
 
 
 def run():
