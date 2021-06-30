@@ -31,7 +31,7 @@ class TestUniverseApi:
 
         Get ancestries
         """
-        assert api.get_universe_ancestries()[0]["bloodline_id"] == 5
+        assert api.get_universe_ancestries()[0]["bloodline_id"] == 7
 
     def test_get_universe_asteroid_belts_asteroid_belt_id(self, api):
         """Test case for get_universe_asteroid_belts_asteroid_belt_id
