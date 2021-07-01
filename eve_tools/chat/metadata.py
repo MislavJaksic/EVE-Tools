@@ -17,4 +17,7 @@ class ChatChannelMetadata:
         return False
 
     def __str__(self):
-        return "Channel ID: {}\nChannel Name: {} \n Listener:{} \nSession started: {}\n".format(self.channel_id, self.channel_name, self.listener, str(self.session_started))
+        return "Channel ID: {}\nChannel Name: {} \nListener:{} \nSession started: {}".format(self.channel_id,
+                                                                                                self.channel_name,
+                                                                                                self.listener, str(
+                self.session_started))

@@ -10,8 +10,7 @@ class EveDatastore:
 
         empty_kills = []
         for system in systems:
-            empty = {"npc_kills": 0, "pod_kills": 0, "ship_kills": 0}
-            empty["system_id"] = system
+            empty = {"npc_kills": 0, "pod_kills": 0, "ship_kills": 0, "system_id": system}
             empty_kills.append(empty)
 
         system_kills = self.universe_api.get_universe_system_kills()
