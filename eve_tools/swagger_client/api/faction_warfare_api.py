@@ -50,7 +50,7 @@ class FactionWarfareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_fw_stats_with_http_info(character_id, **kwargs)
         else:
@@ -165,7 +165,7 @@ class FactionWarfareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_fw_stats_with_http_info(corporation_id, **kwargs)
         else:
@@ -278,7 +278,7 @@ class FactionWarfareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_fw_leaderboards_with_http_info(**kwargs)
         else:
@@ -377,7 +377,7 @@ class FactionWarfareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_fw_leaderboards_characters_with_http_info(**kwargs)
         else:
@@ -476,7 +476,7 @@ class FactionWarfareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_fw_leaderboards_corporations_with_http_info(**kwargs)
         else:
@@ -575,7 +575,7 @@ class FactionWarfareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_fw_stats_with_http_info(**kwargs)
         else:
@@ -674,7 +674,7 @@ class FactionWarfareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_fw_systems_with_http_info(**kwargs)
         else:
@@ -773,7 +773,7 @@ class FactionWarfareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_fw_wars_with_http_info(**kwargs)
         else:

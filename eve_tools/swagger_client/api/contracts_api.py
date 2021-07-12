@@ -51,7 +51,7 @@ class ContractsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_contracts_with_http_info(character_id, **kwargs)
         else:
@@ -173,7 +173,7 @@ class ContractsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_contracts_contract_id_bids_with_http_info(character_id, contract_id,
                                                                                               **kwargs)
@@ -300,7 +300,7 @@ class ContractsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_contracts_contract_id_items_with_http_info(character_id,
                                                                                                contract_id, **kwargs)
@@ -426,7 +426,7 @@ class ContractsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_contracts_public_bids_contract_id_with_http_info(contract_id, **kwargs)
         else:
@@ -541,7 +541,7 @@ class ContractsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_contracts_public_items_contract_id_with_http_info(contract_id, **kwargs)
         else:
@@ -656,7 +656,7 @@ class ContractsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_contracts_public_region_id_with_http_info(region_id, **kwargs)
         else:
@@ -771,7 +771,7 @@ class ContractsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_contracts_with_http_info(corporation_id, **kwargs)
         else:
@@ -894,7 +894,7 @@ class ContractsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_contracts_contract_id_bids_with_http_info(contract_id,
                                                                                                   corporation_id,
@@ -1029,7 +1029,7 @@ class ContractsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_contracts_contract_id_items_with_http_info(contract_id,
                                                                                                    corporation_id,

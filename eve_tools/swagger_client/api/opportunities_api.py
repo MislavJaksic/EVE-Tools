@@ -50,7 +50,7 @@ class OpportunitiesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_opportunities_with_http_info(character_id, **kwargs)
         else:
@@ -163,7 +163,7 @@ class OpportunitiesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_opportunities_groups_with_http_info(**kwargs)
         else:
@@ -265,7 +265,7 @@ class OpportunitiesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_opportunities_groups_group_id_with_http_info(group_id, **kwargs)
         else:
@@ -378,7 +378,7 @@ class OpportunitiesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_opportunities_tasks_with_http_info(**kwargs)
         else:
@@ -478,7 +478,7 @@ class OpportunitiesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_opportunities_tasks_task_id_with_http_info(task_id, **kwargs)
         else:

@@ -50,7 +50,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_orders_with_http_info(character_id, **kwargs)
         else:
@@ -166,7 +166,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_orders_history_with_http_info(character_id, **kwargs)
         else:
@@ -288,7 +288,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_orders_with_http_info(corporation_id, **kwargs)
         else:
@@ -410,7 +410,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_orders_history_with_http_info(corporation_id, **kwargs)
         else:
@@ -529,7 +529,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_markets_groups_with_http_info(**kwargs)
         else:
@@ -631,7 +631,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_markets_groups_market_group_id_with_http_info(market_group_id, **kwargs)
         else:
@@ -744,7 +744,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_markets_prices_with_http_info(**kwargs)
         else:
@@ -845,7 +845,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_markets_region_id_history_with_http_info(region_id, type_id, **kwargs)
         else:
@@ -962,7 +962,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_markets_region_id_orders_with_http_info(order_type, region_id, **kwargs)
         else:
@@ -1086,7 +1086,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_markets_region_id_types_with_http_info(region_id, **kwargs)
         else:
@@ -1201,7 +1201,7 @@ class MarketApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_markets_structures_structure_id_with_http_info(structure_id, **kwargs)
         else:

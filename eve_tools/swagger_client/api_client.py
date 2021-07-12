@@ -20,9 +20,12 @@ import tempfile
 from multiprocessing.pool import ThreadPool
 
 # python 2 and python 3 compatibility library
+from typing import Dict
+
 import six
 from six.moves.urllib.parse import quote
 
+from eve_tools import swagger_client
 from eve_tools.swagger_client import rest
 from eve_tools.swagger_client.configuration import Configuration
 
@@ -116,7 +119,7 @@ class ApiClient(object):
             collection_formats=None,
             _preload_content=True,
             _request_timeout=None,
-    ):
+    ) -> Dict:
 
         config = self.configuration
 
@@ -185,9 +188,9 @@ class ApiClient(object):
                 return_data = None
 
         if _return_http_data_only:
-            return return_data
+            return {"data": return_data}
         else:
-            return (return_data, response_data.status, response_data.getheaders())
+            return {"data": return_data, "status": response_data.status, "headers": response_data.getheaders()}
 
     def sanitize_for_serialization(self, obj):
         """Builds a JSON POST object.
@@ -311,7 +314,7 @@ class ApiClient(object):
             collection_formats=None,
             _preload_content=True,
             _request_timeout=None,
-    ):
+    ) -> Dict:
         """Makes the HTTP request (synchronous) and returns deserialized data.
 
         To make an async request, set the async_req parameter.

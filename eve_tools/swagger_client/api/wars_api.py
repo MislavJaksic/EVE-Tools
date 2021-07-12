@@ -49,7 +49,7 @@ class WarsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_wars_with_http_info(**kwargs)
         else:
@@ -152,7 +152,7 @@ class WarsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_wars_war_id_with_http_info(war_id, **kwargs)
         else:
@@ -263,7 +263,7 @@ class WarsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_wars_war_id_killmails_with_http_info(war_id, **kwargs)
         else:

@@ -50,7 +50,7 @@ class ContactsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.delete_characters_character_id_contacts_with_http_info(character_id, contact_ids, **kwargs)
         else:
@@ -180,7 +180,7 @@ class ContactsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_alliances_alliance_id_contacts_with_http_info(alliance_id, **kwargs)
         else:
@@ -301,7 +301,7 @@ class ContactsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_alliances_alliance_id_contacts_labels_with_http_info(alliance_id, **kwargs)
         else:
@@ -417,7 +417,7 @@ class ContactsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_contacts_with_http_info(character_id, **kwargs)
         else:
@@ -538,7 +538,7 @@ class ContactsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_contacts_labels_with_http_info(character_id, **kwargs)
         else:
@@ -654,7 +654,7 @@ class ContactsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_contacts_with_http_info(corporation_id, **kwargs)
         else:
@@ -775,7 +775,7 @@ class ContactsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_contacts_labels_with_http_info(corporation_id, **kwargs)
         else:
@@ -893,7 +893,7 @@ class ContactsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing,
                                                                              **kwargs)
@@ -1043,7 +1043,7 @@ class ContactsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.put_characters_character_id_contacts_with_http_info(character_id, contact_ids, standing,
                                                                             **kwargs)

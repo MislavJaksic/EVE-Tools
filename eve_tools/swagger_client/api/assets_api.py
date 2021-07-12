@@ -51,7 +51,7 @@ class AssetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_assets_with_http_info(character_id, **kwargs)
         else:
@@ -173,7 +173,7 @@ class AssetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_assets_with_http_info(corporation_id, **kwargs)
         else:
@@ -294,7 +294,7 @@ class AssetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_characters_character_id_assets_locations_with_http_info(character_id, item_ids, **kwargs)
         else:
@@ -414,7 +414,7 @@ class AssetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_characters_character_id_assets_names_with_http_info(character_id, item_ids, **kwargs)
         else:
@@ -534,7 +534,7 @@ class AssetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_corporations_corporation_id_assets_locations_with_http_info(corporation_id, item_ids,
                                                                                          **kwargs)
@@ -656,7 +656,7 @@ class AssetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_corporations_corporation_id_assets_names_with_http_info(corporation_id, item_ids, **kwargs)
         else:

@@ -48,7 +48,7 @@ class AllianceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_alliances_with_http_info(**kwargs)
         else:
@@ -148,7 +148,7 @@ class AllianceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_alliances_alliance_id_with_http_info(alliance_id, **kwargs)
         else:
@@ -258,7 +258,7 @@ class AllianceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_alliances_alliance_id_corporations_with_http_info(alliance_id, **kwargs)
         else:
@@ -369,7 +369,7 @@ class AllianceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_alliances_alliance_id_icons_with_http_info(alliance_id, **kwargs)
         else:

@@ -50,7 +50,7 @@ class FittingsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.delete_characters_character_id_fittings_fitting_id_with_http_info(character_id, fitting_id,
                                                                                           **kwargs)
@@ -172,7 +172,7 @@ class FittingsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_fittings_with_http_info(character_id, **kwargs)
         else:
@@ -287,7 +287,7 @@ class FittingsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_characters_character_id_fittings_with_http_info(character_id, fitting, **kwargs)
         else:

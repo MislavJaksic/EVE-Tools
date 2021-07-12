@@ -51,7 +51,7 @@ class KillmailsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_killmails_recent_with_http_info(character_id, **kwargs)
         else:
@@ -173,7 +173,7 @@ class KillmailsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_killmails_recent_with_http_info(corporation_id, **kwargs)
         else:
@@ -294,7 +294,7 @@ class KillmailsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_killmails_killmail_id_killmail_hash_with_http_info(killmail_hash, killmail_id, **kwargs)
         else:

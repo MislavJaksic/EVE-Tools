@@ -50,7 +50,7 @@ class PlanetaryInteractionApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_planets_with_http_info(character_id, **kwargs)
         else:
@@ -165,7 +165,7 @@ class PlanetaryInteractionApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_planets_planet_id_with_http_info(character_id, planet_id, **kwargs)
         else:
@@ -287,7 +287,7 @@ class PlanetaryInteractionApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_customs_offices_with_http_info(corporation_id, **kwargs)
         else:
@@ -407,7 +407,7 @@ class PlanetaryInteractionApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_schematics_schematic_id_with_http_info(schematic_id, **kwargs)
         else:

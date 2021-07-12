@@ -51,7 +51,7 @@ class IndustryApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_industry_jobs_with_http_info(character_id, **kwargs)
         else:
@@ -170,7 +170,7 @@ class IndustryApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_mining_with_http_info(character_id, **kwargs)
         else:
@@ -292,7 +292,7 @@ class IndustryApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporation_corporation_id_mining_extractions_with_http_info(corporation_id, **kwargs)
         else:
@@ -414,7 +414,7 @@ class IndustryApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporation_corporation_id_mining_observers_with_http_info(corporation_id, **kwargs)
         else:
@@ -537,7 +537,7 @@ class IndustryApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporation_corporation_id_mining_observers_observer_id_with_http_info(corporation_id,
                                                                                                    observer_id,
@@ -673,7 +673,7 @@ class IndustryApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_industry_jobs_with_http_info(corporation_id, **kwargs)
         else:
@@ -795,7 +795,7 @@ class IndustryApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_industry_facilities_with_http_info(**kwargs)
         else:
@@ -894,7 +894,7 @@ class IndustryApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_industry_systems_with_http_info(**kwargs)
         else:

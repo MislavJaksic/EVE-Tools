@@ -143,3 +143,17 @@ CCP recognizes that it is not the owner of the Applications(s), and CCP will not
 Go through the https://developers.eveonline.com/blog as it explains a lot! :D
 
 https://developers.eveonline.com/blog/article/updated-esi-quick-reference-for-new-developers
+
+Change kwargs['_return_http_data_only'] = True to False if you want to get other data too!
+
+if _return_http_data_only:
+    return return_data
+else:
+    return (return_data, response_data.status, response_data.getheaders())
+change to
+if _return_http_data_only:
+    return {"data": return_data}
+else:
+    return {"data": return_data, "status": response_data.status, "headers": response_data.getheaders()}
+
+Change (data) = to data = 

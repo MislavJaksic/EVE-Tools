@@ -50,7 +50,7 @@ class ClonesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_clones_with_http_info(character_id, **kwargs)
         else:
@@ -165,7 +165,7 @@ class ClonesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_implants_with_http_info(character_id, **kwargs)
         else:

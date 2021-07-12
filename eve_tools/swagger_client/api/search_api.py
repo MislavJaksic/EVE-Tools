@@ -55,7 +55,7 @@ class SearchApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_search_with_http_info(categories, character_id, search, **kwargs)
         else:
@@ -212,7 +212,7 @@ class SearchApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_search_with_http_info(categories, search, **kwargs)
         else:

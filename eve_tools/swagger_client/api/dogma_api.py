@@ -48,7 +48,7 @@ class DogmaApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_dogma_attributes_with_http_info(**kwargs)
         else:
@@ -148,7 +148,7 @@ class DogmaApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_dogma_attributes_attribute_id_with_http_info(attribute_id, **kwargs)
         else:
@@ -257,7 +257,7 @@ class DogmaApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_dogma_dynamic_items_type_id_item_id_with_http_info(item_id, type_id, **kwargs)
         else:
@@ -372,7 +372,7 @@ class DogmaApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_dogma_effects_with_http_info(**kwargs)
         else:
@@ -472,7 +472,7 @@ class DogmaApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_dogma_effects_effect_id_with_http_info(effect_id, **kwargs)
         else:

@@ -51,7 +51,7 @@ class UserInterfaceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_ui_autopilot_waypoint_with_http_info(add_to_beginning, clear_other_waypoints,
                                                                   destination_id, **kwargs)
@@ -178,7 +178,7 @@ class UserInterfaceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_ui_openwindow_contract_with_http_info(contract_id, **kwargs)
         else:
@@ -285,7 +285,7 @@ class UserInterfaceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_ui_openwindow_information_with_http_info(target_id, **kwargs)
         else:
@@ -392,7 +392,7 @@ class UserInterfaceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_ui_openwindow_marketdetails_with_http_info(type_id, **kwargs)
         else:
@@ -499,7 +499,7 @@ class UserInterfaceApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_ui_openwindow_newmail_with_http_info(new_mail, **kwargs)
         else:

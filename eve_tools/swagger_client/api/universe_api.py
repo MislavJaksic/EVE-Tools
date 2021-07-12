@@ -13,8 +13,9 @@
 from __future__ import absolute_import
 
 import re  # noqa: F401
-
 # python 2 and python 3 compatibility library
+from typing import Dict
+
 import six
 
 from eve_tools.swagger_client.api_client import ApiClient
@@ -32,14 +33,14 @@ class UniverseApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_universe_ancestries(self, **kwargs):
+    def get_universe_ancestries(self, **kwargs) -> Dict:
         """Get ancestries
 
         Get all character ancestries  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_ancestries(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_ancestries(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str accept_language: Language to use in the response
@@ -50,21 +51,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_ancestries_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_ancestries_with_http_info(**kwargs)
+            data = self.get_universe_ancestries_with_http_info(**kwargs)
             return data
 
-    def get_universe_ancestries_with_http_info(self, **kwargs):
+    def get_universe_ancestries_with_http_info(self, **kwargs) -> Dict:
         """Get ancestries
 
         Get all character ancestries  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_ancestries_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_ancestries_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str accept_language: Language to use in the response
@@ -145,8 +146,8 @@ class UniverseApi(object):
         Get information on an asteroid belt  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_asteroid_belts_asteroid_belt_id(asteroid_belt_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_asteroid_belts_asteroid_belt_id(asteroid_belt_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int asteroid_belt_id: asteroid_belt_id integer (required)
@@ -156,11 +157,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, **kwargs)
         else:
-            (data) = self.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, **kwargs)
+            data = self.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, **kwargs)
             return data
 
     def get_universe_asteroid_belts_asteroid_belt_id_with_http_info(self, asteroid_belt_id, **kwargs):
@@ -169,8 +170,8 @@ class UniverseApi(object):
         Get information on an asteroid belt  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_asteroid_belts_asteroid_belt_id_with_http_info(asteroid_belt_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int asteroid_belt_id: asteroid_belt_id integer (required)
@@ -247,14 +248,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_bloodlines(self, **kwargs):
+    def get_universe_bloodlines(self, **kwargs) -> Dict:
         """Get bloodlines
 
         Get a list of bloodlines  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_bloodlines(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_bloodlines(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str accept_language: Language to use in the response
@@ -265,21 +266,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_bloodlines_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_bloodlines_with_http_info(**kwargs)
+            data = self.get_universe_bloodlines_with_http_info(**kwargs)
             return data
 
-    def get_universe_bloodlines_with_http_info(self, **kwargs):
+    def get_universe_bloodlines_with_http_info(self, **kwargs) -> Dict:
         """Get bloodlines
 
         Get a list of bloodlines  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_bloodlines_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_bloodlines_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str accept_language: Language to use in the response
@@ -354,14 +355,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_categories(self, **kwargs):
+    def get_universe_categories(self, **kwargs) -> Dict:
         """Get item categories
 
         Get a list of item categories  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_categories(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_categories(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -370,21 +371,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_categories_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_categories_with_http_info(**kwargs)
+            data = self.get_universe_categories_with_http_info(**kwargs)
             return data
 
-    def get_universe_categories_with_http_info(self, **kwargs):
+    def get_universe_categories_with_http_info(self, **kwargs) -> Dict:
         """Get item categories
 
         Get a list of item categories  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_categories_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_categories_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -459,8 +460,8 @@ class UniverseApi(object):
         Get information of an item category  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_categories_category_id(category_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_categories_category_id(category_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int category_id: An Eve item category ID (required)
@@ -472,11 +473,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_categories_category_id_with_http_info(category_id, **kwargs)
         else:
-            (data) = self.get_universe_categories_category_id_with_http_info(category_id, **kwargs)
+            data = self.get_universe_categories_category_id_with_http_info(category_id, **kwargs)
             return data
 
     def get_universe_categories_category_id_with_http_info(self, category_id, **kwargs):
@@ -485,8 +486,8 @@ class UniverseApi(object):
         Get information of an item category  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_categories_category_id_with_http_info(category_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_categories_category_id_with_http_info(category_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int category_id: An Eve item category ID (required)
@@ -569,14 +570,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_constellations(self, **kwargs):
+    def get_universe_constellations(self, **kwargs) -> Dict:
         """Get constellations
 
         Get a list of constellations  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_constellations(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_constellations(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -585,21 +586,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_constellations_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_constellations_with_http_info(**kwargs)
+            data = self.get_universe_constellations_with_http_info(**kwargs)
             return data
 
-    def get_universe_constellations_with_http_info(self, **kwargs):
+    def get_universe_constellations_with_http_info(self, **kwargs) -> Dict:
         """Get constellations
 
         Get a list of constellations  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_constellations_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_constellations_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -674,8 +675,8 @@ class UniverseApi(object):
         Get information on a constellation  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_constellations_constellation_id(constellation_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_constellations_constellation_id(constellation_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int constellation_id: constellation_id integer (required)
@@ -687,11 +688,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_constellations_constellation_id_with_http_info(constellation_id, **kwargs)
         else:
-            (data) = self.get_universe_constellations_constellation_id_with_http_info(constellation_id, **kwargs)
+            data = self.get_universe_constellations_constellation_id_with_http_info(constellation_id, **kwargs)
             return data
 
     def get_universe_constellations_constellation_id_with_http_info(self, constellation_id, **kwargs):
@@ -700,8 +701,8 @@ class UniverseApi(object):
         Get information on a constellation  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_constellations_constellation_id_with_http_info(constellation_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_constellations_constellation_id_with_http_info(constellation_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int constellation_id: constellation_id integer (required)
@@ -784,14 +785,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_factions(self, **kwargs):
+    def get_universe_factions(self, **kwargs) -> Dict:
         """Get factions
 
         Get a list of factions  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_factions(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_factions(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str accept_language: Language to use in the response
@@ -802,21 +803,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_factions_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_factions_with_http_info(**kwargs)
+            data = self.get_universe_factions_with_http_info(**kwargs)
             return data
 
-    def get_universe_factions_with_http_info(self, **kwargs):
+    def get_universe_factions_with_http_info(self, **kwargs) -> Dict:
         """Get factions
 
         Get a list of factions  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_factions_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_factions_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str accept_language: Language to use in the response
@@ -891,14 +892,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_graphics(self, **kwargs):
+    def get_universe_graphics(self, **kwargs) -> Dict:
         """Get graphics
 
         Get a list of graphics  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_graphics(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_graphics(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -907,21 +908,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_graphics_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_graphics_with_http_info(**kwargs)
+            data = self.get_universe_graphics_with_http_info(**kwargs)
             return data
 
-    def get_universe_graphics_with_http_info(self, **kwargs):
+    def get_universe_graphics_with_http_info(self, **kwargs) -> Dict:
         """Get graphics
 
         Get a list of graphics  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_graphics_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_graphics_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -996,8 +997,8 @@ class UniverseApi(object):
         Get information on a graphic  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_graphics_graphic_id(graphic_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_graphics_graphic_id(graphic_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int graphic_id: graphic_id integer (required)
@@ -1007,11 +1008,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_graphics_graphic_id_with_http_info(graphic_id, **kwargs)
         else:
-            (data) = self.get_universe_graphics_graphic_id_with_http_info(graphic_id, **kwargs)
+            data = self.get_universe_graphics_graphic_id_with_http_info(graphic_id, **kwargs)
             return data
 
     def get_universe_graphics_graphic_id_with_http_info(self, graphic_id, **kwargs):
@@ -1020,8 +1021,8 @@ class UniverseApi(object):
         Get information on a graphic  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_graphics_graphic_id_with_http_info(graphic_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_graphics_graphic_id_with_http_info(graphic_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int graphic_id: graphic_id integer (required)
@@ -1098,14 +1099,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_groups(self, **kwargs):
+    def get_universe_groups(self, **kwargs) -> Dict:
         """Get item groups
 
         Get a list of item groups  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_groups(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_groups(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -1115,21 +1116,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_groups_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_groups_with_http_info(**kwargs)
+            data = self.get_universe_groups_with_http_info(**kwargs)
             return data
 
-    def get_universe_groups_with_http_info(self, **kwargs):
+    def get_universe_groups_with_http_info(self, **kwargs) -> Dict:
         """Get item groups
 
         Get a list of item groups  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_groups_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_groups_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -1210,8 +1211,8 @@ class UniverseApi(object):
         Get information on an item group  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_groups_group_id(group_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_groups_group_id(group_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int group_id: An Eve item group ID (required)
@@ -1223,11 +1224,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_groups_group_id_with_http_info(group_id, **kwargs)
         else:
-            (data) = self.get_universe_groups_group_id_with_http_info(group_id, **kwargs)
+            data = self.get_universe_groups_group_id_with_http_info(group_id, **kwargs)
             return data
 
     def get_universe_groups_group_id_with_http_info(self, group_id, **kwargs):
@@ -1236,8 +1237,8 @@ class UniverseApi(object):
         Get information on an item group  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_groups_group_id_with_http_info(group_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_groups_group_id_with_http_info(group_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int group_id: An Eve item group ID (required)
@@ -1325,8 +1326,8 @@ class UniverseApi(object):
         Get information on a moon  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_moons_moon_id(moon_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_moons_moon_id(moon_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int moon_id: moon_id integer (required)
@@ -1336,11 +1337,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_moons_moon_id_with_http_info(moon_id, **kwargs)
         else:
-            (data) = self.get_universe_moons_moon_id_with_http_info(moon_id, **kwargs)
+            data = self.get_universe_moons_moon_id_with_http_info(moon_id, **kwargs)
             return data
 
     def get_universe_moons_moon_id_with_http_info(self, moon_id, **kwargs):
@@ -1349,8 +1350,8 @@ class UniverseApi(object):
         Get information on a moon  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_moons_moon_id_with_http_info(moon_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_moons_moon_id_with_http_info(moon_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int moon_id: moon_id integer (required)
@@ -1432,8 +1433,8 @@ class UniverseApi(object):
         Get information on a planet  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_planets_planet_id(planet_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_planets_planet_id(planet_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int planet_id: planet_id integer (required)
@@ -1443,11 +1444,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_planets_planet_id_with_http_info(planet_id, **kwargs)
         else:
-            (data) = self.get_universe_planets_planet_id_with_http_info(planet_id, **kwargs)
+            data = self.get_universe_planets_planet_id_with_http_info(planet_id, **kwargs)
             return data
 
     def get_universe_planets_planet_id_with_http_info(self, planet_id, **kwargs):
@@ -1456,8 +1457,8 @@ class UniverseApi(object):
         Get information on a planet  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_planets_planet_id_with_http_info(planet_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_planets_planet_id_with_http_info(planet_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int planet_id: planet_id integer (required)
@@ -1533,14 +1534,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_races(self, **kwargs):
+    def get_universe_races(self, **kwargs) -> Dict:
         """Get character races
 
         Get a list of character races  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_races(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_races(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str accept_language: Language to use in the response
@@ -1551,21 +1552,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_races_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_races_with_http_info(**kwargs)
+            data = self.get_universe_races_with_http_info(**kwargs)
             return data
 
-    def get_universe_races_with_http_info(self, **kwargs):
+    def get_universe_races_with_http_info(self, **kwargs) -> Dict:
         """Get character races
 
         Get a list of character races  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_races_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_races_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str accept_language: Language to use in the response
@@ -1640,14 +1641,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_regions(self, **kwargs):
+    def get_universe_regions(self, **kwargs) -> Dict:
         """Get regions
 
         Get a list of regions  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_regions(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_regions(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -1656,21 +1657,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_regions_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_regions_with_http_info(**kwargs)
+            data = self.get_universe_regions_with_http_info(**kwargs)
             return data
 
-    def get_universe_regions_with_http_info(self, **kwargs):
+    def get_universe_regions_with_http_info(self, **kwargs) -> Dict:
         """Get regions
 
         Get a list of regions  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_regions_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_regions_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -1745,8 +1746,8 @@ class UniverseApi(object):
         Get information on a region  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_regions_region_id(region_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_regions_region_id(region_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int region_id: region_id integer (required)
@@ -1758,11 +1759,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_regions_region_id_with_http_info(region_id, **kwargs)
         else:
-            (data) = self.get_universe_regions_region_id_with_http_info(region_id, **kwargs)
+            data = self.get_universe_regions_region_id_with_http_info(region_id, **kwargs)
             return data
 
     def get_universe_regions_region_id_with_http_info(self, region_id, **kwargs):
@@ -1771,8 +1772,8 @@ class UniverseApi(object):
         Get information on a region  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_regions_region_id_with_http_info(region_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_regions_region_id_with_http_info(region_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int region_id: region_id integer (required)
@@ -1860,8 +1861,8 @@ class UniverseApi(object):
         Get information on a stargate  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_stargates_stargate_id(stargate_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_stargates_stargate_id(stargate_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int stargate_id: stargate_id integer (required)
@@ -1871,11 +1872,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_stargates_stargate_id_with_http_info(stargate_id, **kwargs)
         else:
-            (data) = self.get_universe_stargates_stargate_id_with_http_info(stargate_id, **kwargs)
+            data = self.get_universe_stargates_stargate_id_with_http_info(stargate_id, **kwargs)
             return data
 
     def get_universe_stargates_stargate_id_with_http_info(self, stargate_id, **kwargs):
@@ -1884,8 +1885,8 @@ class UniverseApi(object):
         Get information on a stargate  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_stargates_stargate_id_with_http_info(stargate_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_stargates_stargate_id_with_http_info(stargate_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int stargate_id: stargate_id integer (required)
@@ -1968,8 +1969,8 @@ class UniverseApi(object):
         Get information on a star  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_stars_star_id(star_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_stars_star_id(star_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int star_id: star_id integer (required)
@@ -1979,11 +1980,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_stars_star_id_with_http_info(star_id, **kwargs)
         else:
-            (data) = self.get_universe_stars_star_id_with_http_info(star_id, **kwargs)
+            data = self.get_universe_stars_star_id_with_http_info(star_id, **kwargs)
             return data
 
     def get_universe_stars_star_id_with_http_info(self, star_id, **kwargs):
@@ -1992,8 +1993,8 @@ class UniverseApi(object):
         Get information on a star  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_stars_star_id_with_http_info(star_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_stars_star_id_with_http_info(star_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int star_id: star_id integer (required)
@@ -2075,8 +2076,8 @@ class UniverseApi(object):
         Get information on a station  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_stations_station_id(station_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_stations_station_id(station_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int station_id: station_id integer (required)
@@ -2086,11 +2087,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_stations_station_id_with_http_info(station_id, **kwargs)
         else:
-            (data) = self.get_universe_stations_station_id_with_http_info(station_id, **kwargs)
+            data = self.get_universe_stations_station_id_with_http_info(station_id, **kwargs)
             return data
 
     def get_universe_stations_station_id_with_http_info(self, station_id, **kwargs):
@@ -2099,8 +2100,8 @@ class UniverseApi(object):
         Get information on a station  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_stations_station_id_with_http_info(station_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_stations_station_id_with_http_info(station_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int station_id: station_id integer (required)
@@ -2177,14 +2178,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_structures(self, **kwargs):
+    def get_universe_structures(self, **kwargs) -> Dict:
         """List all public structures
 
         List all public structures  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_structures(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_structures(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2194,21 +2195,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_structures_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_structures_with_http_info(**kwargs)
+            data = self.get_universe_structures_with_http_info(**kwargs)
             return data
 
-    def get_universe_structures_with_http_info(self, **kwargs):
+    def get_universe_structures_with_http_info(self, **kwargs) -> Dict:
         """List all public structures
 
         List all public structures  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_structures_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_structures_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2286,8 +2287,8 @@ class UniverseApi(object):
         Returns information on requested structure if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_structures_structure_id(structure_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_structures_structure_id(structure_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int structure_id: An Eve structure ID (required)
@@ -2298,11 +2299,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_structures_structure_id_with_http_info(structure_id, **kwargs)
         else:
-            (data) = self.get_universe_structures_structure_id_with_http_info(structure_id, **kwargs)
+            data = self.get_universe_structures_structure_id_with_http_info(structure_id, **kwargs)
             return data
 
     def get_universe_structures_structure_id_with_http_info(self, structure_id, **kwargs):
@@ -2311,8 +2312,8 @@ class UniverseApi(object):
         Returns information on requested structure if you are on the ACL. Otherwise, returns \"Forbidden\" for all inputs.  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_structures_structure_id_with_http_info(structure_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_structures_structure_id_with_http_info(structure_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int structure_id: An Eve structure ID (required)
@@ -2392,14 +2393,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_system_jumps(self, **kwargs):
+    def get_universe_system_jumps(self, **kwargs) -> Dict:
         """Get system jumps
 
         Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_system_jumps(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_system_jumps(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2408,21 +2409,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_system_jumps_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_system_jumps_with_http_info(**kwargs)
+            data = self.get_universe_system_jumps_with_http_info(**kwargs)
             return data
 
-    def get_universe_system_jumps_with_http_info(self, **kwargs):
+    def get_universe_system_jumps_with_http_info(self, **kwargs) -> Dict:
         """Get system jumps
 
         Get the number of jumps in solar systems within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with jumps will be listed  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_system_jumps_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_system_jumps_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2491,14 +2492,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_system_kills(self, **kwargs):
+    def get_universe_system_kills(self, **kwargs) -> Dict:
         """Get system kills
 
         Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_system_kills(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_system_kills(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2507,21 +2508,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_system_kills_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_system_kills_with_http_info(**kwargs)
+            data = self.get_universe_system_kills_with_http_info(**kwargs)
             return data
 
-    def get_universe_system_kills_with_http_info(self, **kwargs):
+    def get_universe_system_kills_with_http_info(self, **kwargs) -> Dict:
         """Get system kills
 
         Get the number of ship, pod and NPC kills per solar system within the last hour ending at the timestamp of the Last-Modified header, excluding wormhole space. Only systems with kills will be listed  ---  This route is cached for up to 3600 seconds
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_system_kills_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_system_kills_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2590,14 +2591,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_systems(self, **kwargs):
+    def get_universe_systems(self, **kwargs) -> Dict:
         """Get solar systems
 
         Get a list of solar systems  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_systems(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_systems(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2606,21 +2607,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_systems_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_systems_with_http_info(**kwargs)
+            data = self.get_universe_systems_with_http_info(**kwargs)
             return data
 
-    def get_universe_systems_with_http_info(self, **kwargs):
+    def get_universe_systems_with_http_info(self, **kwargs) -> Dict:
         """Get solar systems
 
         Get a list of solar systems  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_systems_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_systems_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2695,8 +2696,8 @@ class UniverseApi(object):
         Get information on a solar system.  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_systems_system_id(system_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_systems_system_id(system_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int system_id: system_id integer (required)
@@ -2708,11 +2709,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_systems_system_id_with_http_info(system_id, **kwargs)
         else:
-            (data) = self.get_universe_systems_system_id_with_http_info(system_id, **kwargs)
+            data = self.get_universe_systems_system_id_with_http_info(system_id, **kwargs)
             return data
 
     def get_universe_systems_system_id_with_http_info(self, system_id, **kwargs):
@@ -2721,8 +2722,8 @@ class UniverseApi(object):
         Get information on a solar system.  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_systems_system_id_with_http_info(system_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_systems_system_id_with_http_info(system_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int system_id: system_id integer (required)
@@ -2804,14 +2805,14 @@ class UniverseApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_universe_types(self, **kwargs):
+    def get_universe_types(self, **kwargs) -> Dict:
         """Get types
 
         Get a list of type ids  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_types(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_types(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2821,21 +2822,21 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_types_with_http_info(**kwargs)
         else:
-            (data) = self.get_universe_types_with_http_info(**kwargs)
+            data = self.get_universe_types_with_http_info(**kwargs)
             return data
 
-    def get_universe_types_with_http_info(self, **kwargs):
+    def get_universe_types_with_http_info(self, **kwargs) -> Dict:
         """Get types
 
         Get a list of type ids  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_types_with_http_info(async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_types_with_http_info(async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param str datasource: The server name you would like data from
@@ -2916,8 +2917,8 @@ class UniverseApi(object):
         Get information on a type  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_types_type_id(type_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_types_type_id(type_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int type_id: An Eve item type ID (required)
@@ -2929,11 +2930,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_universe_types_type_id_with_http_info(type_id, **kwargs)
         else:
-            (data) = self.get_universe_types_type_id_with_http_info(type_id, **kwargs)
+            data = self.get_universe_types_type_id_with_http_info(type_id, **kwargs)
             return data
 
     def get_universe_types_type_id_with_http_info(self, type_id, **kwargs):
@@ -2942,8 +2943,8 @@ class UniverseApi(object):
         Get information on a type  ---  This route expires daily at 11:05
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_universe_types_type_id_with_http_info(type_id, async_req=True)
-        >>> result = thread.get()
+        thread = api.get_universe_types_type_id_with_http_info(type_id, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param int type_id: An Eve item type ID (required)
@@ -3031,8 +3032,8 @@ class UniverseApi(object):
         Resolve a set of names to IDs in the following categories: agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems. Only exact matches will be returned. All names searched for are cached for 12 hours  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_universe_ids(names, async_req=True)
-        >>> result = thread.get()
+        thread = api.post_universe_ids(names, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param list[str] names: The names to resolve (required)
@@ -3043,11 +3044,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_universe_ids_with_http_info(names, **kwargs)
         else:
-            (data) = self.post_universe_ids_with_http_info(names, **kwargs)
+            data = self.post_universe_ids_with_http_info(names, **kwargs)
             return data
 
     def post_universe_ids_with_http_info(self, names, **kwargs):
@@ -3056,8 +3057,8 @@ class UniverseApi(object):
         Resolve a set of names to IDs in the following categories: agents, alliances, characters, constellations, corporations factions, inventory_types, regions, stations, and systems. Only exact matches will be returned. All names searched for are cached for 12 hours  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_universe_ids_with_http_info(names, async_req=True)
-        >>> result = thread.get()
+        thread = api.post_universe_ids_with_http_info(names, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param list[str] names: The names to resolve (required)
@@ -3142,8 +3143,8 @@ class UniverseApi(object):
         Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types, Factions  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_universe_names(ids, async_req=True)
-        >>> result = thread.get()
+        thread = api.post_universe_names(ids, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param list[int] ids: The ids to resolve (required)
@@ -3152,11 +3153,11 @@ class UniverseApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_universe_names_with_http_info(ids, **kwargs)
         else:
-            (data) = self.post_universe_names_with_http_info(ids, **kwargs)
+            data = self.post_universe_names_with_http_info(ids, **kwargs)
             return data
 
     def post_universe_names_with_http_info(self, ids, **kwargs):
@@ -3165,8 +3166,8 @@ class UniverseApi(object):
         Resolve a set of IDs to names and categories. Supported ID's for resolving are: Characters, Corporations, Alliances, Stations, Solar Systems, Constellations, Regions, Types, Factions  --- 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.post_universe_names_with_http_info(ids, async_req=True)
-        >>> result = thread.get()
+        thread = api.post_universe_names_with_http_info(ids, async_req=True)
+        result = thread.get()
 
         :param async_req bool
         :param list[int] ids: The ids to resolve (required)

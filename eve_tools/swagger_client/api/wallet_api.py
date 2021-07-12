@@ -50,7 +50,7 @@ class WalletApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_wallet_with_http_info(character_id, **kwargs)
         else:
@@ -166,7 +166,7 @@ class WalletApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_wallet_journal_with_http_info(character_id, **kwargs)
         else:
@@ -288,7 +288,7 @@ class WalletApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_wallet_transactions_with_http_info(character_id, **kwargs)
         else:
@@ -406,7 +406,7 @@ class WalletApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_wallets_with_http_info(corporation_id, **kwargs)
         else:
@@ -523,7 +523,7 @@ class WalletApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_wallets_division_journal_with_http_info(corporation_id,
                                                                                                 division, **kwargs)
@@ -663,7 +663,7 @@ class WalletApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_wallets_division_transactions_with_http_info(corporation_id,
                                                                                                      division, **kwargs)

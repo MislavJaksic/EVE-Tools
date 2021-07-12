@@ -50,7 +50,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.delete_characters_character_id_mail_labels_label_id_with_http_info(character_id, label_id,
                                                                                            **kwargs)
@@ -172,7 +172,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.delete_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)
         else:
@@ -294,7 +294,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_mail_with_http_info(character_id, **kwargs)
         else:
@@ -424,7 +424,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_mail_labels_with_http_info(character_id, **kwargs)
         else:
@@ -539,7 +539,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_mail_lists_with_http_info(character_id, **kwargs)
         else:
@@ -655,7 +655,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_mail_mail_id_with_http_info(character_id, mail_id, **kwargs)
         else:
@@ -778,7 +778,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_characters_character_id_mail_with_http_info(character_id, mail, **kwargs)
         else:
@@ -897,7 +897,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_characters_character_id_mail_labels_with_http_info(character_id, label, **kwargs)
         else:
@@ -1018,7 +1018,7 @@ class MailApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.put_characters_character_id_mail_mail_id_with_http_info(character_id, contents, mail_id,
                                                                                 **kwargs)

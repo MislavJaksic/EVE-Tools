@@ -14,6 +14,7 @@ class ChatChannelCollection:
     for channel in collection.channels:
         print(channel)
     """
+
     def __init__(self, parser: ChatChannelParser, chat_log_dir: Path, channels: List[ChatChannel]):
         self.parser = parser
         self.chat_log_dir = chat_log_dir

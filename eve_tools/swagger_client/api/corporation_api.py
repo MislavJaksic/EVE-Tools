@@ -49,7 +49,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_with_http_info(corporation_id, **kwargs)
         else:
@@ -160,7 +160,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_alliancehistory_with_http_info(corporation_id, **kwargs)
         else:
@@ -273,7 +273,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_blueprints_with_http_info(corporation_id, **kwargs)
         else:
@@ -395,7 +395,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_containers_logs_with_http_info(corporation_id, **kwargs)
         else:
@@ -516,7 +516,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_divisions_with_http_info(corporation_id, **kwargs)
         else:
@@ -631,7 +631,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_facilities_with_http_info(corporation_id, **kwargs)
         else:
@@ -745,7 +745,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_icons_with_http_info(corporation_id, **kwargs)
         else:
@@ -858,7 +858,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_medals_with_http_info(corporation_id, **kwargs)
         else:
@@ -980,7 +980,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_medals_issued_with_http_info(corporation_id, **kwargs)
         else:
@@ -1101,7 +1101,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_members_with_http_info(corporation_id, **kwargs)
         else:
@@ -1216,7 +1216,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_members_limit_with_http_info(corporation_id, **kwargs)
         else:
@@ -1331,7 +1331,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_members_titles_with_http_info(corporation_id, **kwargs)
         else:
@@ -1446,7 +1446,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_membertracking_with_http_info(corporation_id, **kwargs)
         else:
@@ -1561,7 +1561,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_roles_with_http_info(corporation_id, **kwargs)
         else:
@@ -1677,7 +1677,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_roles_history_with_http_info(corporation_id, **kwargs)
         else:
@@ -1799,7 +1799,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_shareholders_with_http_info(corporation_id, **kwargs)
         else:
@@ -1921,7 +1921,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_standings_with_http_info(corporation_id, **kwargs)
         else:
@@ -2043,7 +2043,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_starbases_with_http_info(corporation_id, **kwargs)
         else:
@@ -2166,7 +2166,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_starbases_starbase_id_with_http_info(corporation_id,
                                                                                              starbase_id, system_id,
@@ -2305,7 +2305,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_structures_with_http_info(corporation_id, **kwargs)
         else:
@@ -2432,7 +2432,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_corporation_id_titles_with_http_info(corporation_id, **kwargs)
         else:
@@ -2545,7 +2545,7 @@ class CorporationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_corporations_npccorps_with_http_info(**kwargs)
         else:

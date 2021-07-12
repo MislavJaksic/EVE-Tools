@@ -50,7 +50,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.delete_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, **kwargs)
         else:
@@ -167,7 +167,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.delete_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, squad_id, **kwargs)
         else:
@@ -284,7 +284,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.delete_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, wing_id, **kwargs)
         else:
@@ -401,7 +401,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_characters_character_id_fleet_with_http_info(character_id, **kwargs)
         else:
@@ -516,7 +516,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_fleets_fleet_id_with_http_info(fleet_id, **kwargs)
         else:
@@ -629,7 +629,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_fleets_fleet_id_members_with_http_info(fleet_id, **kwargs)
         else:
@@ -748,7 +748,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.get_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)
         else:
@@ -865,7 +865,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_fleets_fleet_id_members_with_http_info(fleet_id, invitation, **kwargs)
         else:
@@ -979,7 +979,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_fleets_fleet_id_wings_with_http_info(fleet_id, **kwargs)
         else:
@@ -1087,7 +1087,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.post_fleets_fleet_id_wings_wing_id_squads_with_http_info(fleet_id, wing_id, **kwargs)
         else:
@@ -1204,7 +1204,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.put_fleets_fleet_id_with_http_info(fleet_id, new_settings, **kwargs)
         else:
@@ -1320,7 +1320,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.put_fleets_fleet_id_members_member_id_with_http_info(fleet_id, member_id, movement, **kwargs)
         else:
@@ -1446,7 +1446,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.put_fleets_fleet_id_squads_squad_id_with_http_info(fleet_id, naming, squad_id, **kwargs)
         else:
@@ -1572,7 +1572,7 @@ class FleetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
+        kwargs['_return_http_data_only'] = False
         if kwargs.get('async_req'):
             return self.put_fleets_fleet_id_wings_wing_id_with_http_info(fleet_id, naming, wing_id, **kwargs)
         else:
