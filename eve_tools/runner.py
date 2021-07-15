@@ -8,8 +8,11 @@
     :license: MIT License
 """
 import sys
+from datetime import datetime
 
 from eve_tools import swagger_client
+from eve_tools.helper.data_frame import DataFrame
+from eve_tools.helper.eve_datastore import EveDatastore
 from eve_tools.swagger_client.rest import ApiException
 
 # from eve_tools.eve_calculator import EveCalculator
@@ -20,11 +23,11 @@ log_message = "update?={update}"
 
 def main(args):
     """main() will be run if you run this script directly"""
-    # datastore = EveDatastore()
-    # kills = datastore.get_universe_system_kills()
-    #
-    # dataframe = DataFrame("json", kills)
-    # dataframe.to_csv("kills" + str(datetime.now().hour) + str(datetime.now().minute) + ".csv")
+    datastore = EveDatastore()
+    kills = datastore.get_universe_system_kills()
+
+    dataframe = DataFrame("json", kills)
+    dataframe.to_csv("kills" + str(datetime.now().hour) + str(datetime.now().minute) + ".csv")
 
     # counter = 0
     # while counter < 1000:
