@@ -18,7 +18,6 @@ import os
 import re
 import tempfile
 from multiprocessing.pool import ThreadPool
-
 # python 2 and python 3 compatibility library
 from typing import Dict
 
